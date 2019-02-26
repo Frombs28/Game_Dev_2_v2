@@ -28,6 +28,7 @@ public class MeleeCharacterScript : CharacterScript
 
     public override void Attack()
     {
+        base.Attack();
         gameObject.SendMessage("FireRifleGun");
     }
 

@@ -19,10 +19,12 @@ public class CharacterScript : MonoBehaviour
 
     private NavMeshAgent navAgent;
 
+    public Animator myAnimator;
+
     public CharacterController controller;
     public Vector3 moveDirection;
     public bool interruptMovement = false;
-    public bool zeroMovement;
+    public bool zeroMovement = true;
     public float moveSpeed = 20f; //how fast the character can move //this should be overridden
     public float jumpSpeed = 50f;
     public float gravity = 20f;
@@ -30,6 +32,8 @@ public class CharacterScript : MonoBehaviour
     public int enemyhealth = 3;
     public float enemySpeed = 20f;
     public bool invincible = false;
+
+    GameObject figure;
 
     public Camera cam; //player character rotation is based on camera rotation //this is the MAIN CAMERA,  *not*  your personal VIRTUAL CAMERA
     
@@ -55,6 +59,8 @@ public class CharacterScript : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         inputManager = GameObject.Find("InputManager");
         navAgent.speed = enemySpeed;
+        myAnimator = gameObject.GetComponentInChildren<Animator>();
+        figure = gameObject.transform.GetChild(3).gameObject;
     }
 
     public void AssignPlayer(GameObject myPlayer)
@@ -120,21 +126,76 @@ public class CharacterScript : MonoBehaviour
         {
             if (controller.isGrounded)
             {
-                zeroMovement = false;
                 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")).normalized;
                 moveDirection = transform.TransformDirection(moveDirection);
                 moveDirection *= moveSpeed;
                 num_jumps = 0;
+                myAnimator.SetBool("jumping", false);
             }
-            if (Input.GetButtonDown("Jump") && num_jumps < 2)
+
+            //if(Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") == 0)
+            //{
+            //    figure.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            //}
+            //else if (Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") > 0)
+            //{
+            //    figure.transform.rotation = Quaternion.Euler(new Vector3(0, 45, 0));
+            //}
+            //else if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") > 0)
+            //{
+            //    figure.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            //}
+            //else if (Input.GetAxis("Vertical") < 0 && Input.GetAxis("Horizontal") > 0)
+            //{
+            //    figure.transform.rotation = Quaternion.Euler(new Vector3(0, 135, 0));
+            //}
+            //else if (Input.GetAxis("Vertical") < 0 && Input.GetAxis("Horizontal") == 0)
+            //{
+            //    figure.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            //}
+            //else if (Input.GetAxis("Vertical") < 0 && Input.GetAxis("Horizontal") < 0)
+            //{
+            //    figure.transform.rotation = Quaternion.Euler(new Vector3(0, 225, 0));
+            //}
+            //else if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") < 0)
+            //{
+            //    figure.transform.rotation = Quaternion.Euler(new Vector3(0, 270, 0));
+            //}
+            //else if (Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") < 0)
+            //{
+            //    figure.transform.rotation = Quaternion.Euler(new Vector3(0, 315, 0));
+            //}
+
+            if (Input.GetButtonDown("Jump") && num_jumps < 1)
             {
                 moveDirection.y += jumpSpeed;
                 num_jumps += 1;
+                myAnimator.SetBool("jumping", true);
+            }
+            if(amPlayer && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") !=0 || num_jumps > 0))
+            {
+                zeroMovement = false;
+            }
+            else
+            {
+                zeroMovement = true;
             }
         }
 
 
-        if (zeroMovement) { moveDirection = new Vector3(0f, moveDirection.y, 0f); }
+        if (zeroMovement)
+        {
+            moveDirection = new Vector3(0f, moveDirection.y, 0f);
+            myAnimator.SetBool("run", false);
+        }
+        else
+        {
+            myAnimator.SetBool("run", true);
+        }
+        if (!amPlayer)
+        {
+            myAnimator.SetBool("run", false);
+        }
         moveDirection.y -= (gravity * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
 
@@ -155,7 +216,16 @@ public class CharacterScript : MonoBehaviour
     }
     
     //the virtual stuff that must be overloaded by the subclasses
-    public virtual void Attack() { }
+    public virtual void Attack()
+    {
+        myAnimator.SetBool("firing", true);
+        Debug.Log("Fire animiation!!");
+    }
+    public virtual void StopAttack()
+    {
+        myAnimator.SetBool("firing", false);
+        Debug.Log("No more animation...");
+    }
     public virtual bool IsCharging() { return false; }
     public virtual void TraversalAbility() { }
     public virtual void Ability() { }
@@ -173,7 +243,8 @@ public class CharacterScript : MonoBehaviour
     public virtual void Die()
     {
         inputManager.SendMessage("RemoveCharacterFromList", gameObject);
-        Destroy(gameObject, 0.01f);
+        myAnimator.SetBool("die", true);
+        Destroy(gameObject, 0.5f);
     }
 
     void OnCollisionEnter(Collision collider)

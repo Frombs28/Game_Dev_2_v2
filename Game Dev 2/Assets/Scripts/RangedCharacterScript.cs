@@ -28,6 +28,7 @@ public class RangedCharacterScript : CharacterScript
 
     public override void Attack()
     {
+        base.Attack();
         gameObject.SendMessage("FireShortGun");
     }
 

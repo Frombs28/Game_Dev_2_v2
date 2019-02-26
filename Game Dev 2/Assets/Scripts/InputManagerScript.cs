@@ -139,6 +139,10 @@ public class InputManagerScript : MonoBehaviour
             timer = 0f;
             player.SendMessage("Attack");
         }
+        if (Input.GetButtonUp("Attack"))
+        {
+            player.SendMessage("StopAttack");
+        }
     }
 
     public void AssignPlayer(GameObject myPlayer)

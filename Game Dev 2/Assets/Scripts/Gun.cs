@@ -49,7 +49,7 @@ public class Gun : MonoBehaviour
 
     private void FireShortGun()
     {
-        Debug.Log("Firing the thing!");
+
         GameObject cur_bullet;
         Vector3 myDirection;
         RaycastHit hit;
