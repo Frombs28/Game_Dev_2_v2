@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 6ed6cb43de7536b408c35d2719fbde7f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bottomFloor
+    100002: catwalk3_catwalk
+    100004: catwalk_catwalk1
+    100006: catwalk_catwalk2
+    100008: cell
+    100010: hallway
+    100012: innerWall1_landing_innerWall
+    100014: //RootNode
+    100016: outerWall
+    100018: pCylinder6
+    100020: stairs
+    100022: stairs1
+    100024: WallsObj
+    400000: bottomFloor
+    400002: catwalk3_catwalk
+    400004: catwalk_catwalk1
+    400006: catwalk_catwalk2
+    400008: cell
+    400010: hallway
+    400012: innerWall1_landing_innerWall
+    400014: //RootNode
+    400016: outerWall
+    400018: pCylinder6
+    400020: stairs
+    400022: stairs1
+    400024: WallsObj
+    2100000: bottomFloorMat
+    2100002: catwalk3_catwalkMat
+    2100004: catwalk_catwalk1Mat
+    2100006: catwalk_catwalk2Mat
+    2100008: cellMat
+    2100010: hallwayMat
+    2100012: innerWall1_landing_innerWallMat
+    2100014: outerWallMat
+    2100016: pCylinder6Mat
+    2100018: stairsMat
+    2100020: stairs1Mat
+    2100022: WallsObjMat
+    2300000: bottomFloor
+    2300002: catwalk3_catwalk
+    2300004: catwalk_catwalk1
+    2300006: catwalk_catwalk2
+    2300008: cell
+    2300010: hallway
+    2300012: innerWall1_landing_innerWall
+    2300014: outerWall
+    2300016: pCylinder6
+    2300018: stairs
+    2300020: stairs1
+    2300022: WallsObj
+    3300000: bottomFloor
+    3300002: catwalk3_catwalk
+    3300004: catwalk_catwalk1
+    3300006: catwalk_catwalk2
+    3300008: cell
+    3300010: hallway
+    3300012: innerWall1_landing_innerWall
+    3300014: outerWall
+    3300016: pCylinder6
+    3300018: stairs
+    3300020: stairs1
+    3300022: WallsObj
+    4300000: bottomFloor
+    4300002: catwalk3_catwalk
+    4300004: catwalk_catwalk1
+    4300006: catwalk_catwalk2
+    4300008: cell
+    4300010: hallway
+    4300012: innerWall1_landing_innerWall
+    4300014: outerWall
+    4300016: pCylinder6
+    4300018: stairs
+    4300020: stairs1
+    4300022: WallsObj
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
