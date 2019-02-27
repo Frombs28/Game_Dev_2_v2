@@ -93,10 +93,10 @@ public class ThirdPersonCamScript : MonoBehaviour
 
             lookAtTransform = lookAtObject.transform.position;
             //RaycastHit hit;
-            Debug.DrawRay(transform.position, lookAtObject.gameObject.transform.position - transform.position);
+            //Debug.DrawRay(transform.position, lookAtObject.gameObject.transform.position - transform.position);
             //if (Physics.Raycast(transform.position, lookAtObject.gameObject.transform.position - transform.position, out hit))
             //{
-            //    if(hit.transform != lookAtObject.transform)
+            //    if (hit.transform != lookAtObject.transform)
             //    {
             //        transform.position = hit.transform.position + (rotation * direction);
             //    }

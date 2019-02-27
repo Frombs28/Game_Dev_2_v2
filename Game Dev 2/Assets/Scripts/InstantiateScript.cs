@@ -36,7 +36,7 @@ public class InstantiateScript : MonoBehaviour
             }
             else
             {
-                InstantiateCharacter(rangedPrefab,
+                InstantiateCharacter(meleePrefab,
                     new Vector3(spawns.transform.GetChild(i).transform.position.x,
                     spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), false);
             }

@@ -45,6 +45,7 @@ public class CharacterScript : MonoBehaviour
     public bool hittingWall = false;
     public bool aggro = false; //true if you're within a certain distance of the player or just got hit //resets after a few seconds
     private bool canStartAggroTimer = true;
+    public float distanceToAggro = 25f;
 
     public int Enemyhealth
     {
@@ -222,7 +223,7 @@ public class CharacterScript : MonoBehaviour
         //    {
         //        gameObject.SendMessage("FireEnemyGun");
         //    }
-        //}
+        }
 
         //for now, assume there is only 1 AI in the scene and that possession isn't a thing
         //we'll change this to support possession once we get it working well enough with one dude
@@ -235,7 +236,7 @@ public class CharacterScript : MonoBehaviour
         }
 
         float myDist = Vector3.Distance(player.transform.position, transform.position);
-        if (myDist <= 15f)
+        if (myDist <= distanceToAggro)
         {
             aggro = true;
             if (canStartAggroTimer) { StartCoroutine("AggroTimer"); }
