@@ -22,6 +22,8 @@ public class InputManagerScript : MonoBehaviour
     public Slider abilityBar;
     float traversalRechargeStartTime;
     float abilityRechargeStartTime;
+    int num_shots = 15;
+    int reload_speed = 3;
 
     public GameObject reticle;
 
@@ -134,10 +136,19 @@ public class InputManagerScript : MonoBehaviour
             }
         }
 
-        if (timer >= fire_rate && Input.GetButton("Attack"))
+        if (timer >= fire_rate && Input.GetButton("Attack") && num_shots >= 0)
         {
-            timer = 0f;
-            player.SendMessage("Attack");
+            if (num_shots > 0)
+            {
+                timer = 0f;
+                player.SendMessage("Attack");
+                num_shots -= 1;
+            }
+            else
+            {
+                timer = -1 * reload_speed;
+                num_shots = 15;
+            }
         }
         if (Input.GetButtonUp("Attack"))
         {

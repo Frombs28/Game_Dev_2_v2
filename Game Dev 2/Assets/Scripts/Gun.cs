@@ -14,11 +14,15 @@ public class Gun : MonoBehaviour
     int burst_num = 4;
     int i;
     public float short_range;
+    AudioSource laser;
+    float pitch;
 
     void Start()
     {
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         barrel = transform.GetChild(0).gameObject;
+        laser = gameObject.GetComponent<AudioSource>();
+        pitch = 1;
     }
 
     void Update()
@@ -45,6 +49,9 @@ public class Gun : MonoBehaviour
         cur_bullet.GetComponent<Rigidbody>().velocity = myDirection.normalized * bullet_speed;
         cur_bullet.layer = 9;
         Destroy(cur_bullet, 5);
+        laser.pitch = Random.Range(1.0f, 1.5f);
+        laser.Play();
+
     }
 
     private void FireShortGun()

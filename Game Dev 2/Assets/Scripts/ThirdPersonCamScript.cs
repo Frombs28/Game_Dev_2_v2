@@ -92,6 +92,19 @@ public class ThirdPersonCamScript : MonoBehaviour
             //moving this beneath the other stuff didn't help and just made it choppy
 
             lookAtTransform = lookAtObject.transform.position;
+            //RaycastHit hit;
+            Debug.DrawRay(transform.position, lookAtObject.gameObject.transform.position - transform.position);
+            //if (Physics.Raycast(transform.position, lookAtObject.gameObject.transform.position - transform.position, out hit))
+            //{
+            //    if(hit.transform != lookAtObject.transform)
+            //    {
+            //        transform.position = hit.transform.position + (rotation * direction);
+            //    }
+            //}
+            //else
+            //{
+            //    Debug.Log("Nothing?");
+            //}
             /*
             temp = new Vector3(lookOffset * Vector3.Project(transform.rotation.eulerAngles, lookAtObject.transform.rotation.eulerAngles).x, 0f, 0f);
             lookAtTransform.position += temp;

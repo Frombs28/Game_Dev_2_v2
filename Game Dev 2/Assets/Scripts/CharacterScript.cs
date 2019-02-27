@@ -32,6 +32,8 @@ public class CharacterScript : MonoBehaviour
     public int enemyhealth = 3;
     public float enemySpeed = 20f;
     public bool invincible = false;
+    GameObject marker;
+    bool marker_bool = true;
 
     GameObject figure;
 
@@ -57,10 +59,11 @@ public class CharacterScript : MonoBehaviour
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         controller = GetComponent<CharacterController>();
         navAgent = GetComponent<NavMeshAgent>();
-        inputManager = GameObject.Find("InputManager");
+        inputManager = GameObject.Find("Input Manager");
         navAgent.speed = enemySpeed;
         myAnimator = gameObject.GetComponentInChildren<Animator>();
         figure = gameObject.transform.GetChild(3).gameObject;
+        marker = GameObject.Find("Marker");
     }
 
     public void AssignPlayer(GameObject myPlayer)
@@ -70,8 +73,12 @@ public class CharacterScript : MonoBehaviour
         if (amPlayer)
         {
             navAgent.enabled = false;
+            myAnimator.SetBool("walk", false);
         }
-        else { navAgent.enabled = true; }
+        else {
+            navAgent.enabled = true;
+            myAnimator.SetBool("walk", true);
+        }
     }
 
     //movement if this character is possessed by the player
@@ -199,20 +206,31 @@ public class CharacterScript : MonoBehaviour
         moveDirection.y -= (gravity * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
 
-        //if (!amPlayer)
-        //{
-        //    navAgent.SetDestination(player.transform.position);
+        if (!amPlayer)
+        {
+            navAgent.SetDestination(marker.transform.position);
 
-        //    //put some stuff here about firing le gun
-        //    if (Random.Range(0f, 100) <= 1)
-        //    {
-        //        gameObject.SendMessage("FireEnemyGun");
-        //    }
-        //}
+            ////put some stuff here about firing le gun
+            //if (Random.Range(0f, 100) <= 1)
+            //{
+            //    gameObject.SendMessage("FireEnemyGun");
+            //}
+        }
     }
     private void LateUpdate()
     {
         //zeroMovement = true;
+        if (!amPlayer)
+        {
+            if(gameObject.transform.position.z >= 21.0f)
+            {
+                marker = GameObject.Find("Marker");
+            }
+            else if(gameObject.transform.position.z <= 1.0f)
+            {
+                marker = GameObject.Find("Marker2");
+            }
+        }
     }
     
     //the virtual stuff that must be overloaded by the subclasses
@@ -279,5 +297,20 @@ public class CharacterScript : MonoBehaviour
         {
             gameObject.SendMessage("StopCharging");
         }
+        //if(collider.gameObject == marker)
+        //{
+        //    if(marker_bool)
+        //    {
+        //        marker = GameObject.Find("Marker2");
+        //        marker_bool = false;
+        //        Debug.Log("yeet yeet");
+        //    }
+        //    else
+        //    {
+        //        marker = GameObject.Find("Marker");
+        //        marker_bool = true;
+        //        Debug.Log("dont touch my feet");
+        //    }
+        //}
     }
 }
