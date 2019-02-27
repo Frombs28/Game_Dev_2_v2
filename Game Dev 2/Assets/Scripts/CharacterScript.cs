@@ -153,7 +153,7 @@ public class CharacterScript : MonoBehaviour
 
         //for now, assume there is only 1 AI in the scene and that possession isn't a thing
         //we'll change this to support possession once we get it working well enough with one dude
-        if (!amPlayer) { Debug.Log(state); }
+        //if (!amPlayer) { Debug.Log(state); }
 
         if (!amPlayer && state == "none")
         {

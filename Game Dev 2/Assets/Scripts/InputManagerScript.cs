@@ -44,9 +44,10 @@ public class InputManagerScript : MonoBehaviour
 
     private void Update()
     {
-        /*
+        
         timer += Time.deltaTime;
         possess_timer += Time.deltaTime;
+        /*
         if(Time.deltaTime - traversalRechargeStartTime < movementBar.maxValue)
         {
             movementBar.value = Time.deltaTime - traversalRechargeStartTime;
@@ -126,8 +127,8 @@ public class InputManagerScript : MonoBehaviour
                     //set the player to the new character
                     player.layer = 0; //i would put this in AssignPlayer but it's a hassle so do it here
                     AssignPlayer(hit.collider.gameObject);
-                    movementBar.maxValue = player.gameObject.GetComponent<CharacterScript>().TraversalMaxTime();
-                    abilityBar.maxValue = player.gameObject.GetComponent<CharacterScript>().AbilityMaxTime();
+                    //movementBar.maxValue = player.gameObject.GetComponent<CharacterScript>().TraversalMaxTime();
+                    //abilityBar.maxValue = player.gameObject.GetComponent<CharacterScript>().AbilityMaxTime();
                     //transition the camera
                     mainCam.SendMessage("PossessionTransitionStarter", hit.collider.gameObject);
 
