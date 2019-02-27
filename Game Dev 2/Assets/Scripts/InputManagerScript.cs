@@ -34,17 +34,22 @@ public class InputManagerScript : MonoBehaviour
     //this function is also called by InstantiateScript to determine who the player is when the scene just starts
     void Start()
     {
+        /*
         healthBar.value = playerhealth;
         movementBar.maxValue = player.gameObject.GetComponent<CharacterScript>().TraversalMaxTime();
         abilityBar.maxValue = player.gameObject.GetComponent<CharacterScript>().AbilityMaxTime();
+        */
+        //^^^not doing bars rn
         traversalRechargeStartTime = 0f;
         abilityRechargeStartTime = 0f;
     }
 
     private void Update()
     {
+        
         timer += Time.deltaTime;
         possess_timer += Time.deltaTime;
+        /*
         if(Time.deltaTime - traversalRechargeStartTime < movementBar.maxValue)
         {
             movementBar.value = Time.deltaTime - traversalRechargeStartTime;
@@ -61,6 +66,8 @@ public class InputManagerScript : MonoBehaviour
         {
             abilityBar.value = abilityBar.maxValue;
         }
+        */
+        //^^^ stuff having to do with UI things that i'm not bothering to re-implement bc i didn't make them and i'm tryna do that AI rn
 
         //player movement
         //if the player is pressing the WASD keys, call a function on the CharacterScript of whatever character the player is controlling
@@ -122,8 +129,8 @@ public class InputManagerScript : MonoBehaviour
                     //set the player to the new character
                     player.layer = 0; //i would put this in AssignPlayer but it's a hassle so do it here
                     AssignPlayer(hit.collider.gameObject);
-                    movementBar.maxValue = player.gameObject.GetComponent<CharacterScript>().TraversalMaxTime();
-                    abilityBar.maxValue = player.gameObject.GetComponent<CharacterScript>().AbilityMaxTime();
+                    //movementBar.maxValue = player.gameObject.GetComponent<CharacterScript>().TraversalMaxTime();
+                    //abilityBar.maxValue = player.gameObject.GetComponent<CharacterScript>().AbilityMaxTime();
                     //transition the camera
                     mainCam.SendMessage("PossessionTransitionStarter", hit.collider.gameObject);
 

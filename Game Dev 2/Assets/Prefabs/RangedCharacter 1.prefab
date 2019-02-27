@@ -1370,6 +1370,7 @@ MonoBehaviour:
   player: {fileID: 0}
   amPlayer: 0
   inputManager: {fileID: 0}
+  navAgent: {fileID: 0}
   controller: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   interruptMovement: 0
@@ -1378,9 +1379,12 @@ MonoBehaviour:
   jumpSpeed: 20
   gravity: 70
   enemyhealth: 6
-  enemySpeed: 20
+  enemySpeed: 9
   invincible: 0
   cam: {fileID: 0}
+  state: none
+  lookAtPlayer: 0
+  lookAwayFromPlayer: 0
   dashDistance: 70
   dashSpeed: 75
   dashTime: 1
