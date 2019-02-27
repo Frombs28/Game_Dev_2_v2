@@ -102,6 +102,7 @@ public class MeleeCharacterScript : CharacterScript
     }
     public override bool MakeDistanceHelperTwo()
     {
+        if (amPlayer) { return false; }
         float myDist = Vector3.Distance(player.transform.position, transform.position);
         if (myDist <= 10f)
         {

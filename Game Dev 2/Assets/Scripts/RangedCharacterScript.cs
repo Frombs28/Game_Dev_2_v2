@@ -133,8 +133,9 @@ public class RangedCharacterScript : CharacterScript
     }
     public override bool MakeDistanceHelperTwo() //need a way to have the guy stop after a certain amount of time has passed / he walked into a wall    //actually flipping a bool to true as long as ya boi is hitting a wall might be helpful
     {
+        if (amPlayer) { return false; }
         float myDist = Vector3.Distance(player.transform.position, transform.position);
-        if (myDist >= 20)
+        if (myDist >= 20 || hittingWall)
         {
             navAgent.ResetPath();
             lookAwayFromPlayer = false;

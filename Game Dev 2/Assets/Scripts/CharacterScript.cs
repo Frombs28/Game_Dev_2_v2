@@ -36,6 +36,7 @@ public class CharacterScript : MonoBehaviour
     public string state = "none";
     public bool lookAtPlayer = false;
     public bool lookAwayFromPlayer = false;
+    public bool hittingWall = false;
 
     public int Enemyhealth
     {
@@ -66,6 +67,7 @@ public class CharacterScript : MonoBehaviour
         amPlayer = (gameObject == player);
         if (amPlayer)
         {
+            state = "none";
             navAgent.enabled = false;
         }
         else { navAgent.enabled = true; }
@@ -161,8 +163,8 @@ public class CharacterScript : MonoBehaviour
             StartCoroutine("FacePlayer");
         }
 
-        if (lookAtPlayer) { lookAwayFromPlayer = false; }
-        if (lookAwayFromPlayer) { lookAtPlayer = false; }
+        if (lookAtPlayer || amPlayer) { lookAwayFromPlayer = false; }
+        if (lookAwayFromPlayer || amPlayer) { lookAtPlayer = false; }
         if (lookAtPlayer)
         {
             transform.LookAt(player.transform);
@@ -200,8 +202,11 @@ public class CharacterScript : MonoBehaviour
         //^^^idk why that's not working
         yield return null; //comment this out if you get the stuff up there working
         lookAtPlayer = true;
-        state = "makingDistance";
-        StartCoroutine("MakeDistance");
+        if (!amPlayer)
+        {
+            state = "makingDistance";
+            StartCoroutine("MakeDistance");
+        }
     }
     
     
@@ -218,8 +223,11 @@ public class CharacterScript : MonoBehaviour
         {
             yield return null;
         }
-        state = "circling";
-        StartCoroutine("Circle");
+        if (!amPlayer)
+        {
+            state = "circling";
+            StartCoroutine("Circle");
+        }
     }
     
     IEnumerator Circle()
@@ -244,8 +252,11 @@ public class CharacterScript : MonoBehaviour
             }
             yield return null;
         }
-        state = "firing";
-        StartCoroutine("Fire");
+        if (!amPlayer)
+        {
+            state = "firing";
+            StartCoroutine("Fire");
+        }
     }
 
     IEnumerator Fire()
@@ -257,8 +268,11 @@ public class CharacterScript : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             i++;
         }
-        state = "makingDistance";
-        StartCoroutine("MakeDistance");
+        if (!amPlayer)
+        {
+            state = "makingDistance";
+            StartCoroutine("MakeDistance");
+        }
     }
     //AI stuff//
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -319,6 +333,17 @@ public class CharacterScript : MonoBehaviour
         if(gameObject.GetComponent<RangedCharacterScript>() && collider.gameObject.tag != "Possessable" && collider.gameObject.tag != "Projectile") //projectile was spelled wrong
         {
             gameObject.SendMessage("StopCharging");
+        }
+        if (collider.gameObject.tag == "Wall")
+        {
+            hittingWall = true;
+        }
+    }
+    void OnCollisionExit(Collision collider)
+    {
+        if (collider.gameObject.tag == "Wall")
+        {
+            hittingWall = false;
         }
     }
 }
