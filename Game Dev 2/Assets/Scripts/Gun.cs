@@ -89,7 +89,7 @@ public class Gun : MonoBehaviour
             else
             {
             */
-                targetTransform = new Vector3(cam.transform.forward.x + 2 * Mathf.Cos(i), cam.transform.forward.y + 2 * Mathf.Sin(i), cam.transform.forward.z);
+                targetTransform = new Vector3(cam.transform.forward.x + 2 * Mathf.Cos(i), cam.transform.forward.y + 2 * Mathf.Sin(i), (transform.InverseTransformDirection(Vector3.forward).z*10));
                 myDirection2 = targetTransform;
             //}
             cur_bullet2 = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);

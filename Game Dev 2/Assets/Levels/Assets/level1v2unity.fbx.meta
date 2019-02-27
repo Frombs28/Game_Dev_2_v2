@@ -1,0 +1,316 @@
+fileFormatVersion: 2
+guid: 53b04d09006758849992ccf34551dd6f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Atrium
+    100002: back
+    100004: bottomFloor
+    100006: cameraH1
+    100008: cameraH1 1
+    100010: cameraH1 2
+    100012: cameraH1 3
+    100014: curve10
+    100016: curve13
+    100018: curve14
+    100020: curve15
+    100022: curve16
+    100024: curve17
+    100026: curve18
+    100028: curve19
+    100030: desk_camera_1
+    100032: desk_camera_2
+    100034: desk_camera_3
+    100036: desk_camera_4
+    100038: DeskOBJ:Mesh
+    100040: HoloTableUV:Mesh
+    100042: joint1
+    100044: joint1 1
+    100046: joint1 2
+    100048: joint1 3
+    100050: joint2
+    100052: joint2 1
+    100054: joint2 2
+    100056: joint2 3
+    100058: joint3
+    100060: joint3 1
+    100062: joint3 2
+    100064: joint3 3
+    100066: joint4
+    100068: joint4 1
+    100070: joint4 2
+    100072: joint4 3
+    100074: left
+    100076: //RootNode
+    100078: level_1_Proto_OBJ:bottomFloor
+    100080: level_1_Proto_OBJ:catwalkcatwalk2
+    100082: level_1_Proto_OBJ:cell
+    100084: level_1_Proto_OBJ:hallway
+    100086: level_1_Proto_OBJ:innerWall1landing_innerWall
+    100088: level_1_Proto_OBJ:stairs
+    100090: level_1_Proto_OBJ:stairs1
+    100092: light_pSphere1
+    100094: light_pSphere1 1
+    100096: light_pSphere1 2
+    100098: light_pSphere1 3
+    100100: Mesh
+    100102: Mesh1
+    100104: Mesh2
+    100106: pasted__cell
+    100108: pCube2
+    100110: pCube3
+    100112: pCube4
+    100114: pCube5
+    100116: pCylinder1
+    100118: pCylinder2
+    100120: placeholderperson:curve10
+    100122: transform1
+    100124: transform2
+    100126: transform3
+    100128: WallsObj
+    400000: Atrium
+    400002: back
+    400004: bottomFloor
+    400006: cameraH1
+    400008: cameraH1 1
+    400010: cameraH1 2
+    400012: cameraH1 3
+    400014: curve10
+    400016: curve13
+    400018: curve14
+    400020: curve15
+    400022: curve16
+    400024: curve17
+    400026: curve18
+    400028: curve19
+    400030: desk_camera_1
+    400032: desk_camera_2
+    400034: desk_camera_3
+    400036: desk_camera_4
+    400038: DeskOBJ:Mesh
+    400040: HoloTableUV:Mesh
+    400042: joint1
+    400044: joint1 1
+    400046: joint1 2
+    400048: joint1 3
+    400050: joint2
+    400052: joint2 1
+    400054: joint2 2
+    400056: joint2 3
+    400058: joint3
+    400060: joint3 1
+    400062: joint3 2
+    400064: joint3 3
+    400066: joint4
+    400068: joint4 1
+    400070: joint4 2
+    400072: joint4 3
+    400074: left
+    400076: //RootNode
+    400078: level_1_Proto_OBJ:bottomFloor
+    400080: level_1_Proto_OBJ:catwalkcatwalk2
+    400082: level_1_Proto_OBJ:cell
+    400084: level_1_Proto_OBJ:hallway
+    400086: level_1_Proto_OBJ:innerWall1landing_innerWall
+    400088: level_1_Proto_OBJ:stairs
+    400090: level_1_Proto_OBJ:stairs1
+    400092: light_pSphere1
+    400094: light_pSphere1 1
+    400096: light_pSphere1 2
+    400098: light_pSphere1 3
+    400100: Mesh
+    400102: Mesh1
+    400104: Mesh2
+    400106: pasted__cell
+    400108: pCube2
+    400110: pCube3
+    400112: pCube4
+    400114: pCube5
+    400116: pCylinder1
+    400118: pCylinder2
+    400120: placeholderperson:curve10
+    400122: transform1
+    400124: transform2
+    400126: transform3
+    400128: WallsObj
+    2000000: back
+    2000002: left
+    2100000: lambert1
+    2100002: cameraMaterial
+    2300000: bottomFloor
+    2300002: cameraH1
+    2300004: cameraH1 1
+    2300006: cameraH1 2
+    2300008: cameraH1 3
+    2300010: curve10
+    2300012: curve13
+    2300014: curve14
+    2300016: curve15
+    2300018: curve16
+    2300020: curve17
+    2300022: curve18
+    2300024: curve19
+    2300026: DeskOBJ:Mesh
+    2300028: HoloTableUV:Mesh
+    2300030: level_1_Proto_OBJ:bottomFloor
+    2300032: level_1_Proto_OBJ:catwalkcatwalk2
+    2300034: level_1_Proto_OBJ:cell
+    2300036: level_1_Proto_OBJ:hallway
+    2300038: level_1_Proto_OBJ:innerWall1landing_innerWall
+    2300040: level_1_Proto_OBJ:stairs
+    2300042: level_1_Proto_OBJ:stairs1
+    2300044: Mesh
+    2300046: Mesh1
+    2300048: Mesh2
+    2300050: pasted__cell
+    2300052: pCube5
+    2300054: pCylinder1
+    2300056: pCylinder2
+    2300058: placeholderperson:curve10
+    2300060: WallsObj
+    3300000: bottomFloor
+    3300002: cameraH1
+    3300004: cameraH1 1
+    3300006: cameraH1 2
+    3300008: cameraH1 3
+    3300010: curve10
+    3300012: curve13
+    3300014: curve14
+    3300016: curve15
+    3300018: curve16
+    3300020: curve17
+    3300022: curve18
+    3300024: curve19
+    3300026: DeskOBJ:Mesh
+    3300028: HoloTableUV:Mesh
+    3300030: level_1_Proto_OBJ:bottomFloor
+    3300032: level_1_Proto_OBJ:catwalkcatwalk2
+    3300034: level_1_Proto_OBJ:cell
+    3300036: level_1_Proto_OBJ:hallway
+    3300038: level_1_Proto_OBJ:innerWall1landing_innerWall
+    3300040: level_1_Proto_OBJ:stairs
+    3300042: level_1_Proto_OBJ:stairs1
+    3300044: Mesh
+    3300046: Mesh1
+    3300048: Mesh2
+    3300050: pasted__cell
+    3300052: pCube5
+    3300054: pCylinder1
+    3300056: pCylinder2
+    3300058: placeholderperson:curve10
+    3300060: WallsObj
+    4300000: level_1_Proto_OBJ:cell
+    4300002: level_1_Proto_OBJ:bottomFloor
+    4300004: level_1_Proto_OBJ:hallway
+    4300006: level_1_Proto_OBJ:stairs
+    4300008: level_1_Proto_OBJ:stairs1
+    4300010: level_1_Proto_OBJ:innerWall1landing_innerWall
+    4300012: level_1_Proto_OBJ:catwalkcatwalk2
+    4300014: pasted__cell
+    4300016: pCube5
+    4300018: pCylinder1
+    4300020: pCylinder2
+    4300022: placeholderperson:curve10
+    4300024: curve10
+    4300026: curve13
+    4300028: DeskOBJ:Mesh
+    4300030: curve14
+    4300032: HoloTableUV:Mesh
+    4300034: Mesh
+    4300036: Mesh1
+    4300038: Mesh2
+    4300040: cameraH1
+    4300042: cameraH1
+    4300044: cameraH1
+    4300046: cameraH1
+    4300048: WallsObj
+    4300050: bottomFloor
+    4300052: curve15
+    4300054: curve16
+    4300056: curve17
+    4300058: curve18
+    4300060: curve19
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
