@@ -76,8 +76,8 @@ public class CharacterScript : MonoBehaviour
             myAnimator.SetBool("walk", false);
         }
         else {
-            navAgent.enabled = true;
-            myAnimator.SetBool("walk", true);
+            //navAgent.enabled = true;
+            //myAnimator.SetBool("walk", true);
         }
     }
 
@@ -208,7 +208,7 @@ public class CharacterScript : MonoBehaviour
 
         if (!amPlayer)
         {
-            navAgent.SetDestination(marker.transform.position);
+            //navAgent.SetDestination(marker.transform.position);
 
             ////put some stuff here about firing le gun
             //if (Random.Range(0f, 100) <= 1)
