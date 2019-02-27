@@ -29,7 +29,8 @@ public class RangedCharacterScript : CharacterScript
     public override void Attack()
     {
         base.Attack();
-        gameObject.SendMessage("FireShortGun");
+        if (amPlayer) { gameObject.SendMessage("FireShortGun"); }
+        else { gameObject.SendMessage("FireEnemyGun"); }
     }
 
     public override float TraversalMaxTime()
@@ -69,7 +70,7 @@ public class RangedCharacterScript : CharacterScript
 
     public override bool IsCharging()
     {
-        Debug.Log(dashing);
+        //Debug.Log(dashing); //commenting this out so i can test some other stuff
         return dashing;
     }
 
@@ -123,4 +124,28 @@ public class RangedCharacterScript : CharacterScript
         shieldEndTime = Time.time;
         Debug.Log("Done Shielding!");
     }
+
+    public override bool MakeDistanceHelperOne()
+    {
+        lookAtPlayer = false;
+        //put a lerp here to actually face away from the player smoothly
+        lookAwayFromPlayer = true;
+        return false;
+    }
+    public override bool MakeDistanceHelperTwo() //need a way to have the guy stop after a certain amount of time has passed / he walked into a wall    //actually flipping a bool to true as long as ya boi is hitting a wall might be helpful
+    {
+        if (amPlayer) { return false; }
+        float myDist = Vector3.Distance(player.transform.position, transform.position);
+        if (myDist >= 20 || hittingWall)
+        {
+            navAgent.ResetPath();
+            lookAwayFromPlayer = false;
+            lookAtPlayer = true;
+            return false;
+        }
+        Vector3 myVect = 2 * transform.position - player.transform.position;
+        navAgent.SetDestination(myVect);
+        return true;
+    }
+    //^^^put collision detection  in this boi so he can know to stop these coroutines if he yeets into a wall
 }

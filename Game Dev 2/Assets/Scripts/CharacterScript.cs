@@ -17,7 +17,7 @@ public class CharacterScript : MonoBehaviour
     public bool amPlayer;
     public GameObject inputManager;
 
-    private NavMeshAgent navAgent;
+    public NavMeshAgent navAgent;
 
     public Animator myAnimator;
 
@@ -32,11 +32,20 @@ public class CharacterScript : MonoBehaviour
     public int enemyhealth = 3;
     public float enemySpeed = 20f;
     public bool invincible = false;
+    GameObject marker;
+    bool marker_bool = true;
 
     GameObject figure;
 
     public Camera cam; //player character rotation is based on camera rotation //this is the MAIN CAMERA,  *not*  your personal VIRTUAL CAMERA
-    
+
+    public string state = "none";
+    public bool lookAtPlayer = false;
+    public bool lookAwayFromPlayer = false;
+    public bool hittingWall = false;
+    public bool aggro = false; //true if you're within a certain distance of the player or just got hit //resets after a few seconds
+    private bool canStartAggroTimer = true;
+    public float distanceToAggro = 25f;
 
     public int Enemyhealth
     {
@@ -57,10 +66,11 @@ public class CharacterScript : MonoBehaviour
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         controller = GetComponent<CharacterController>();
         navAgent = GetComponent<NavMeshAgent>();
-        inputManager = GameObject.Find("InputManager");
+        inputManager = GameObject.Find("Input Manager");
         navAgent.speed = enemySpeed;
         myAnimator = gameObject.GetComponentInChildren<Animator>();
         figure = gameObject.transform.GetChild(3).gameObject;
+        marker = GameObject.Find("Marker");
     }
 
     public void AssignPlayer(GameObject myPlayer)
@@ -69,9 +79,14 @@ public class CharacterScript : MonoBehaviour
         amPlayer = (gameObject == player);
         if (amPlayer)
         {
+            state = "none";
             navAgent.enabled = false;
+            myAnimator.SetBool("walk", false);
         }
-        else { navAgent.enabled = true; }
+        else {
+            //navAgent.enabled = true;
+            //myAnimator.SetBool("walk", true);
+        }
     }
 
     //movement if this character is possessed by the player
@@ -199,23 +214,215 @@ public class CharacterScript : MonoBehaviour
         moveDirection.y -= (gravity * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
 
-        //if (!amPlayer)
-        //{
-        //    navAgent.SetDestination(player.transform.position);
+        if (!amPlayer)
+        {
+            //navAgent.SetDestination(marker.transform.position);
 
         //    //put some stuff here about firing le gun
         //    if (Random.Range(0f, 100) <= 1)
         //    {
         //        gameObject.SendMessage("FireEnemyGun");
         //    }
-        //}
+        }
+
+        //for now, assume there is only 1 AI in the scene and that possession isn't a thing
+        //we'll change this to support possession once we get it working well enough with one dude
+        //if (!amPlayer) { Debug.Log(state); }
+
+        if (!amPlayer && state == "none")
+        {
+            state = "idle";
+            StartCoroutine("Idle");
+        }
+
+        float myDist = Vector3.Distance(player.transform.position, transform.position);
+        if (myDist <= distanceToAggro)
+        {
+            aggro = true;
+            if (canStartAggroTimer) { StartCoroutine("AggroTimer"); }
+        }
+
+        if (lookAtPlayer || amPlayer) { lookAwayFromPlayer = false; }
+        if (lookAwayFromPlayer || amPlayer) { lookAtPlayer = false; }
+        if (lookAtPlayer)
+        {
+            transform.LookAt(player.transform);
+        }
+        if (lookAwayFromPlayer)
+        {
+            Vector3 myVect = 2 * transform.position - player.transform.position;
+            transform.LookAt(myVect);
+        }
     }
     private void LateUpdate()
     {
         //zeroMovement = true;
+        if (!amPlayer)
+        {
+            if(gameObject.transform.position.z >= 21.0f)
+            {
+                marker = GameObject.Find("Marker");
+            }
+            else if(gameObject.transform.position.z <= 1.0f)
+            {
+                marker = GameObject.Find("Marker2");
+            }
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //AI stuff//
+    IEnumerator AggroTimer()
+    {
+        canStartAggroTimer = false;
+        float startTime = Time.time;
+        while (Time.time - startTime < 3f)
+        {
+            yield return null;
+        }
+        aggro = false;
+        canStartAggroTimer = true;
+    }
+
+    IEnumerator Idle()
+    {
+        navAgent.ResetPath();
+        while (!aggro)
+        {
+            yield return null;
+        }
+        state = "facingPlayer";
+        StartCoroutine("FacePlayer");
+    }
+
+    IEnumerator FacePlayer()
+    {
+        /*
+        Quaternion initialRotation = transform.rotation;
+        Quaternion targetRotation = Quaternion.Euler(player.transform.position - transform.position);
+        float startTime = Time.time;
+        float t = 0;
+
+        while (Vector3.Angle(targetRotation.eulerAngles, (player.transform.position - transform.position)) > 0.01f)
+        {
+            t = (Time.time - startTime) / 1f;
+            transform.rotation = Quaternion.Slerp(initialRotation, targetRotation, t);
+            yield return null;
+        }
+        */
+        //^^^idk why that's not working
+        yield return null; //comment this out if you get the stuff up there working
+        lookAtPlayer = true;
+        if (!amPlayer)
+        {
+            if (aggro)
+            {
+                state = "makingDistance";
+                StartCoroutine("MakeDistance");
+            }
+            else
+            {
+                state = "idle";
+                StartCoroutine("Idle");
+            }
+        }
     }
     
+    
+    IEnumerator MakeDistance()
+    {
+        //call a virtual function
+        //stay in this coroutine until that function returns true
+        while (MakeDistanceHelperOne())
+        {
+            yield return null;
+        }
+        
+        while (MakeDistanceHelperTwo())
+        {
+            yield return null;
+        }
+        if (!amPlayer)
+        {
+            if (aggro)
+            {
+                state = "circling";
+                StartCoroutine("Circle");
+            }
+            else
+            {
+                state = "idle";
+                StartCoroutine("Idle");
+            }
+        }
+    }
+    
+    IEnumerator Circle()
+    {
+        bool strafingRight = (Random.value >= 0.5f);
+        float startTime = Time.time;
+        while (Time.time - startTime <= 1.5f)
+        {
+            if (strafingRight)
+            {
+                Vector3 myVect = transform.TransformDirection(Vector3.right);
+                myVect *= 10;
+                myVect += transform.position;
+                navAgent.SetDestination(myVect);
+            }
+            else
+            {
+                Vector3 myVect = transform.TransformDirection(-Vector3.right);
+                myVect *= 10;
+                myVect += transform.position;
+                navAgent.SetDestination(myVect);
+            }
+            yield return null;
+        }
+        if (!amPlayer)
+        {
+            if (aggro)
+            {
+                state = "firing";
+                StartCoroutine("Fire");
+            }
+            else
+            {
+                state = "idle";
+                StartCoroutine("Idle");
+            }
+        }
+    }
+
+    IEnumerator Fire()
+    {
+        int i = 0;
+        while (i < 5)
+        {
+            Attack();
+            yield return new WaitForSeconds(0.5f);
+            i++;
+        }
+        if (!amPlayer)
+        {
+            if (aggro)
+            {
+                state = "makingDistance";
+                StartCoroutine("MakeDistance");
+            }
+            else
+            {
+                state = "idle";
+                StartCoroutine("Idle");
+            }
+        }
+    }
+    //AI stuff//
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     //the virtual stuff that must be overloaded by the subclasses
+    public virtual bool MakeDistanceHelperOne() { return true; } //turns the character to face in the desired direction, returns true as long as this has not been successful
+    public virtual bool MakeDistanceHelperTwo() { return true; } //moves the character in the desired direction, returns true as long as distance has not been made
     public virtual void Attack()
     {
         myAnimator.SetBool("firing", true);
@@ -254,6 +461,8 @@ public class CharacterScript : MonoBehaviour
             if(collider.gameObject.layer == 9)
             {
                 TakeDamage(1);
+                aggro = true;
+                if (canStartAggroTimer) { StartCoroutine("AggroTimer"); }
             }
             else if(amPlayer)
             {
@@ -275,9 +484,20 @@ public class CharacterScript : MonoBehaviour
                 }
             }
         }
-        if(gameObject.GetComponent<RangedCharacterScript>() && collider.gameObject.tag != "Possessable" && collider.gameObject.tag != "Proejectile")
+        if(gameObject.GetComponent<RangedCharacterScript>() && collider.gameObject.tag != "Possessable" && collider.gameObject.tag != "Projectile") //projectile was spelled wrong
         {
             gameObject.SendMessage("StopCharging");
+        }
+        if (collider.gameObject.tag == "Wall")
+        {
+            hittingWall = true;
+        }
+    }
+    void OnCollisionExit(Collision collider)
+    {
+        if (collider.gameObject.tag == "Wall")
+        {
+            hittingWall = false;
         }
     }
 }

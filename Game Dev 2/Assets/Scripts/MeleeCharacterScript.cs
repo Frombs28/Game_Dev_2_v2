@@ -29,7 +29,8 @@ public class MeleeCharacterScript : CharacterScript
     public override void Attack()
     {
         base.Attack();
-        gameObject.SendMessage("FireRifleGun");
+        if (amPlayer) { gameObject.SendMessage("FireRifleGun"); }
+        else { gameObject.SendMessage("FireEnemyGun"); }
     }
 
     public override float TraversalMaxTime()
@@ -92,5 +93,25 @@ public class MeleeCharacterScript : CharacterScript
         interruptMovement = false;
         dashEndTime = Time.time;
         dashing = false;
+    }
+
+    public override bool MakeDistanceHelperOne()
+    {
+        //put a lerp here to actually face the player smoothly
+        lookAtPlayer = true;
+        return false;
+    }
+    public override bool MakeDistanceHelperTwo()
+    {
+        if (amPlayer) { return false; }
+        float myDist = Vector3.Distance(player.transform.position, transform.position);
+        if (myDist <= 10f)
+        {
+            //navAgent.ResetPath();
+            navAgent.SetDestination(transform.position);
+            return false;
+        }
+        navAgent.SetDestination(player.transform.position);
+        return true;
     }
 }

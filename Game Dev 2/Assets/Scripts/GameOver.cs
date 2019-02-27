@@ -22,6 +22,6 @@ public class GameOver : MonoBehaviour {
 
     private void Reset()
     {
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene("slice");
     }
 }

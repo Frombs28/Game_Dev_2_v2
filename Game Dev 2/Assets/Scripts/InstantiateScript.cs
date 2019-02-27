@@ -24,9 +24,15 @@ public class InstantiateScript : MonoBehaviour
         {
             if (i == 0)
             {
-                InstantiateCharacter(rangedPrefab, 
+                InstantiateCharacter(meleePrefab, 
                     new Vector3(spawns.transform.GetChild(i).transform.position.x, 
                     spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), true);
+            }
+            else if (i % 2 == 0)
+            {
+                InstantiateCharacter(meleePrefab,
+                    new Vector3(spawns.transform.GetChild(i).transform.position.x,
+                    spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), false);
             }
             else
             {
