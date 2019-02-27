@@ -17,7 +17,7 @@ public class CharacterScript : MonoBehaviour
     public bool amPlayer;
     public GameObject inputManager;
 
-    private NavMeshAgent navAgent;
+    public NavMeshAgent navAgent;
 
     public CharacterController controller;
     public Vector3 moveDirection;
@@ -32,7 +32,10 @@ public class CharacterScript : MonoBehaviour
     public bool invincible = false;
 
     public Camera cam; //player character rotation is based on camera rotation //this is the MAIN CAMERA,  *not*  your personal VIRTUAL CAMERA
-    
+
+    public string state = "none";
+    public bool lookAtPlayer = false;
+    public bool lookAwayFromPlayer = false;
 
     public int Enemyhealth
     {
@@ -133,7 +136,6 @@ public class CharacterScript : MonoBehaviour
             }
         }
 
-
         if (zeroMovement) { moveDirection = new Vector3(0f, moveDirection.y, 0f); }
         moveDirection.y -= (gravity * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
@@ -148,13 +150,123 @@ public class CharacterScript : MonoBehaviour
         //        gameObject.SendMessage("FireEnemyGun");
         //    }
         //}
+
+        //for now, assume there is only 1 AI in the scene and that possession isn't a thing
+        //we'll change this to support possession once we get it working well enough with one dude
+        if (!amPlayer) { Debug.Log(state); }
+
+        if (!amPlayer && state == "none")
+        {
+            state = "facingPlayer";
+            StartCoroutine("FacePlayer");
+        }
+
+        if (lookAtPlayer) { lookAwayFromPlayer = false; }
+        if (lookAwayFromPlayer) { lookAtPlayer = false; }
+        if (lookAtPlayer)
+        {
+            transform.LookAt(player.transform);
+        }
+        if (lookAwayFromPlayer)
+        {
+            Vector3 myVect = 2 * transform.position - player.transform.position;
+            transform.LookAt(myVect);
+        }
+
     }
     private void LateUpdate()
     {
         //zeroMovement = true;
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //AI stuff//
+
+    IEnumerator FacePlayer()
+    {
+        /*
+        Quaternion initialRotation = transform.rotation;
+        Quaternion targetRotation = Quaternion.Euler(player.transform.position - transform.position);
+        float startTime = Time.time;
+        float t = 0;
+
+        while (Vector3.Angle(targetRotation.eulerAngles, (player.transform.position - transform.position)) > 0.01f)
+        {
+            t = (Time.time - startTime) / 1f;
+            transform.rotation = Quaternion.Slerp(initialRotation, targetRotation, t);
+            yield return null;
+        }
+        */
+        //^^^idk why that's not working
+        yield return null; //comment this out if you get the stuff up there working
+        lookAtPlayer = true;
+        state = "makingDistance";
+        StartCoroutine("MakeDistance");
+    }
     
+    
+    IEnumerator MakeDistance()
+    {
+        //call a virtual function
+        //stay in this coroutine until that function returns true
+        while (MakeDistanceHelperOne())
+        {
+            yield return null;
+        }
+        
+        while (MakeDistanceHelperTwo())
+        {
+            yield return null;
+        }
+        state = "circling";
+        StartCoroutine("Circle");
+    }
+    
+    IEnumerator Circle()
+    {
+        bool strafingRight = (Random.value >= 0.5f);
+        float startTime = Time.time;
+        while (Time.time - startTime <= 1.5f)
+        {
+            if (strafingRight)
+            {
+                Vector3 myVect = transform.TransformDirection(Vector3.right);
+                myVect *= 10;
+                myVect += transform.position;
+                navAgent.SetDestination(myVect);
+            }
+            else
+            {
+                Vector3 myVect = transform.TransformDirection(-Vector3.right);
+                myVect *= 10;
+                myVect += transform.position;
+                navAgent.SetDestination(myVect);
+            }
+            yield return null;
+        }
+        state = "firing";
+        StartCoroutine("Fire");
+    }
+
+    IEnumerator Fire()
+    {
+        int i = 0;
+        while (i < 5)
+        {
+            Attack();
+            yield return new WaitForSeconds(0.5f);
+            i++;
+        }
+        state = "makingDistance";
+        StartCoroutine("MakeDistance");
+    }
+    //AI stuff//
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     //the virtual stuff that must be overloaded by the subclasses
+    public virtual bool MakeDistanceHelperOne() { return true; } //turns the character to face in the desired direction, returns true as long as this has not been successful
+    public virtual bool MakeDistanceHelperTwo() { return true; } //moves the character in the desired direction, returns true as long as distance has not been made
+
     public virtual void Attack() { }
     public virtual bool IsCharging() { return false; }
     public virtual void TraversalAbility() { }
@@ -204,7 +316,7 @@ public class CharacterScript : MonoBehaviour
                 }
             }
         }
-        if(gameObject.GetComponent<RangedCharacterScript>() && collider.gameObject.tag != "Possessable" && collider.gameObject.tag != "Proejectile")
+        if(gameObject.GetComponent<RangedCharacterScript>() && collider.gameObject.tag != "Possessable" && collider.gameObject.tag != "Projectile") //projectile was spelled wrong
         {
             gameObject.SendMessage("StopCharging");
         }
