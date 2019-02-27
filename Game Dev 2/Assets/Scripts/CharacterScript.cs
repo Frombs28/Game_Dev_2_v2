@@ -37,6 +37,8 @@ public class CharacterScript : MonoBehaviour
     public bool lookAtPlayer = false;
     public bool lookAwayFromPlayer = false;
     public bool hittingWall = false;
+    public bool aggro = false; //true if you're within a certain distance of the player or just got hit //resets after a few seconds
+    private bool canStartAggroTimer = true;
 
     public int Enemyhealth
     {
@@ -159,8 +161,15 @@ public class CharacterScript : MonoBehaviour
 
         if (!amPlayer && state == "none")
         {
-            state = "facingPlayer";
-            StartCoroutine("FacePlayer");
+            state = "idle";
+            StartCoroutine("Idle");
+        }
+
+        float myDist = Vector3.Distance(player.transform.position, transform.position);
+        if (myDist <= 15f)
+        {
+            aggro = true;
+            if (canStartAggroTimer) { StartCoroutine("AggroTimer"); }
         }
 
         if (lookAtPlayer || amPlayer) { lookAwayFromPlayer = false; }
@@ -174,7 +183,6 @@ public class CharacterScript : MonoBehaviour
             Vector3 myVect = 2 * transform.position - player.transform.position;
             transform.LookAt(myVect);
         }
-
     }
     private void LateUpdate()
     {
@@ -183,6 +191,28 @@ public class CharacterScript : MonoBehaviour
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //AI stuff//
+    IEnumerator AggroTimer()
+    {
+        canStartAggroTimer = false;
+        float startTime = Time.time;
+        while (Time.time - startTime < 3f)
+        {
+            yield return null;
+        }
+        aggro = false;
+        canStartAggroTimer = true;
+    }
+
+    IEnumerator Idle()
+    {
+        navAgent.ResetPath();
+        while (!aggro)
+        {
+            yield return null;
+        }
+        state = "facingPlayer";
+        StartCoroutine("FacePlayer");
+    }
 
     IEnumerator FacePlayer()
     {
@@ -204,8 +234,16 @@ public class CharacterScript : MonoBehaviour
         lookAtPlayer = true;
         if (!amPlayer)
         {
-            state = "makingDistance";
-            StartCoroutine("MakeDistance");
+            if (aggro)
+            {
+                state = "makingDistance";
+                StartCoroutine("MakeDistance");
+            }
+            else
+            {
+                state = "idle";
+                StartCoroutine("Idle");
+            }
         }
     }
     
@@ -225,8 +263,16 @@ public class CharacterScript : MonoBehaviour
         }
         if (!amPlayer)
         {
-            state = "circling";
-            StartCoroutine("Circle");
+            if (aggro)
+            {
+                state = "circling";
+                StartCoroutine("Circle");
+            }
+            else
+            {
+                state = "idle";
+                StartCoroutine("Idle");
+            }
         }
     }
     
@@ -254,8 +300,16 @@ public class CharacterScript : MonoBehaviour
         }
         if (!amPlayer)
         {
-            state = "firing";
-            StartCoroutine("Fire");
+            if (aggro)
+            {
+                state = "firing";
+                StartCoroutine("Fire");
+            }
+            else
+            {
+                state = "idle";
+                StartCoroutine("Idle");
+            }
         }
     }
 
@@ -270,8 +324,16 @@ public class CharacterScript : MonoBehaviour
         }
         if (!amPlayer)
         {
-            state = "makingDistance";
-            StartCoroutine("MakeDistance");
+            if (aggro)
+            {
+                state = "makingDistance";
+                StartCoroutine("MakeDistance");
+            }
+            else
+            {
+                state = "idle";
+                StartCoroutine("Idle");
+            }
         }
     }
     //AI stuff//
@@ -309,6 +371,8 @@ public class CharacterScript : MonoBehaviour
             if(collider.gameObject.layer == 9)
             {
                 TakeDamage(1);
+                aggro = true;
+                if (canStartAggroTimer) { StartCoroutine("AggroTimer"); }
             }
             else if(amPlayer)
             {
