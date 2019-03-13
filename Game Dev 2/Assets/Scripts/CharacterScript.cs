@@ -35,6 +35,10 @@ public class CharacterScript : MonoBehaviour
     GameObject marker;
     bool marker_bool = true;
 
+    public Material notPossessed;
+    public Material possessed;
+    Material material;
+
     GameObject figure;
 
     public Camera cam; //player character rotation is based on camera rotation //this is the MAIN CAMERA,  *not*  your personal VIRTUAL CAMERA
@@ -71,6 +75,7 @@ public class CharacterScript : MonoBehaviour
         myAnimator = gameObject.GetComponentInChildren<Animator>();
         figure = gameObject.transform.GetChild(3).gameObject;
         marker = GameObject.Find("Marker");
+        material = GetComponent<Material>();
     }
 
     public void AssignPlayer(GameObject myPlayer)
@@ -82,11 +87,18 @@ public class CharacterScript : MonoBehaviour
             state = "none";
             navAgent.enabled = false;
             myAnimator.SetBool("walk", false);
+            material = possessed;
         }
         else {
             //navAgent.enabled = true;
             //myAnimator.SetBool("walk", true);
+            material = notPossessed;
         }
+    }
+
+    public virtual int Type()
+    {
+        return 0;
     }
 
     //movement if this character is possessed by the player
@@ -147,6 +159,21 @@ public class CharacterScript : MonoBehaviour
                 num_jumps = 0;
                 myAnimator.SetBool("jumping", false);
             }
+
+            //RaycastHit hit;
+            //Debug.DrawRay(transform.position, cam.gameObject.transform.position - transform.position);
+            //if (Physics.Raycast(transform.position, cam.gameObject.transform.position - transform.position, out hit))
+            //{
+            //    if (hit.collider.gameObject != cam)
+            //    {
+            //        Debug.Log(hit.collider.gameObject);
+            //        cam.transform.position = hit.point;
+            //    }
+            //}
+            //else
+            //{
+            //    Debug.Log("Nothing?");
+            //}
 
             //if(Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") == 0)
             //{
@@ -426,12 +453,10 @@ public class CharacterScript : MonoBehaviour
     public virtual void Attack()
     {
         myAnimator.SetBool("firing", true);
-        Debug.Log("Fire animiation!!");
     }
     public virtual void StopAttack()
     {
         myAnimator.SetBool("firing", false);
-        Debug.Log("No more animation...");
     }
     public virtual bool IsCharging() { return false; }
     public virtual void TraversalAbility() { }
@@ -452,6 +477,11 @@ public class CharacterScript : MonoBehaviour
         inputManager.SendMessage("RemoveCharacterFromList", gameObject);
         myAnimator.SetBool("die", true);
         Destroy(gameObject, 0.5f);
+    }
+
+    public virtual void HasJumped()
+    {
+        num_jumps += 1;
     }
 
     void OnCollisionEnter(Collision collider)

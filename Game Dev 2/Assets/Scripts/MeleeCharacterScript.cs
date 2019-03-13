@@ -43,6 +43,11 @@ public class MeleeCharacterScript : CharacterScript
         return phaseCoolDown;
     }
 
+    public override int Type()
+    {
+        return 0;
+    }
+
     public override void TraversalAbility() //i have a problem in the form of collisions not happening
     {
         if ((Time.time - dashEndTime) >= dashCoolDown && !dashing)

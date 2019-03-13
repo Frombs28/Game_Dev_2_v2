@@ -9,6 +9,7 @@ public class InstantiateScript : MonoBehaviour
     public GameObject inputManager;
     public GameObject meleePrefab;
     public GameObject rangedPrefab;
+    public GameObject sniperPrefab;
     public GameObject cam; //the main camera //for now just set in the inspector might do it dynamically in a hot sec
     public GameObject spawns;
     public int spawn_number = 1;
@@ -24,7 +25,7 @@ public class InstantiateScript : MonoBehaviour
         {
             if (i == 0)
             {
-                InstantiateCharacter(meleePrefab, 
+                InstantiateCharacter(sniperPrefab, 
                     new Vector3(spawns.transform.GetChild(i).transform.position.x, 
                     spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), true);
             }
