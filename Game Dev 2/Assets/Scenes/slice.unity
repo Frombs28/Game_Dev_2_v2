@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAtObject: {fileID: 0}
-  distance: 10
+  distance: 5
   sensitivityX: 4
   sensitivityY: 4
   offset: 10
@@ -2209,6 +2209,8 @@ MonoBehaviour:
   meleePrefab: {fileID: 1408844105495096, guid: 03dbc8cc61bbe2e4bb3749cbc1fa43dd,
     type: 2}
   rangedPrefab: {fileID: 1699993314130230, guid: 60e1ae336deb98a4092ef834cd0e8383,
+    type: 2}
+  sniperPrefab: {fileID: 1594852165712796, guid: c46076d10c0fa274f9c56a768f9c1a88,
     type: 2}
   cam: {fileID: 6223367}
   spawns: {fileID: 1686223373}
@@ -7819,7 +7821,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   receiveInput: 1
-  fire_rate: 0.2
+  rifle_fire_rate: 1
+  short_fire_rate: 2
+  sniper_fire_rate: 3
   possession_rate: 0.5
   healthBar: {fileID: 1255340480}
   movementBar: {fileID: 1255340479}
