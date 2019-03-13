@@ -14,7 +14,10 @@ public class InputManagerScript : MonoBehaviour
     private int playerhealth=10;
     float timer = 0f;
     float possess_timer = 0f;
-    public float fire_rate = 1f;
+    float fire_rate;
+    public float rifle_fire_rate = 1f;
+    public float short_fire_rate = 2f;
+    public float sniper_fire_rate = 3f;
     public float possession_rate = 0.5f;
     private bool startingPossessing = false; //flag for slomo
     public Slider healthBar;
@@ -133,6 +136,8 @@ public class InputManagerScript : MonoBehaviour
                     //abilityBar.maxValue = player.gameObject.GetComponent<CharacterScript>().AbilityMaxTime();
                     //transition the camera
                     mainCam.SendMessage("PossessionTransitionStarter", hit.collider.gameObject);
+                    timer = Time.deltaTime;
+                    num_shots = 25;
 
                     //for each character, assign the new player
                     foreach (GameObject character in characters)
@@ -154,7 +159,7 @@ public class InputManagerScript : MonoBehaviour
             else
             {
                 timer = -1 * reload_speed;
-                num_shots = 15;
+                num_shots = 25;
             }
         }
         if (Input.GetButtonUp("Attack"))
@@ -167,6 +172,18 @@ public class InputManagerScript : MonoBehaviour
     {
         player = myPlayer;
         player.layer = 2; //ignore raycast //should probably eventually change to custom layer
+        if(player.gameObject.GetComponent<CharacterScript>().Type() == 0)
+        {
+            fire_rate = rifle_fire_rate;
+        }
+        else if(player.gameObject.GetComponent<CharacterScript>().Type() == 1)
+        {
+            fire_rate = short_fire_rate;
+        }
+        else if(player.gameObject.GetComponent<CharacterScript>().Type() == 2)
+        {
+            fire_rate = sniper_fire_rate;
+        }
     }
 
     public void PopulateCharacterList(GameObject myCharacter)

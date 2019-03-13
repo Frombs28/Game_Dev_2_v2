@@ -8,7 +8,9 @@ public class Gun : MonoBehaviour
     public Camera cam;
     public GameObject bullet;
     public GameObject barrel;
-    public float bullet_speed = 0.1f;
+    public float rifle_bullet_speed = 0.1f;
+    public float short_bullet_speed = 0.1f;
+    public float sniper_bullet_speed = 0.1f;
     float start_time = 0f;
     float burst_rate = 60f;
     int burst_num = 4;
@@ -46,7 +48,7 @@ public class Gun : MonoBehaviour
         }
         cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
         //cur_bullet.GetComponent<Rigidbody>().velocity = cam.transform.TransformDirection(Vector3.forward * bullet_speed);
-        cur_bullet.GetComponent<Rigidbody>().velocity = myDirection.normalized * bullet_speed;
+        cur_bullet.GetComponent<Rigidbody>().velocity = myDirection.normalized * rifle_bullet_speed;
         cur_bullet.layer = 9;
         Destroy(cur_bullet, 5);
         laser.pitch = Random.Range(1.0f, 1.5f);
@@ -70,7 +72,7 @@ public class Gun : MonoBehaviour
         }
         cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
         //cur_bullet.GetComponent<Rigidbody>().velocity = cam.transform.TransformDirection(Vector3.forward * bullet_speed);
-        cur_bullet.GetComponent<Rigidbody>().velocity = myDirection.normalized * bullet_speed;
+        cur_bullet.GetComponent<Rigidbody>().velocity = myDirection.normalized * short_bullet_speed;
         cur_bullet.layer = 9;
         Destroy(cur_bullet, 0.5f);
         
@@ -94,11 +96,34 @@ public class Gun : MonoBehaviour
             //}
             cur_bullet2 = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
             //cur_bullet.GetComponent<Rigidbody>().velocity = cam.transform.TransformDirection(Vector3.forward * bullet_speed);
-            cur_bullet2.GetComponent<Rigidbody>().velocity = myDirection2.normalized * bullet_speed;
+            cur_bullet2.GetComponent<Rigidbody>().velocity = myDirection2.normalized * short_bullet_speed;
             cur_bullet2.layer = 9;
             Destroy(cur_bullet2, 0.5f);
         }
         
+    }
+    
+    private void FireSniperGun()
+    {
+
+        GameObject cur_bullet;
+        Vector3 myDirection;
+        RaycastHit hit;
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
+        {
+            myDirection = hit.point - barrel.transform.position;
+        }
+        else
+        {
+            myDirection = cam.transform.forward;
+        }
+        cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
+        cur_bullet.GetComponent<Rigidbody>().velocity = myDirection.normalized * sniper_bullet_speed;
+        cur_bullet.layer = 9;
+        Destroy(cur_bullet, 7);
+        laser.pitch = Random.Range(1.0f, 1.5f);
+        laser.Play();
+
     }
 
     private void FireEnemyGun()
@@ -113,7 +138,7 @@ public class Gun : MonoBehaviour
         {
             GameObject cur_bullet;
             cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
-            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * (bullet_speed * 0.5f));
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * (rifle_bullet_speed * 0.5f));
             Destroy(cur_bullet, 3);
             yield return new WaitForSeconds(burst_rate);
         }

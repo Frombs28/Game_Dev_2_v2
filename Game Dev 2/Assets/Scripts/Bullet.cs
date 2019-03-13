@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
+    public GameObject boom;
+    GameObject curBoom;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,6 +19,11 @@ public class Bullet : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        if(collision.gameObject.tag == "Possessable")
+        {
+            curBoom = Instantiate(boom, transform);
+        }
+        Destroy(gameObject,0.01f);
+        Debug.Log(collision.gameObject.tag);
     }
 }
