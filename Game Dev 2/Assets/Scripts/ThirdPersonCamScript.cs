@@ -8,7 +8,7 @@ public class ThirdPersonCamScript : MonoBehaviour
     private Vector3 lookAtTransform;
     private Vector3 temp;
 
-    public float distance = 10f;
+    public float distance = 5f;
     public float sensitivityX = 4f;
     public float sensitivityY = 4f;
     public float offset = 5f;
@@ -121,9 +121,17 @@ public class ThirdPersonCamScript : MonoBehaviour
         sensitivityY = 0.5f;
     }
 
+    void SlowCam()
+    {
+        distance = 2f;
+        sensitivityX = 2f;
+        sensitivityY = 2f;
+    }
+
     void NormCam()
     {
         sensitivityX = 4f;
         sensitivityY = 4f;
+        distance = 5f;
     }
 }

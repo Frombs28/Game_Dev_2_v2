@@ -43,6 +43,11 @@ public class RangedCharacterScript : CharacterScript
         return shieldCoolDown;
     }
 
+    public override int Type()
+    {
+        return 1;
+    }
+
     public override void TraversalAbility() //i have a problem in the form of collisions not happening
     {
         if ((Time.time - dashEndTime) >= dashCoolDown && !dashing && controller.isGrounded)

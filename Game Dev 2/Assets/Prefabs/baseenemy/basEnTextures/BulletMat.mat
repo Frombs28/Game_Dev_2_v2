@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: cellmat
-  m_Shader: {fileID: 4800000, guid: 4c92d5f259dea094797d1243dbfc5332, type: 3}
+  m_Name: BulletMat
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,7 +19,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 03210ccddf1ff6f45b31a442b9d95941, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CombMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -39,11 +43,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MKGlowTex:
-        m_Texture: {fileID: 2800000, guid: c8c46124117d5434b96bc9b6468eea9e, type: 3}
+        m_Texture: {fileID: 2800000, guid: cb372b52533666543ae0e56744331856, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 03210ccddf1ff6f45b31a442b9d95941, type: 3}
+        m_Texture: {fileID: 2800000, guid: 92cd8c64c4492ca47a32509133742769, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -58,6 +62,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SSSTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -66,21 +74,25 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MKGlowPower: 0.74
-    - _MKGlowTexStrength: 1
+    - _LitOffset: 0.25
+    - _MKGlowPower: 5
+    - _MKGlowTexStrength: 4.2
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _OutlineThickness: 1
     - _Parallax: 0.02
-    - _Shininess: 0.078125
     - _SmoothnessTextureChannel: 0
+    - _SpecPower: 40.6
+    - _SpecScale: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.80716693, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MKGlowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MKGlowTexColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _MKGlowTexColor: {r: 0.7830189, g: 0.08495018, b: 0.08495018, a: 1}
+    - _OutlineColor: {r: 0.07355818, g: 0.6189646, b: 0.8207547, a: 1}
+    - _SSSColor: {r: 1, g: 1, b: 1, a: 1}
