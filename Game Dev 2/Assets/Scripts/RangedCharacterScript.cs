@@ -22,15 +22,40 @@ public class RangedCharacterScript : CharacterScript
     public float shieldSpeed = 4f;
     private float shieldStartTime;
     private float shieldEndTime = 0f;
+    public float ammo_count = 5f;
+    public float reload = 3f;
+    public float fire_rate = 2f;
+    public int my_health = 40;
 
     private bool dashing = false;
     //remember to override movespeed in the inspector!
 
+    public override void SetEnemyHealth()
+    {
+        enemyhealth = my_health;
+    }
+
     public override void Attack()
     {
-        base.Attack();
-        if (amPlayer) { gameObject.SendMessage("FireShortGun"); }
-        else { gameObject.SendMessage("FireEnemyGun"); }
+        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
+        else if (ammo_count > 0 && timer >= fire_rate)
+        {
+            base.Attack();
+            gameObject.SendMessage("FireShortGun");
+            timer = 0f;
+            ammo_count--;
+        }
+        else if(ammo_count==0)
+        {
+            Reload();
+        }
+    }
+
+    public override void Reload()
+    {
+        //do reload animation
+        timer = -1 * reload;
+        ammo_count = 5f;
     }
 
     public override float TraversalMaxTime()

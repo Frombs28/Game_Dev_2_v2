@@ -14,10 +14,6 @@ public class InputManagerScript : MonoBehaviour
     private int playerhealth=10;
     float timer = 0f;
     float possess_timer = 0f;
-    float fire_rate;
-    public float rifle_fire_rate = 1f;
-    public float short_fire_rate = 2f;
-    public float sniper_fire_rate = 3f;
     public float possession_rate = 0.5f;
     private bool startingPossessing = false; //flag for slomo
     public Slider healthBar;
@@ -25,8 +21,7 @@ public class InputManagerScript : MonoBehaviour
     public Slider abilityBar;
     float traversalRechargeStartTime;
     float abilityRechargeStartTime;
-    int num_shots = 15;
-    int reload_speed = 3;
+    public bool attack_mode;
 
     public GameObject reticle;
 
@@ -45,6 +40,7 @@ public class InputManagerScript : MonoBehaviour
         //^^^not doing bars rn
         traversalRechargeStartTime = 0f;
         abilityRechargeStartTime = 0f;
+        attack_mode = true;
     }
 
     private void Update()
@@ -90,7 +86,7 @@ public class InputManagerScript : MonoBehaviour
         //possession
         //if (Input.GetAxis("Possess") != 0 && player && !possessing)
         //if pressed, start timer
-        if (Input.GetMouseButtonDown(1) && player && receiveInput)
+        if (Input.GetButtonDown("Attack") && player && receiveInput && !attack_mode)
         {
             possess_timer = 0f;
             reticle.SendMessage("Possessing");
@@ -116,7 +112,7 @@ public class InputManagerScript : MonoBehaviour
         //^^^if ya want the slo-mos, un-comment that and also speed up the time it takes to possess someone (possession_rate in this script) and the animation on the reticle (literally just open the animator, select the reticle in the heirarchy, and change "speed" in the animator)
 
         //if released after enough time has passed, trigger possession
-        if (possess_timer >= possession_rate && Input.GetMouseButtonUp(1) && player && receiveInput)
+        if (possess_timer >= possession_rate && Input.GetButtonUp("Attack") && player && receiveInput && !attack_mode)
         {
             //do a raycast from the main camera
             mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -137,7 +133,6 @@ public class InputManagerScript : MonoBehaviour
                     //transition the camera
                     mainCam.SendMessage("PossessionTransitionStarter", hit.collider.gameObject);
                     timer = Time.deltaTime;
-                    num_shots = 25;
 
                     //for each character, assign the new player
                     foreach (GameObject character in characters)
@@ -148,23 +143,26 @@ public class InputManagerScript : MonoBehaviour
             }
         }
 
-        if (timer >= fire_rate && Input.GetButton("Attack") && num_shots >= 0)
+        if (Input.GetButton("Attack") && attack_mode)
         {
-            if (num_shots > 0)
+            player.SendMessage("Attack");
+        }
+
+        if (Input.GetButtonUp("Attack") || !attack_mode)
+        {
+            player.SendMessage("StopAttack");
+        }
+
+        if (Input.GetButtonDown("Switch"))
+        {
+            if (attack_mode)
             {
-                timer = 0f;
-                player.SendMessage("Attack");
-                num_shots -= 1;
+                attack_mode = false;
             }
             else
             {
-                timer = -1 * reload_speed;
-                num_shots = 25;
+                attack_mode = true;
             }
-        }
-        if (Input.GetButtonUp("Attack"))
-        {
-            player.SendMessage("StopAttack");
         }
     }
 
@@ -172,18 +170,13 @@ public class InputManagerScript : MonoBehaviour
     {
         player = myPlayer;
         player.layer = 2; //ignore raycast //should probably eventually change to custom layer
-        if(player.gameObject.GetComponent<CharacterScript>().Type() == 0)
-        {
-            fire_rate = rifle_fire_rate;
-        }
-        else if(player.gameObject.GetComponent<CharacterScript>().Type() == 1)
-        {
-            fire_rate = short_fire_rate;
-        }
-        else if(player.gameObject.GetComponent<CharacterScript>().Type() == 2)
-        {
-            fire_rate = sniper_fire_rate;
-        }
+        NewHealth(myPlayer.GetComponent<CharacterScript>().GetHealth());
+        receiveInput = true;
+    }
+
+    public void NewHealth(int new_health)
+    {
+        playerhealth = new_health;
     }
 
     public void PopulateCharacterList(GameObject myCharacter)
@@ -195,9 +188,9 @@ public class InputManagerScript : MonoBehaviour
         characters.Remove(myCharacter);
     }
 
-    public void TookDamage() //plz capitalize every word in your function names as per the standard many thank
+    public void TookDamage(int damage) //plz capitalize every word in your function names as per the standard many thank
     {
-        playerhealth -= 1;
+        playerhealth -= damage;
         healthBar.value = playerhealth;
         if (playerhealth <= 0)
         {

@@ -50,18 +50,7 @@ public class CharacterScript : MonoBehaviour
     public bool aggro = false; //true if you're within a certain distance of the player or just got hit //resets after a few seconds
     private bool canStartAggroTimer = true;
     public float distanceToAggro = 25f;
-
-    public int Enemyhealth
-    {
-        get
-        {
-            return enemyhealth;
-        }
-        set
-        {
-            enemyhealth = value;
-        }
-    }
+    public float timer = 100f;
 
     private void Awake()
     {
@@ -76,6 +65,7 @@ public class CharacterScript : MonoBehaviour
         figure = gameObject.transform.GetChild(3).gameObject;
         marker = GameObject.Find("Marker");
         material = GetComponent<Material>();
+        SetEnemyHealth();
     }
 
     public void AssignPlayer(GameObject myPlayer)
@@ -148,6 +138,7 @@ public class CharacterScript : MonoBehaviour
     {
         //debuggin
         grounded = controller.isGrounded;
+        timer += Time.deltaTime;
 
         if (!interruptMovement && amPlayer)
         {
@@ -460,15 +451,21 @@ public class CharacterScript : MonoBehaviour
     }
     public virtual bool IsCharging() { return false; }
     public virtual void TraversalAbility() { }
+    public virtual void Reload() { }
     public virtual void Ability() { }
     public virtual float TraversalMaxTime() { return 0f; }
     public virtual float AbilityMaxTime() { return 0f; }
+    public virtual void SetEnemyHealth() { }
     public virtual void TakeDamage(int damage)
     {
         enemyhealth -= damage;
-        if (enemyhealth <= 0)
+        if (enemyhealth <= 0 && !amPlayer)
         {
             Die();
+        }
+        else if(enemyhealth <=0 && amPlayer)
+        {
+            
         }
     }
 
@@ -477,6 +474,11 @@ public class CharacterScript : MonoBehaviour
         inputManager.SendMessage("RemoveCharacterFromList", gameObject);
         myAnimator.SetBool("die", true);
         Destroy(gameObject, 0.5f);
+    }
+
+    public int GetHealth()
+    {
+        return enemyhealth;
     }
 
     public virtual void HasJumped()
@@ -490,13 +492,13 @@ public class CharacterScript : MonoBehaviour
         {
             if(collider.gameObject.layer == 9)
             {
-                TakeDamage(1);
+                TakeDamage(collider.gameObject.GetComponent<Bullet>().GetDamage());
                 aggro = true;
                 if (canStartAggroTimer) { StartCoroutine("AggroTimer"); }
             }
             else if(amPlayer)
             {
-                inputManager.SendMessage("TookDamage");
+                inputManager.SendMessage("TookDamage", collider.gameObject.GetComponent<Bullet>().GetDamage());
             }
             Destroy(collider.gameObject);
         }

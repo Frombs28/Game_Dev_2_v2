@@ -1487,13 +1487,17 @@ MonoBehaviour:
   hittingWall: 0
   aggro: 0
   distanceToAggro: 25
+  timer: 100
   jumpDistance: 10
-  newJumpSpeed: 20
+  newJumpSpeed: 100
   jumpTime: 0.1
   jumpCoolDown: 1
   slowTime: 3
   slowCoolDown: 6
   slowSpeed: 4
+  ammo_count: 1
+  reload: 4
+  fire_rate: 0.1
 --- !u!114 &114962437012064500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1512,6 +1516,9 @@ MonoBehaviour:
   rifle_bullet_speed: 0.1
   short_bullet_speed: 0.1
   sniper_bullet_speed: 100
+  rifle_damage: 2
+  short_damage: 5
+  sniper_damage: 10
   short_range: 0
 --- !u!137 &137179662806590668
 SkinnedMeshRenderer:

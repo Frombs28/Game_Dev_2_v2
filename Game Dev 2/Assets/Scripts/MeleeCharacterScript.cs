@@ -22,15 +22,40 @@ public class MeleeCharacterScript : CharacterScript
     public float phaseSpeed = 4f;
     private float phaseStartTime;
     private float phaseEndTime = 0f;
+    public float ammo_count = 25f;
+    public float reload = 2f;
+    public float fire_rate = 1f;
+    public int my_health = 9;
 
     private bool dashing = false;
     //remember to override movespeed in the inspector!
 
+    public override void SetEnemyHealth()
+    {
+        enemyhealth = my_health;
+    }
+
     public override void Attack()
     {
-        base.Attack();
-        if (amPlayer) { gameObject.SendMessage("FireRifleGun"); }
-        else { gameObject.SendMessage("FireEnemyGun"); }
+        if(!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
+        else if (ammo_count > 0 && timer >= fire_rate)
+        {
+            base.Attack();
+            timer = 0f;
+            gameObject.SendMessage("FireRifleGun");
+            ammo_count--;
+        }
+        else if(ammo_count==0)
+        {
+            Reload();
+        }
+    }
+
+    public override void Reload()
+    {
+        //do reload animation
+        timer = -1 * reload;
+        ammo_count = 25f;
     }
 
     public override float TraversalMaxTime()

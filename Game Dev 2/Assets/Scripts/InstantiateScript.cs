@@ -25,7 +25,7 @@ public class InstantiateScript : MonoBehaviour
         {
             if (i == 0)
             {
-                InstantiateCharacter(sniperPrefab, 
+                InstantiateCharacter(rangedPrefab, 
                     new Vector3(spawns.transform.GetChild(i).transform.position.x, 
                     spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), true);
             }

@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour {
 
     public GameObject boom;
     GameObject curBoom;
+    int damage = 2;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,16 @@ public class Bullet : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void SetDamage(int num)
+    {
+        damage = num;
+    }
+
+    public int GetDamage()
+    {
+        return damage;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

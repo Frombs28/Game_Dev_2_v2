@@ -16,15 +16,40 @@ public class SniperCharacter : CharacterScript
     public float slowSpeed = 4f;
     private float slowStartTime;
     private float slowEndTime = 0f;
+    public float ammo_count = 1f;
+    public float reload = 4f;
+    public float fire_rate = 0.1f;
+    public int my_health = 12;
 
     private bool dashing = false;
     //remember to override movespeed in the inspector!
 
+    public override void SetEnemyHealth()
+    {
+        enemyhealth = my_health;
+    }
+
     public override void Attack()
     {
-        base.Attack();
-        if (amPlayer) { gameObject.SendMessage("FireSniperGun"); }
-        else { gameObject.SendMessage("FireEnemyGun"); }
+        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
+        else if (ammo_count > 0 && timer >= fire_rate)
+        {
+            base.Attack();
+            gameObject.SendMessage("FireSniperGun");
+            timer = 0f;
+            ammo_count--;
+        }
+        else if(ammo_count == 0)
+        {
+            Reload();
+        }
+    }
+
+    public override void Reload()
+    {
+        //do reload animation
+        timer = -1 * reload;
+        ammo_count = 1f;
     }
 
     public override float TraversalMaxTime()
