@@ -403,6 +403,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1567408199968888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4347707178853294}
+  m_Layer: 0
+  m_Name: shieldPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1576050521345816
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +590,21 @@ GameObject:
   - component: {fileID: 4570177022596238}
   m_Layer: 0
   m_Name: R_writs_j
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1869364954019378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4333308244055238}
+  m_Layer: 0
+  m_Name: rangePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -835,6 +865,32 @@ Transform:
   m_Father: {fileID: 4878773864888164}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4333308244055238
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1869364954019378}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 131.87276, y: -3.2496223, z: 48.846905}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4688676270990732}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4347707178853294
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1567408199968888}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.27, z: 1.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4688676270990732}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4357445012269446
 Transform:
   m_ObjectHideFlags: 1
@@ -1036,13 +1092,15 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1699993314130230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.063845, y: 1.33, z: -25.408304}
+  m_LocalPosition: {x: -104.63312, y: 39.45128, z: -50.58211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4063509468530644}
   - {fileID: 4357445012269446}
   - {fileID: 4114969039220560}
   - {fileID: 4020977026021464}
+  - {fileID: 4347707178853294}
+  - {fileID: 4333308244055238}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1402,6 +1460,9 @@ MonoBehaviour:
   ammo_count: 5
   reload: 3
   fire_rate: 1.15
+  my_health: 40
+  shield: {fileID: 1649544701957296, guid: 97633ad980a6363449371d9ccdaeee68, type: 2}
+  shieldPos: {fileID: 4347707178853294}
 --- !u!114 &114459160243006552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1420,9 +1481,11 @@ MonoBehaviour:
   rifle_bullet_speed: 0.1
   short_bullet_speed: 100
   sniper_bullet_speed: 0.1
+  grunt_bullet_speed: 100
   rifle_damage: 2
   short_damage: 5
   sniper_damage: 10
+  grunt_damage: 2
   short_range: 3000
 --- !u!137 &137488983134329220
 SkinnedMeshRenderer:

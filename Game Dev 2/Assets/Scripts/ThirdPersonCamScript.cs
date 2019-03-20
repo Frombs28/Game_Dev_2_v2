@@ -128,6 +128,13 @@ public class ThirdPersonCamScript : MonoBehaviour
         sensitivityY = 2f;
     }
 
+    void AimCam()
+    {
+        distance = 2f;
+        sensitivityX = 2f;
+        sensitivityY = 2f;
+    }
+
     void NormCam()
     {
         sensitivityX = 4f;

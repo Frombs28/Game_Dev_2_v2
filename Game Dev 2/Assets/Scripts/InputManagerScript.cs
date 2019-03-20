@@ -19,6 +19,7 @@ public class InputManagerScript : MonoBehaviour
     public Slider healthBar;
     public Slider movementBar;
     public Slider abilityBar;
+    public Text ammo_num;
     float traversalRechargeStartTime;
     float abilityRechargeStartTime;
     public bool attack_mode;
@@ -41,6 +42,7 @@ public class InputManagerScript : MonoBehaviour
         traversalRechargeStartTime = 0f;
         abilityRechargeStartTime = 0f;
         attack_mode = true;
+        SetAmmoText();
     }
 
     private void Update()
@@ -128,6 +130,7 @@ public class InputManagerScript : MonoBehaviour
                     //set the player to the new character
                     player.layer = 0; //i would put this in AssignPlayer but it's a hassle so do it here
                     AssignPlayer(hit.collider.gameObject);
+                    SetAmmoText();
                     //movementBar.maxValue = player.gameObject.GetComponent<CharacterScript>().TraversalMaxTime();
                     //abilityBar.maxValue = player.gameObject.GetComponent<CharacterScript>().AbilityMaxTime();
                     //transition the camera
@@ -146,6 +149,17 @@ public class InputManagerScript : MonoBehaviour
         if (Input.GetButton("Attack") && attack_mode)
         {
             player.SendMessage("Attack");
+            SetAmmoText();
+        }
+
+        if (Input.GetButtonDown("Aim"))
+        {
+            mainCam.SendMessage("AimCam");
+        }
+
+        if (Input.GetButtonUp("Aim"))
+        {
+            mainCam.SendMessage("NormCam");
         }
 
         if (Input.GetButtonUp("Attack") || !attack_mode)
@@ -171,6 +185,7 @@ public class InputManagerScript : MonoBehaviour
         player = myPlayer;
         player.layer = 2; //ignore raycast //should probably eventually change to custom layer
         NewHealth(myPlayer.GetComponent<CharacterScript>().GetHealth());
+        healthBar.maxValue = myPlayer.GetComponent<CharacterScript>().GetMaxHealth();
         receiveInput = true;
     }
 
@@ -218,5 +233,10 @@ public class InputManagerScript : MonoBehaviour
     void RechargeAbility()
     {
         abilityRechargeStartTime = Time.deltaTime;
+    }
+
+    public void SetAmmoText()
+    {
+        ammo_num.text = player.gameObject.GetComponent<CharacterScript>().GetCurAmmo() + " / " + player.gameObject.GetComponent<CharacterScript>().GetMaxAmmo();
     }
 }

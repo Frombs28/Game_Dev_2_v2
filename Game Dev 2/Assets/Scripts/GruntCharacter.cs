@@ -9,9 +9,11 @@ using UnityEngine;
 public class GruntCharacter : CharacterScript
 {
     public float ammo_count = 20f;
+    public float max_ammo = 20f;
     public float reload = 2f;
     public float fire_rate = 1.2f;
     public int my_health = 5;
+    public int max_health = 5;
 
 
     public override void SetEnemyHealth()
@@ -19,17 +21,37 @@ public class GruntCharacter : CharacterScript
         enemyhealth = my_health;
     }
 
+    public override float GetMaxAmmo()
+    {
+        return max_ammo;
+    }
+
+    public override int GetMaxHealth()
+    {
+        return max_health;
+    }
+
+    public override float GetCurAmmo()
+    {
+        return ammo_count;
+    }
+
     public override void Attack()
     {
         if (!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
-        else if (ammo_count > 0 && timer >= fire_rate)
+        else if ((ammo_count > 0 || reloading) && timer >= fire_rate)
         {
             base.Attack();
-            timer = 0f;
+            if (reloading)
+            {
+                reloading = false;
+                ammo_count = max_ammo;
+            }
             gameObject.SendMessage("FireGruntGun");
+            timer = 0f;
             ammo_count--;
         }
-        else if (ammo_count == 0)
+        else if (ammo_count == 0 && !reloading)
         {
             Reload();
         }
@@ -39,7 +61,7 @@ public class GruntCharacter : CharacterScript
     {
         //do reload animation
         timer = -1 * reload;
-        ammo_count = 20f;
+        reloading = true;
     }
 
     public override float TraversalMaxTime()

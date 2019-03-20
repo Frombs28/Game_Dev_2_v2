@@ -17,9 +17,11 @@ public class SniperCharacter : CharacterScript
     private float slowStartTime;
     private float slowEndTime = 0f;
     public float ammo_count = 1f;
+    public float max_ammo = 1f;
     public float reload = 4f;
     public float fire_rate = 0.1f;
     public int my_health = 12;
+    public int max_health = 12;
 
     private bool dashing = false;
     //remember to override movespeed in the inspector!
@@ -29,17 +31,37 @@ public class SniperCharacter : CharacterScript
         enemyhealth = my_health;
     }
 
+    public override float GetMaxAmmo()
+    {
+        return max_ammo;
+    }
+
+    public override int GetMaxHealth()
+    {
+        return max_health;
+    }
+
+    public override float GetCurAmmo()
+    {
+        return ammo_count;
+    }
+
     public override void Attack()
     {
         if (!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
-        else if (ammo_count > 0 && timer >= fire_rate)
+        else if ((ammo_count > 0 || reloading) && timer >= fire_rate)
         {
             base.Attack();
+            if (reloading)
+            {
+                reloading = false;
+                ammo_count = max_ammo;
+            }
             gameObject.SendMessage("FireSniperGun");
             timer = 0f;
             ammo_count--;
         }
-        else if(ammo_count == 0)
+        else if(ammo_count == 0 && !reloading)
         {
             Reload();
         }
@@ -49,7 +71,7 @@ public class SniperCharacter : CharacterScript
     {
         //do reload animation
         timer = -1 * reload;
-        ammo_count = 1f;
+        reloading = true;
     }
 
     public override float TraversalMaxTime()

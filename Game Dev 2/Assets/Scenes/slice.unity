@@ -1348,6 +1348,81 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c519947dc60f043829ae45d00fabec, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &226417775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 226417776}
+  - component: {fileID: 226417778}
+  - component: {fileID: 226417777}
+  m_Layer: 5
+  m_Name: Ammo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &226417776
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 226417775}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2065898804}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.44200003, y: 0.018333334}
+  m_AnchorMax: {x: 0.55817217, y: 0.12833335}
+  m_AnchoredPosition: {x: -0.11847, y: 0.049996}
+  m_SizeDelta: {x: 128.4, y: 0.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &226417777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 226417775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 57
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 57
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &226417778
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 226417775}
+  m_CullTransparentMesh: 0
 --- !u!1 &233465572
 GameObject:
   m_ObjectHideFlags: 0
@@ -7825,6 +7900,7 @@ MonoBehaviour:
   healthBar: {fileID: 1255340480}
   movementBar: {fileID: 1255340479}
   abilityBar: {fileID: 1255340478}
+  ammo_num: {fileID: 226417777}
   attack_mode: 0
   reticle: {fileID: 1170173477}
 --- !u!4 &1642832492
@@ -9215,6 +9291,11 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 723ad0429b9c79a4ca41620fffc21670, type: 3}
+--- !u!224 &2065898804 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224777389074214540, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1255340477}
 --- !u!1001 &2077261787
 Prefab:
   m_ObjectHideFlags: 0
