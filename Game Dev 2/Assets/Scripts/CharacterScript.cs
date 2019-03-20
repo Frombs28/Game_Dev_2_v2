@@ -31,6 +31,7 @@ public class CharacterScript : MonoBehaviour
     int num_jumps = 0;
     public int enemyhealth = 3;
     public float enemySpeed = 20f;
+    public float enemyAcceleration = 100f;
     public bool invincible = false;
     GameObject marker;
     bool marker_bool = true;
@@ -68,20 +69,22 @@ public class CharacterScript : MonoBehaviour
         SetEnemyHealth();
     }
 
+    //this is called on every character whenever a possession takes place, since the player changes when that happens
+    //this is also called on this object when this object is instantiated
     public void AssignPlayer(GameObject myPlayer)
     {
         player = myPlayer;
         amPlayer = (gameObject == player);
         if (amPlayer)
         {
-            state = "none";
+            state = "none"; //AI thing
             navAgent.enabled = false;
             myAnimator.SetBool("walk", false);
             material = possessed;
         }
         else {
-            //navAgent.enabled = true;
-            //myAnimator.SetBool("walk", true);
+            navAgent.enabled = true;
+            myAnimator.SetBool("walk", true);
             material = notPossessed;
         }
     }
@@ -217,6 +220,7 @@ public class CharacterScript : MonoBehaviour
 
 
         if (zeroMovement)
+        //reset the non-vertical components of the player's movement direction to 0 if this is the player and there was no input
         {
             moveDirection = new Vector3(0f, moveDirection.y, 0f);
             myAnimator.SetBool("run", false);
@@ -274,7 +278,7 @@ public class CharacterScript : MonoBehaviour
     }
     private void LateUpdate()
     {
-        //zeroMovement = true;
+        zeroMovement = true;//if shit starts fucking up i'll re-comment this but i think it needs to be here
         if (!amPlayer)
         {
             if(gameObject.transform.position.z >= 21.0f)
@@ -291,6 +295,7 @@ public class CharacterScript : MonoBehaviour
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //AI stuff//
     IEnumerator AggroTimer()
+    //if you were just turned aggro, count down to 3 and if the conditions are no longer met, turn yourself off aggro
     {
         canStartAggroTimer = false;
         float startTime = Time.time;
@@ -303,6 +308,7 @@ public class CharacterScript : MonoBehaviour
     }
 
     IEnumerator Idle()
+    //he's just standing there . . . menacingly!
     {
         navAgent.ResetPath();
         while (!aggro)
@@ -450,7 +456,7 @@ public class CharacterScript : MonoBehaviour
         myAnimator.SetBool("firing", false);
     }
     public virtual bool IsCharging() { return false; }
-    public virtual void TraversalAbility() { }
+    public virtual bool TraversalAbility() { return true; }
     public virtual void Reload() { }
     public virtual void Ability() { }
     public virtual float TraversalMaxTime() { return 0f; }

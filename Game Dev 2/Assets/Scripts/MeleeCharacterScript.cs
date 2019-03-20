@@ -10,6 +10,8 @@ public class MeleeCharacterScript : CharacterScript
 {
     public float dashDistance = 10f;
     public float dashSpeed = 10f;
+    public float AIDashSpeed = 150f; //ratio between this and enemySpeed should be the same ratio as that between the player's speed and dash speed 
+    public float AIDashAcceleration = 700f;
     public float dashTime = 0.1f;
     public float dashCoolDown = 1f;
     private Vector3 dashDirection;
@@ -27,7 +29,7 @@ public class MeleeCharacterScript : CharacterScript
     public float fire_rate = 1f;
     public int my_health = 9;
 
-    private bool dashing = false;
+    public bool dashing = false;
     //remember to override movespeed in the inspector!
 
     public override void SetEnemyHealth()
@@ -73,11 +75,11 @@ public class MeleeCharacterScript : CharacterScript
         return 0;
     }
 
-    public override void TraversalAbility() //i have a problem in the form of collisions not happening
+    public override bool TraversalAbility() //i have a problem in the form of collisions not happening
     {
+        base.TraversalAbility();
         if ((Time.time - dashEndTime) >= dashCoolDown && !dashing)
         {
-            base.TraversalAbility();
             dashing = true;
             startPos = transform.position;
             dashStartTime = Time.time;
@@ -97,8 +99,13 @@ public class MeleeCharacterScript : CharacterScript
             if (myVert == 0 && myHor == 0) { myVert = 1; }
             dashDirection = new Vector3(myHor, 0, myVert);
             Vector3.Normalize(dashDirection);
-            inputManager.SendMessage("RechargeTraversal");
+            //inputManager.SendMessage("RechargeTraversal"); //commenting it out bcit gives error, probs just a problem with how i set up my scene
             StartCoroutine("Dash");
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -106,20 +113,32 @@ public class MeleeCharacterScript : CharacterScript
     {
         while ((Time.time - dashStartTime) <= dashTime)
         {
-            zeroMovement = false;
-            interruptMovement = true;
-            //transform.Translate(dashDirection * dashSpeed * Time.deltaTime);
-            if (controller.isGrounded)
+            if (amPlayer)
             {
-                moveDirection = dashDirection * dashSpeed;
+                zeroMovement = false;
+                interruptMovement = true;
+                //transform.Translate(dashDirection * dashSpeed * Time.deltaTime);
+                if (controller.isGrounded)
+                {
+                    moveDirection = dashDirection * dashSpeed;
+                }
+                else
+                {
+                    moveDirection = dashDirection * 0.5f * dashSpeed;
+                }
+                moveDirection = transform.TransformDirection(moveDirection);
+                yield return null;
             }
             else
             {
-                moveDirection = dashDirection * 0.5f * dashSpeed;
+                navAgent.speed = AIDashSpeed;
+                navAgent.acceleration = AIDashAcceleration;
+                Debug.Log("HERE I GO!");
+                yield return null;
             }
-            moveDirection = transform.TransformDirection(moveDirection);
-            yield return null;
         }
+        navAgent.speed = enemySpeed;
+        navAgent.acceleration = enemyAcceleration;
         interruptMovement = false;
         dashEndTime = Time.time;
         dashing = false;
@@ -140,6 +159,10 @@ public class MeleeCharacterScript : CharacterScript
             //navAgent.ResetPath();
             navAgent.SetDestination(transform.position);
             return false;
+        }
+        if (TraversalAbility())
+        {
+            return true;
         }
         navAgent.SetDestination(player.transform.position);
         return true;

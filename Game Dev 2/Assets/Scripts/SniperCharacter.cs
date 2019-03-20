@@ -67,7 +67,7 @@ public class SniperCharacter : CharacterScript
         return 2;
     }
 
-    public override void TraversalAbility() //i have a problem in the form of collisions not happening
+    public override bool TraversalAbility() //i have a problem in the form of collisions not happening
     {
         if ((Time.time - jumpEndTime) >= jumpCoolDown && !dashing)
         {
@@ -77,6 +77,7 @@ public class SniperCharacter : CharacterScript
             inputManager.SendMessage("RechargeTraversal");
             StartCoroutine("Jump");
         }
+        return true;
     }
 
     public override void Ability()

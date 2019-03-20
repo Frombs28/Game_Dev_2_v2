@@ -73,7 +73,7 @@ public class RangedCharacterScript : CharacterScript
         return 1;
     }
 
-    public override void TraversalAbility() //i have a problem in the form of collisions not happening
+    public override bool TraversalAbility() //i have a problem in the form of collisions not happening
     {
         if ((Time.time - dashEndTime) >= dashCoolDown && !dashing && controller.isGrounded)
         {
@@ -86,6 +86,7 @@ public class RangedCharacterScript : CharacterScript
             inputManager.SendMessage("RechargeTraversal");
             StartCoroutine("Charge");
         }
+        return true;
     }
 
     public override void Ability()
