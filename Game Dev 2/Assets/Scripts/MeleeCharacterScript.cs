@@ -39,6 +39,9 @@ public class MeleeCharacterScript : CharacterScript
     private float aiDashCooldown = 1f;
     public bool triggerInWall = false;
 
+    public bool shield = false;
+
+
     public override void SetEnemyHealth()
     {
         enemyhealth = my_health;
@@ -191,6 +194,8 @@ public class MeleeCharacterScript : CharacterScript
     public override void Update()
     {
         base.Update();
+
+        //dash stuff
         if ((Time.time - aiDashStartTime) >= aiDashTime || triggerInWall)
         {
             if (aiDash)
@@ -202,6 +207,31 @@ public class MeleeCharacterScript : CharacterScript
         if (aiDash)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * 50f);
+        }
+
+        //shield stuff
+        if (!shield)
+        {
+            if (my_health / max_health <= 0.3f)
+            {
+                shield = true;
+                Collider myCollider = transform.Find("Shield").gameObject.GetComponent<Collider>();
+                myCollider.enabled = true;
+                Renderer myRenderer = transform.Find("Shield").gameObject.GetComponent<Renderer>();
+                myRenderer.enabled = true;
+            }
+        }
+        else
+        {
+            //Debug.Log("FUCK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            if ((my_health / max_health) > 0.3f) //<-- this boi right here doesn't feel like being true ever
+            {
+                shield = false;
+                Collider myCollider = transform.Find("Shield").gameObject.GetComponent<Collider>();
+                myCollider.enabled = false;
+                Renderer myRenderer = transform.Find("Shield").gameObject.GetComponent<Renderer>();
+                myRenderer.enabled = false;
+            }
         }
     }
 
