@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 
 //the base character class
-//all character types will inherit from this class
-//sub-classes will override functions specific to thier own behavior, such as attacking and using movement abilities
-//this base class will contain behavior that every character would use, such as movement and AI
-//this class also allows the character to be controlled by the player
+//inherited by MeleeCharacterScript, RangedCharacterScript, and SniperCharacter
+//controls AI behavior as well as player behavior
 
 public class CharacterScript : MonoBehaviour
 {
@@ -56,6 +54,8 @@ public class CharacterScript : MonoBehaviour
     public float timer = 100f;
 
     private void Awake()
+    //this function is mostly used to get references to components on this game object
+    //also used to set initial values of some variables
     {
         //get a reference to the main camera
         //you'll need to do this every time you change cameras in the future
@@ -73,6 +73,10 @@ public class CharacterScript : MonoBehaviour
     }
 
     public void AssignPlayer(GameObject myPlayer)
+    //called from InputManager on every character whenever a possession takes place
+    //called from InstantiateScript on this object once it is instantiated
+    //this function sets the value of "player," which points towards the character game object currently being controlled
+    //this function also sets the value of "amPlayer," the boolean that tells us whether or not this gameobject is being controlled
     {
         player = myPlayer;
         amPlayer = (gameObject == player);
@@ -84,7 +88,7 @@ public class CharacterScript : MonoBehaviour
             material = possessed;
         }
         else {
-            //navAgent.enabled = true;
+            navAgent.enabled = true;
             //myAnimator.SetBool("walk", true);
             material = notPossessed;
         }
@@ -95,69 +99,44 @@ public class CharacterScript : MonoBehaviour
         return 0;
     }
 
-    //movement if this character is possessed by the player
-    //this function gets called from InputManager
-    public void MovePlayer()
-    {
-        
-        //if (controller.isGrounded && !interruptMovement) //okay so apprently it's never grounded? idk fam //except when i'm pressing a WASD button
-        //if (!interruptMovement && controller.isGrounded)
-        //{
-        //    zeroMovement = false;
-        //    if (moveDirection.y > 0)
-        //    {
-        //        moveDirection.y -= (gravity * Time.deltaTime);
-        //        moveDirection = new Vector3(Input.GetAxis("Horizontal"), moveDirection.y, Input.GetAxis("Vertical")).normalized;
-        //    }
-        //    else
-        //    {
-        //        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")).normalized;
-        //    }
-        //    moveDirection = transform.TransformDirection(moveDirection);
-        //    moveDirection *= moveSpeed;
-        //}
-    }
-
-    public void JumpPlayer()
-    {
-        //if (controller.isGrounded)
-        //{
-        //    moveDirection.y = jumpSpeed;
-        //}
-    }
-
-    //rotation based on camera rotation if this character is possessed by the player
-    //this fucntion gets called from InputManager
     public virtual void RotatePlayer()
+    //this function is only called if this gameobject is currently possessed
+    //this fucnction is called from InputManager in Update
+    //this function rotates this gameobject to face in the same direction as the camera is currently pointing
     {
-        //this isn't perfect but it works for now
         transform.rotation = Quaternion.Euler(0, cam.transform.rotation.eulerAngles.y, 0);
     }
 
-    //insert a bunch of functions to receive from the AI controller
-    //movement if this character is not possessed by the player
-    //have this stuff affect moveDirection and just call move() in update regardless of whether you're the player or not I THINK I DON'T KNOW HOW MUCH WE'RE GONNA USE CHARACTER CONTROLLERS FOR THE AI but rn it seems like a good idea
-
-    private void Update()
+    public virtual void Update()
     {
-        //debuggin
         grounded = controller.isGrounded;
         timer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && !PauseScript.paused)
         {
             Reload();
         }
 
-        if (!interruptMovement && amPlayer)
+        if (!interruptMovement && amPlayer && !PauseScript.paused)
+        //player movement
         {
-            if (controller.isGrounded)
+            if (grounded)
+            //set moveDirection based on keyboard input
             {
                 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")).normalized;
                 moveDirection = transform.TransformDirection(moveDirection);
                 moveDirection *= moveSpeed;
                 num_jumps = 0;
                 myAnimator.SetBool("jumping", false);
+            }
+            if ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 || num_jumps > 0))
+            //stop the player from moving this frame if there is no keyboard input
+            {
+                zeroMovement = false;
+            }
+            else
+            {
+                zeroMovement = true;
             }
 
             //RaycastHit hit;
@@ -214,16 +193,7 @@ public class CharacterScript : MonoBehaviour
                 num_jumps += 1;
                 myAnimator.SetBool("jumping", true);
             }
-            if(amPlayer && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") !=0 || num_jumps > 0))
-            {
-                zeroMovement = false;
-            }
-            else
-            {
-                zeroMovement = true;
-            }
         }
-
 
         if (zeroMovement)
         {
@@ -239,6 +209,7 @@ public class CharacterScript : MonoBehaviour
             myAnimator.SetBool("run", false);
         }
         moveDirection.y -= (gravity * Time.deltaTime);
+
         controller.Move(moveDirection * Time.deltaTime);
 
         if (!amPlayer)
@@ -251,17 +222,17 @@ public class CharacterScript : MonoBehaviour
         //        gameObject.SendMessage("FireEnemyGun");
         //    }
         }
-
-        //for now, assume there is only 1 AI in the scene and that possession isn't a thing
-        //we'll change this to support possession once we get it working well enough with one dude
-        //if (!amPlayer) { Debug.Log(state); }
-
+        
+        //some AI stuff
+        //initializes the AI behavior tree if this gameobject has just been possessed out of
         if (!amPlayer && state == "none")
         {
             state = "idle";
             StartCoroutine("Idle");
         }
 
+        //more AI stuff
+        //header for AggroTimer
         float myDist = Vector3.Distance(player.transform.position, transform.position);
         if (myDist <= distanceToAggro)
         {
@@ -300,6 +271,9 @@ public class CharacterScript : MonoBehaviour
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //AI stuff//
     IEnumerator AggroTimer()
+    //called from Update if we're close to the player
+    //called from OnCollisionEnter with a projectile
+    //allows this character to de-aggro if they have been aggro for x seconds and no longer meet the conditions for aggro
     {
         canStartAggroTimer = false;
         float startTime = Time.time;

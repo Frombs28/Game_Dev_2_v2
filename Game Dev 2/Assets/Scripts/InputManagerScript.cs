@@ -82,13 +82,13 @@ public class InputManagerScript : MonoBehaviour
         //if (Input.GetAxis("Attack") != 0 && player && receiveInput) { player.SendMessage("Attack"); }
         //else if (Input.GetAxis("TraversalAbility") != 0 && player && receiveInput) { player.SendMessage("TraversalAbility"); }
         //if (Input.GetAxis("Attack") != 0 && player && receiveInput) { player.SendMessage("Attack"); }
-        if (Input.GetButtonDown("TraversalAbility") && player && receiveInput) { player.SendMessage("TraversalAbility"); }
-        if (Input.GetButtonDown("Ability") && player && receiveInput) { player.SendMessage("Ability"); }
+        if (Input.GetButtonDown("TraversalAbility") && player && receiveInput && !PauseScript.paused) { player.SendMessage("TraversalAbility"); }
+        if (Input.GetButtonDown("Ability") && player && receiveInput && !PauseScript.paused) { player.SendMessage("Ability"); }
 
         //possession
         //if (Input.GetAxis("Possess") != 0 && player && !possessing)
         //if pressed, start timer
-        if (Input.GetButtonDown("Attack") && player && receiveInput && !attack_mode)
+        if (Input.GetButtonDown("Attack") && player && receiveInput && !attack_mode && !PauseScript.paused)
         {
             possess_timer = 0f;
             reticle.SendMessage("Possessing");
@@ -114,7 +114,7 @@ public class InputManagerScript : MonoBehaviour
         //^^^if ya want the slo-mos, un-comment that and also speed up the time it takes to possess someone (possession_rate in this script) and the animation on the reticle (literally just open the animator, select the reticle in the heirarchy, and change "speed" in the animator)
 
         //if released after enough time has passed, trigger possession
-        if (possess_timer >= possession_rate && Input.GetButtonUp("Attack") && player && receiveInput && !attack_mode)
+        if (possess_timer >= possession_rate && Input.GetButtonUp("Attack") && player && receiveInput && !attack_mode && !PauseScript.paused)
         {
             //do a raycast from the main camera
             mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -146,13 +146,13 @@ public class InputManagerScript : MonoBehaviour
             }
         }
 
-        if (Input.GetButton("Attack") && attack_mode)
+        if (Input.GetButton("Attack") && attack_mode && !PauseScript.paused)
         {
             player.SendMessage("Attack");
             SetAmmoText();
         }
 
-        if (Input.GetButtonDown("Aim"))
+        if (Input.GetButtonDown("Aim") && !PauseScript.paused)
         {
             mainCam.SendMessage("AimCam");
         }
