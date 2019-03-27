@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour {
         {
             curBoom = Instantiate(boom, transform);
         }
-        Destroy(gameObject,0.01f);
+        Destroy(gameObject);
         Debug.Log(collision.gameObject.tag);
     }
 }

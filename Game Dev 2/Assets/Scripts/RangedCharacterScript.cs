@@ -23,9 +23,14 @@ public class RangedCharacterScript : CharacterScript
     private float shieldStartTime;
     private float shieldEndTime = 0f;
     public float ammo_count = 5f;
+    public float max_ammo = 5f;
     public float reload = 3f;
     public float fire_rate = 2f;
     public int my_health = 40;
+    public int max_health = 40;
+
+    public GameObject shield;
+    public Transform shieldPos;
 
     private bool dashing = false;
     //remember to override movespeed in the inspector!
@@ -35,17 +40,37 @@ public class RangedCharacterScript : CharacterScript
         enemyhealth = my_health;
     }
 
+    public override float GetMaxAmmo()
+    {
+        return max_ammo;
+    }
+
+    public override int GetMaxHealth()
+    {
+        return max_health;
+    }
+
+    public override float GetCurAmmo()
+    {
+        return ammo_count;
+    }
+
     public override void Attack()
     {
         if (!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
-        else if (ammo_count > 0 && timer >= fire_rate)
+        else if ((ammo_count > 0 || reloading) && timer >= fire_rate)
         {
             base.Attack();
+            if (reloading)
+            {
+                reloading = false;
+                ammo_count = max_ammo;
+            }
             gameObject.SendMessage("FireShortGun");
             timer = 0f;
             ammo_count--;
         }
-        else if(ammo_count==0)
+        else if(ammo_count==0 && !reloading)
         {
             Reload();
         }
@@ -55,7 +80,7 @@ public class RangedCharacterScript : CharacterScript
     {
         //do reload animation
         timer = -1 * reload;
-        ammo_count = 5f;
+        reloading = true;
     }
 
     public override float TraversalMaxTime()
@@ -117,7 +142,7 @@ public class RangedCharacterScript : CharacterScript
     {
         while ((Time.time - dashStartTime) <= dashTime)
         {
-            invincible = true;
+            //invincible = true;
             zeroMovement = false;
             interruptMovement = true;
             //transform.Translate(dashDirection * dashSpeed * Time.deltaTime);
@@ -133,9 +158,11 @@ public class RangedCharacterScript : CharacterScript
 
     IEnumerator Shield()
     {
+        GameObject newShield;
+        newShield = Instantiate(shield, shieldPos);
         while ((Time.time - shieldStartTime) <= shieldTime)
         {
-            invincible = true;
+            //invincible = true;
             interruptMovement = true;
             if (controller.isGrounded)
             {
@@ -151,6 +178,7 @@ public class RangedCharacterScript : CharacterScript
             yield return null;
         }
         interruptMovement = false;
+        Destroy(newShield);
         shieldEndTime = Time.time;
         Debug.Log("Done Shielding!");
     }

@@ -23,9 +23,11 @@ public class MeleeCharacterScript : CharacterScript
     private float phaseStartTime;
     private float phaseEndTime = 0f;
     public float ammo_count = 25f;
+    public float max_ammo = 25f;
     public float reload = 2f;
     public float fire_rate = 1f;
     public int my_health = 9;
+    public int max_health = 9;
 
     private bool dashing = false;
     //remember to override movespeed in the inspector!
@@ -35,17 +37,37 @@ public class MeleeCharacterScript : CharacterScript
         enemyhealth = my_health;
     }
 
+    public override float GetMaxAmmo()
+    {
+        return max_ammo;
+    }
+
+    public override int GetMaxHealth()
+    {
+        return max_health;
+    }
+
+    public override float GetCurAmmo()
+    {
+        return ammo_count;
+    }
+
     public override void Attack()
     {
         if(!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
-        else if (ammo_count > 0 && timer >= fire_rate)
+        else if ((ammo_count > 0 || reloading) && timer >= fire_rate)
         {
             base.Attack();
-            timer = 0f;
+            if (reloading)
+            {
+                reloading = false;
+                ammo_count = max_ammo;
+            }
             gameObject.SendMessage("FireRifleGun");
+            timer = 0f;
             ammo_count--;
         }
-        else if(ammo_count==0)
+        else if(ammo_count==0 && !reloading)
         {
             Reload();
         }
@@ -55,7 +77,7 @@ public class MeleeCharacterScript : CharacterScript
     {
         //do reload animation
         timer = -1 * reload;
-        ammo_count = 25f;
+        reloading = true;
     }
 
     public override float TraversalMaxTime()
@@ -102,6 +124,16 @@ public class MeleeCharacterScript : CharacterScript
         }
     }
 
+    public override void Ability()
+    {
+        if ((Time.time - phaseEndTime) >= phaseCoolDown && controller.isGrounded)
+        {
+            phaseStartTime = Time.time;
+            inputManager.SendMessage("RechargeAbility");
+            StartCoroutine("Phase");
+        }
+    }
+
     IEnumerator Dash()
     {
         while ((Time.time - dashStartTime) <= dashTime)
@@ -123,6 +155,17 @@ public class MeleeCharacterScript : CharacterScript
         interruptMovement = false;
         dashEndTime = Time.time;
         dashing = false;
+    }
+
+    IEnumerator Phase()
+    {
+        while ((Time.time - phaseStartTime) <= phaseTime)
+        {
+            gameObject.SendMessage("FireRifleGun");
+            yield return null;
+        }
+        interruptMovement = false;
+        phaseEndTime = Time.time;
     }
 
     public override bool MakeDistanceHelperOne()

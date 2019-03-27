@@ -1469,6 +1469,11 @@ MonoBehaviour:
   rifle_bullet_speed: 100
   short_bullet_speed: 100
   sniper_bullet_speed: 100
+  grunt_bullet_speed: 100
+  rifle_damage: 3
+  short_damage: 5
+  sniper_damage: 10
+  grunt_damage: 2
   short_range: 0
 --- !u!114 &114732743870573718
 MonoBehaviour:
@@ -1506,13 +1511,18 @@ MonoBehaviour:
   hittingWall: 0
   aggro: 0
   distanceToAggro: 25
+  timer: 100
   dashDistance: 70
   dashSpeed: 150
   dashTime: 0.1
   dashCoolDown: 0.25
-  phaseTime: 3
+  phaseTime: 0.5
   phaseCoolDown: 6
   phaseSpeed: 4
+  ammo_count: 25
+  reload: 2
+  fire_rate: 0.15
+  my_health: 9
 --- !u!137 &137868205873533310
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

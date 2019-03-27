@@ -30,10 +30,13 @@ public class CharacterScript : MonoBehaviour
     public float gravity = 20f;
     int num_jumps = 0;
     public int enemyhealth = 3;
+    public int cur_bullet = 0;
     public float enemySpeed = 20f;
     public bool invincible = false;
     GameObject marker;
     bool marker_bool = true;
+
+    public bool reloading;
 
     public Material notPossessed;
     public Material possessed;
@@ -66,6 +69,7 @@ public class CharacterScript : MonoBehaviour
         marker = GameObject.Find("Marker");
         material = GetComponent<Material>();
         SetEnemyHealth();
+        reloading = false;
     }
 
     public void AssignPlayer(GameObject myPlayer)
@@ -139,6 +143,11 @@ public class CharacterScript : MonoBehaviour
         //debuggin
         grounded = controller.isGrounded;
         timer += Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+        }
 
         if (!interruptMovement && amPlayer)
         {
@@ -456,6 +465,9 @@ public class CharacterScript : MonoBehaviour
     public virtual float TraversalMaxTime() { return 0f; }
     public virtual float AbilityMaxTime() { return 0f; }
     public virtual void SetEnemyHealth() { }
+    public virtual float GetMaxAmmo() { return 0f; }
+    public virtual float GetCurAmmo() { return 0f; }
+    public virtual int GetMaxHealth() { return 0; }
     public virtual void TakeDamage(int damage)
     {
         enemyhealth -= damage;
