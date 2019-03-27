@@ -42,7 +42,7 @@ public class InstantiateScript : MonoBehaviour
                     spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), false);
             }
         }
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
     }
 
