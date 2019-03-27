@@ -31,13 +31,13 @@ public class InstantiateScript : MonoBehaviour
             }
             else if (i % 2 == 0)
             {
-                InstantiateCharacter(meleePrefab,
+                InstantiateCharacter(sniperPrefab,
                     new Vector3(spawns.transform.GetChild(i).transform.position.x,
                     spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), false);
             }
             else
             {
-                InstantiateCharacter(rangedPrefab,
+                InstantiateCharacter(sniperPrefab,
                     new Vector3(spawns.transform.GetChild(i).transform.position.x,
                     spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), false);
             }

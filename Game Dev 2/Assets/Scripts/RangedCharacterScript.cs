@@ -233,5 +233,4 @@ public class RangedCharacterScript : CharacterScript
         navAgent.SetDestination(myVect);
         return true;
     }
-    //^^^put collision detection  in this boi so he can know to stop these coroutines if he yeets into a wall
 }

@@ -26,6 +26,10 @@ public class SniperCharacter : CharacterScript
     private bool dashing = false;
     //remember to override movespeed in the inspector!
 
+    private bool perchInRange = false;
+    private Vector3 perchPosition;
+    
+
     public override void SetEnemyHealth()
     {
         enemyhealth = my_health;
@@ -141,21 +145,47 @@ public class SniperCharacter : CharacterScript
 
     public override bool MakeDistanceHelperOne()
     {
-        //put a lerp here to actually face the player smoothly
-        lookAtPlayer = true;
+        lookAtPlayer = false;
+        //put a lerp here to actually face away from the player smoothly
+        lookAwayFromPlayer = true;
         return false;
     }
     public override bool MakeDistanceHelperTwo()
     {
         if (amPlayer) { return false; }
         float myDist = Vector3.Distance(player.transform.position, transform.position);
-        if (myDist <= 10f)
+        if ((myDist >= 20 && !perchInRange) || hittingWall || (perchInRange && (new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(perchPosition.x, 0, perchPosition.z)).magnitude <= 0.5f))
         {
-            //navAgent.ResetPath();
-            navAgent.SetDestination(transform.position);
+            navAgent.ResetPath();
+            lookAwayFromPlayer = false;
+            lookAtPlayer = true;
             return false;
         }
-        navAgent.SetDestination(player.transform.position);
+        if (!perchInRange)
+        {
+            Vector3 myVect = 2 * transform.position - player.transform.position;
+            navAgent.SetDestination(myVect);
+        }
+        else
+        {
+            navAgent.SetDestination(perchPosition);
+        }
         return true;
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Perch" && !perchInRange)
+        {
+            perchInRange = true;
+            perchPosition = other.transform.position;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Perch")
+        {
+            perchInRange = false;
+        }
     }
 }
