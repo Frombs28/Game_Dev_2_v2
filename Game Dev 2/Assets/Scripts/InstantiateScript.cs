@@ -31,7 +31,7 @@ public class InstantiateScript : MonoBehaviour
             }
             else if (i % 2 == 0)
             {
-                InstantiateCharacter(sniperPrefab,
+                InstantiateCharacter(meleePrefab,
                     new Vector3(spawns.transform.GetChild(i).transform.position.x,
                     spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), false);
             }

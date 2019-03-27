@@ -206,7 +206,12 @@ public class MeleeCharacterScript : CharacterScript
         }
         if (aiDash)
         {
+            navAgent.angularSpeed = 10;
             transform.Translate(Vector3.forward * Time.deltaTime * 50f);
+        }
+        else
+        {
+            navAgent.angularSpeed = 120;
         }
 
         //shield stuff
@@ -223,7 +228,7 @@ public class MeleeCharacterScript : CharacterScript
         }
         else
         {
-            //Debug.Log("FUCK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            //Debug.Log("HEY!!!");
             if ((my_health / max_health) > 0.3f) //<-- this boi right here doesn't feel like being true ever
             {
                 shield = false;
