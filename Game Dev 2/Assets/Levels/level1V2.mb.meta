@@ -170,6 +170,28 @@ ModelImporter:
     100328: WallsObj
     100330: WallsObj1
     100332: wallTabletText
+    100334: floor010
+    100336: floor02 1
+    100338: transform10
+    100340: transform11
+    100342: transform12
+    100344: transform13
+    100346: transform14
+    100348: transform15
+    100350: transform16
+    100352: transform17
+    100354: transform18
+    100356: transform19
+    100358: transform20
+    100360: transform21
+    100362: transform22
+    100364: transform23
+    100366: transform24
+    100368: transform25
+    100370: transform26
+    100372: transform27
+    100374: transform28
+    100376: transform29
     400000: Alpha
     400002: back
     400004: barrel01
@@ -337,6 +359,28 @@ ModelImporter:
     400328: WallsObj
     400330: WallsObj1
     400332: wallTabletText
+    400334: floor010
+    400336: floor02 1
+    400338: transform10
+    400340: transform11
+    400342: transform12
+    400344: transform13
+    400346: transform14
+    400348: transform15
+    400350: transform16
+    400352: transform17
+    400354: transform18
+    400356: transform19
+    400358: transform20
+    400360: transform21
+    400362: transform22
+    400364: transform23
+    400366: transform24
+    400368: transform25
+    400370: transform26
+    400372: transform27
+    400374: transform28
+    400376: transform29
     2000000: back
     2000002: bottom
     2000004: left
@@ -476,6 +520,7 @@ ModelImporter:
     2300238: WallsObj
     2300240: WallsObj1
     2300242: wallTabletText
+    2300244: floor010
     3300000: Alpha
     3300002: barrel01
     3300004: barrel02
@@ -598,6 +643,7 @@ ModelImporter:
     3300238: WallsObj
     3300240: WallsObj1
     3300242: wallTabletText
+    3300244: floor010
     4300000: cell_floor
     4300002: cellbackwall
     4300004: cellwall1
@@ -720,6 +766,7 @@ ModelImporter:
     4300238: person09
     4300240: person08
     4300242: beamNew
+    4300244: floor010
     9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
