@@ -62,7 +62,7 @@ public class CharacterScript : MonoBehaviour
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         controller = GetComponent<CharacterController>();
         navAgent = GetComponent<NavMeshAgent>();
-        inputManager = GameObject.Find("Input Manager");
+        inputManager = GameObject.Find("InputManager");
         navAgent.speed = enemySpeed;
         myAnimator = gameObject.GetComponentInChildren<Animator>();
         figure = gameObject.transform.GetChild(3).gameObject;
