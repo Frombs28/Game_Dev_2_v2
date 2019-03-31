@@ -30,6 +30,7 @@ public class InputManagerScript : MonoBehaviour
     public GameObject CheckpointManager;
     public Canvas myCanvas;
     public bool playerIsAlive;
+    public GameObject instantiateManager;
 
     void Start()
     {
@@ -183,8 +184,17 @@ public class InputManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && !playerIsAlive)
         //respawn
         {
+            Debug.Log("HRRRNNNNNGGGGHHHH i'm trying to respawn but i can't do it :(");
             Vector3 respawnPoint = CheckpointManager.GetComponent<CheckpointManagerScript>().GetLastCheckpoint();
-            //call some shit in instantiatemanager
+            Debug.Log("Here it is: ");
+            Debug.Log(respawnPoint.x);
+            Debug.Log(" ");
+            Debug.Log(respawnPoint.y);
+            Debug.Log(" ");
+            Debug.Log(respawnPoint.z);
+            instantiateManager.SendMessage("Respawn", respawnPoint);
+            myCanvas.SendMessage("DeActivateRespawnUI");
+
         }
     }
 
@@ -195,6 +205,7 @@ public class InputManagerScript : MonoBehaviour
         NewHealth(myPlayer.GetComponent<CharacterScript>().GetHealth());
         //healthBar.maxValue = myPlayer.GetComponent<CharacterScript>().GetMaxHealth();
         receiveInput = true;
+        playerIsAlive = true;
     }
 
     public void NewHealth(int new_health)

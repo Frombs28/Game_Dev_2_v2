@@ -59,4 +59,12 @@ public class InstantiateScript : MonoBehaviour
         myCharacter.SendMessage("AssignPlayer", myPlayer);
         inputManager.SendMessage("PopulateCharacterList", myCharacter);
     }
+
+    public void Respawn(Vector3 pos)
+    //called from InputManager in Update once R is pressed after the player dies
+    //plops the player back down at the last checkpoint, passed as a vector3
+    //i will eventually add functionality to spawn the correct character type and with the correct health, etc.
+    {
+        InstantiateCharacter(rangedPrefab, pos, true);
+    }
 }

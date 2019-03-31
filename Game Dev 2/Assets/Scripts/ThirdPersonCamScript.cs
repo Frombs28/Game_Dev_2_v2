@@ -79,7 +79,7 @@ public class ThirdPersonCamScript : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!transitioning && !PauseScript.paused)
+        if (!transitioning && !PauseScript.paused && lookAtObject)
         {
             Vector3 direction = new Vector3(0, 0, -distance);
             Quaternion rotation = Quaternion.Euler(-currentY, currentX, 0);

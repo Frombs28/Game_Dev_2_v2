@@ -17,8 +17,10 @@ public class CheckpointManagerScript : MonoBehaviour {
     //called from the function "GameOver" in InputManager
     //tells it the transform to yeet the player into when they up and die
     {
-        for (int i = numCheckpoints; i >= 0; i--)
+        Debug.Log("made it into GetLastCheckpoint");
+        for (int i = numCheckpoints-1; i >= 0; i--)
         {
+            Debug.Log("looping");
             myCheckScript = checkpoints[i].GetComponent<CheckpointScript>();
             if (myCheckScript.activated)
             {

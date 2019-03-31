@@ -86,11 +86,13 @@ public class CharacterScript : MonoBehaviour
             navAgent.enabled = false;
             myAnimator.SetBool("walk", false);
             material = possessed;
+            gameObject.tag = "Player";
         }
         else {
             navAgent.enabled = true;
             //myAnimator.SetBool("walk", true);
             material = notPossessed;
+            gameObject.tag = "Possessable";
         }
     }
 
@@ -233,23 +235,26 @@ public class CharacterScript : MonoBehaviour
 
         //more AI stuff
         //header for AggroTimer
-        float myDist = Vector3.Distance(player.transform.position, transform.position);
-        if (myDist <= distanceToAggro)
+        if (player)
         {
-            aggro = true;
-            if (canStartAggroTimer) { StartCoroutine("AggroTimer"); }
-        }
+            float myDist = Vector3.Distance(player.transform.position, transform.position);
+            if (myDist <= distanceToAggro)
+            {
+                aggro = true;
+                if (canStartAggroTimer) { StartCoroutine("AggroTimer"); }
+            }
 
-        if (lookAtPlayer || amPlayer) { lookAwayFromPlayer = false; }
-        if (lookAwayFromPlayer || amPlayer) { lookAtPlayer = false; }
-        if (lookAtPlayer)
-        {
-            transform.LookAt(player.transform);
-        }
-        if (lookAwayFromPlayer)
-        {
-            Vector3 myVect = 2 * transform.position - player.transform.position;
-            transform.LookAt(myVect);
+            if (lookAtPlayer || amPlayer) { lookAwayFromPlayer = false; }
+            if (lookAwayFromPlayer || amPlayer) { lookAtPlayer = false; }
+            if (lookAtPlayer)
+            {
+                transform.LookAt(player.transform);
+            }
+            if (lookAwayFromPlayer)
+            {
+                Vector3 myVect = 2 * transform.position - player.transform.position;
+                transform.LookAt(myVect);
+            }
         }
     }
     private void LateUpdate()
