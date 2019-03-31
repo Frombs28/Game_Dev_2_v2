@@ -11186,6 +11186,11 @@ Transform:
   m_Father: {fileID: 2013309823}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &1491025250 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 223719490560723142, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1255340477}
 --- !u!1 &1504464092
 GameObject:
   m_ObjectHideFlags: 0
@@ -12241,8 +12246,9 @@ MonoBehaviour:
   attack_mode: 0
   reticle: {fileID: 1170173477}
   CheckpointManager: {fileID: 0}
-  myCanvas: {fileID: 0}
+  myCanvas: {fileID: 1491025250}
   playerIsAlive: 0
+  instantiateManager: {fileID: 0}
 --- !u!4 &1642832492
 Transform:
   m_ObjectHideFlags: 0

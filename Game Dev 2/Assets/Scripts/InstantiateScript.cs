@@ -21,11 +21,11 @@ public class InstantiateScript : MonoBehaviour
 
     private void Start()
     {
-        InstantiateCharacter();   
+        InstantiateCharacter(spawn.position);   
     }
 
     //makes a guy
-    private void InstantiateCharacter()
+    private void InstantiateCharacter(Vector3 pos)
     {
         GameObject myPrefab;
         if (prefabNum == 0)
@@ -44,7 +44,7 @@ public class InstantiateScript : MonoBehaviour
         {
             myPrefab = gruntPrefab;
         }
-        myCharacter = Instantiate(myPrefab, spawn.position, Quaternion.identity);
+        myCharacter = Instantiate(myPrefab, pos, Quaternion.identity);
         inputManager.SendMessage("AssignPlayer", myCharacter);
         cam.SendMessage("AssignPlayer", myCharacter.transform.GetChild(1).gameObject);
         myPlayer = myCharacter;
@@ -57,7 +57,7 @@ public class InstantiateScript : MonoBehaviour
     //plops the player back down at the last checkpoint, passed as a vector3
     //i will eventually add functionality to spawn the correct character type and with the correct health, etc.
     {
-        InstantiateCharacter(rangedPrefab, pos, true);
+        InstantiateCharacter(pos);
     }
 
     void ChangeNumber(int val)
