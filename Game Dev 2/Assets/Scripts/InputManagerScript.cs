@@ -47,6 +47,7 @@ public class InputManagerScript : MonoBehaviour
         playerIsAlive = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     private void Update()
@@ -121,7 +122,6 @@ public class InputManagerScript : MonoBehaviour
         if (possess_timer >= possession_rate && Input.GetButtonUp("Attack") && player && receiveInput && !attack_mode && !PauseScript.paused)
         {
             //do a raycast from the main camera
-            mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
             RaycastHit hit; //this will contain a path to a reference to whatever GameObject got hit
             int layerMask = 1 << 2;
             layerMask = ~layerMask; //the raycast will ignore anything on this layer
