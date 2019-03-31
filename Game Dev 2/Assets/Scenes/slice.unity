@@ -3736,7 +3736,7 @@ MonoBehaviour:
     type: 2}
   cam: {fileID: 6223367}
   spawn: {fileID: 446648949}
-  prefabNum: 0
+  prefabNum: 1
 --- !u!1 &458642426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 59c519947dc60f043829ae45d00fabec,
@@ -12313,6 +12313,7 @@ MonoBehaviour:
   abilityBar: {fileID: 1255340478}
   ammo_num: {fileID: 226417777}
   attack_mode: 0
+  myAnimator: {fileID: 0}
   reticle: {fileID: 1170173477}
   CheckpointManager: {fileID: 0}
   myCanvas: {fileID: 1491025250}
