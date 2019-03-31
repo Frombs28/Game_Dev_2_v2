@@ -45,6 +45,8 @@ public class InputManagerScript : MonoBehaviour
         attack_mode = true;
         SetAmmoText();
         playerIsAlive = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
