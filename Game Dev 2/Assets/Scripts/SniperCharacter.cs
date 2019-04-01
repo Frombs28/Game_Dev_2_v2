@@ -60,6 +60,8 @@ public class SniperCharacter : CharacterScript
             {
                 reloading = false;
                 ammo_count = max_ammo;
+                myAnimator.SetBool("relaod", false);
+
             }
             gameObject.SendMessage("FireSniperGun");
             timer = 0f;

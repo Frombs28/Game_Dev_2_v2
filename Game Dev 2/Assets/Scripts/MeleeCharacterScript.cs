@@ -72,6 +72,8 @@ public class MeleeCharacterScript : CharacterScript
             {
                 reloading = false;
                 ammo_count = max_ammo;
+                myAnimator.SetBool("relaod", false);
+
             }
             gameObject.SendMessage("FireRifleGun");
             timer = 0f;

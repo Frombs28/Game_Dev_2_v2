@@ -24,6 +24,7 @@ public class InputManagerScript : MonoBehaviour
     float traversalRechargeStartTime;
     float abilityRechargeStartTime;
     public bool attack_mode;
+    public Animator myAnimator;
 
     public GameObject reticle;
 
@@ -34,6 +35,7 @@ public class InputManagerScript : MonoBehaviour
 
     void Start()
     {
+        
         /*
         healthBar.value = playerhealth;
         movementBar.maxValue = player.gameObject.GetComponent<CharacterScript>().TraversalMaxTime();
@@ -97,6 +99,8 @@ public class InputManagerScript : MonoBehaviour
         {
             possess_timer = 0f;
             reticle.SendMessage("Possessing");
+            myAnimator.SetBool("possescharge", true);
+
 
             startingPossessing = true;
         }
@@ -121,6 +125,9 @@ public class InputManagerScript : MonoBehaviour
         //if released after enough time has passed, trigger possession
         if (possess_timer >= possession_rate && Input.GetButtonUp("Attack") && player && receiveInput && !attack_mode && !PauseScript.paused)
         {
+            myAnimator.SetBool("possescharge", false);
+            myAnimator.SetBool("possesrelease", true);
+
             //do a raycast from the main camera
             RaycastHit hit; //this will contain a path to a reference to whatever GameObject got hit
             int layerMask = 1 << 2;
@@ -148,6 +155,8 @@ public class InputManagerScript : MonoBehaviour
                     }
                 }
             }
+            myAnimator.SetBool("possescharge", false);
+
         }
 
         if (Input.GetButton("Attack") && attack_mode && !PauseScript.paused)
@@ -208,6 +217,7 @@ public class InputManagerScript : MonoBehaviour
         //healthBar.maxValue = myPlayer.GetComponent<CharacterScript>().GetMaxHealth();
         receiveInput = true;
         playerIsAlive = true;
+        myAnimator = player.GetComponentInChildren<Animator>();
     }
 
     public void NewHealth(int new_health)

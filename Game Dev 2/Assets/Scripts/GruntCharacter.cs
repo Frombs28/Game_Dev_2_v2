@@ -46,6 +46,8 @@ public class GruntCharacter : CharacterScript
             {
                 reloading = false;
                 ammo_count = max_ammo;
+                myAnimator.SetBool("relaod", false);
+
             }
             gameObject.SendMessage("FireGruntGun");
             timer = 0f;
