@@ -3786,7 +3786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.44200003, y: 0.018333334}
   m_AnchorMax: {x: 0.55817217, y: 0.12833335}
-  m_AnchoredPosition: {x: -405, y: 0.049996}
+  m_AnchoredPosition: {x: -405, y: 0.05001831}
   m_SizeDelta: {x: 128.4, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &226417777
@@ -8055,7 +8055,7 @@ MonoBehaviour:
     type: 2}
   cam: {fileID: 6223367}
   spawn: {fileID: 809389565}
-  prefabNum: 0
+  prefabNum: 3
 --- !u!1 &458642426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 59c519947dc60f043829ae45d00fabec,
@@ -26645,6 +26645,7 @@ MonoBehaviour:
   abilityBar: {fileID: 1255340478}
   ammo_num: {fileID: 226417777}
   attack_mode: 0
+  myAnimator: {fileID: 0}
   reticle: {fileID: 1170173477}
   CheckpointManager: {fileID: 0}
   myCanvas: {fileID: 1255340481}
