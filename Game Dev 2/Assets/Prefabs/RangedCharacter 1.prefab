@@ -1438,8 +1438,10 @@ MonoBehaviour:
   jumpSpeed: 20
   gravity: 70
   enemyhealth: 6
+  cur_bullet: 0
   enemySpeed: 9
   invincible: 0
+  reloading: 0
   notPossessed: {fileID: 0}
   possessed: {fileID: 0}
   cam: {fileID: 0}
@@ -1458,9 +1460,11 @@ MonoBehaviour:
   shieldCoolDown: 6
   shieldSpeed: 7
   ammo_count: 5
+  max_ammo: 5
   reload: 3
   fire_rate: 1.15
   my_health: 40
+  max_health: 40
   shield: {fileID: 1649544701957296, guid: 97633ad980a6363449371d9ccdaeee68, type: 2}
   shieldPos: {fileID: 4347707178853294}
 --- !u!114 &114459160243006552
@@ -1478,9 +1482,9 @@ MonoBehaviour:
   cam: {fileID: 0}
   bullet: {fileID: 1613299391097858, guid: 6af1a404eaa40864abfa34b3b4fd8097, type: 2}
   barrel: {fileID: 1179065228104812}
-  rifle_bullet_speed: 0.1
+  rifle_bullet_speed: 100
   short_bullet_speed: 100
-  sniper_bullet_speed: 0.1
+  sniper_bullet_speed: 100
   grunt_bullet_speed: 100
   rifle_damage: 2
   short_damage: 5

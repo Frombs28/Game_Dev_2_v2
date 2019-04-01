@@ -69,7 +69,7 @@ public class ThirdPersonCamScript : MonoBehaviour
 
     private void Update()
     {
-        if (!transitioning)
+        if (!transitioning && !PauseScript.paused)
         {
             currentX += Input.GetAxis("Mouse X") * sensitivityX;
             currentY += Input.GetAxis("Mouse Y") * sensitivityY;
@@ -79,7 +79,7 @@ public class ThirdPersonCamScript : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!transitioning)
+        if (!transitioning && !PauseScript.paused && lookAtObject)
         {
             Vector3 direction = new Vector3(0, 0, -distance);
             Quaternion rotation = Quaternion.Euler(-currentY, currentX, 0);

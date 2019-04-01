@@ -7,12 +7,13 @@ using UnityEngine;
 public class InstantiateScript : MonoBehaviour
 {
     public GameObject inputManager;
-    public GameObject meleePrefab;
-    public GameObject rangedPrefab;
-    public GameObject sniperPrefab;
+    public GameObject meleePrefab;  //0
+    public GameObject rangedPrefab; //1
+    public GameObject sniperPrefab; //2
+    public GameObject gruntPrefab;  //3
     public GameObject cam; //the main camera //for now just set in the inspector might do it dynamically in a hot sec
-    public GameObject spawns;
-    public int spawn_number = 1;
+    public Transform spawn;
+    public int prefabNum = 0;       //determines what player spawns as
 
     private GameObject myCharacter; //to be instantiated
 
@@ -20,43 +21,47 @@ public class InstantiateScript : MonoBehaviour
 
     private void Start()
     {
-        //populate the scene with some characters
-        for (int i = 0; i < spawn_number; i++)
-        {
-            if (i == 0)
-            {
-                InstantiateCharacter(rangedPrefab, 
-                    new Vector3(spawns.transform.GetChild(i).transform.position.x, 
-                    spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), true);
-            }
-            else if (i % 2 == 0)
-            {
-                InstantiateCharacter(meleePrefab,
-                    new Vector3(spawns.transform.GetChild(i).transform.position.x,
-                    spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), false);
-            }
-            else
-            {
-                InstantiateCharacter(meleePrefab,
-                    new Vector3(spawns.transform.GetChild(i).transform.position.x,
-                    spawns.transform.GetChild(i).transform.position.y, spawns.transform.GetChild(i).transform.position.z), false);
-            }
-        }
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        InstantiateCharacter(spawn.position);   
     }
 
     //makes a guy
-    private void InstantiateCharacter(GameObject myPrefab, Vector3 myPos, bool isPlayer)
+    private void InstantiateCharacter(Vector3 pos)
     {
-        myCharacter = Instantiate(myPrefab, myPos, Quaternion.identity);
-        if (isPlayer)
+        GameObject myPrefab;
+        if (prefabNum == 0)
         {
-            inputManager.SendMessage("AssignPlayer", myCharacter);
-            cam.SendMessage("AssignPlayer", myCharacter.transform.GetChild(1).gameObject);
-            myPlayer = myCharacter;
+            myPrefab = meleePrefab;
         }
+        else if (prefabNum == 1)
+        {
+            myPrefab = rangedPrefab;
+        }
+        else if (prefabNum == 2)
+        {
+            myPrefab = sniperPrefab;
+        }
+        else
+        {
+            myPrefab = gruntPrefab;
+        }
+        myCharacter = Instantiate(myPrefab, pos, Quaternion.identity);
+        inputManager.SendMessage("AssignPlayer", myCharacter);
+        cam.SendMessage("AssignPlayer", myCharacter.transform.GetChild(1).gameObject);
+        myPlayer = myCharacter;
         myCharacter.SendMessage("AssignPlayer", myPlayer);
         inputManager.SendMessage("PopulateCharacterList", myCharacter);
+    }
+
+    public void Respawn(Vector3 pos)
+    //called from InputManager in Update once R is pressed after the player dies
+    //plops the player back down at the last checkpoint, passed as a vector3
+    //i will eventually add functionality to spawn the correct character type and with the correct health, etc.
+    {
+        InstantiateCharacter(pos);
+    }
+
+    void ChangeNumber(int val)
+    {
+        prefabNum = val;
     }
 }

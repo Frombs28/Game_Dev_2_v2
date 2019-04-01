@@ -32,6 +32,8 @@ public class RangedCharacterScript : CharacterScript
     public GameObject shield;
     public Transform shieldPos;
 
+    private bool waitingForTimer = false;
+
     private bool dashing = false;
     //remember to override movespeed in the inspector!
 
@@ -183,6 +185,32 @@ public class RangedCharacterScript : CharacterScript
         Debug.Log("Done Shielding!");
     }
 
+    IEnumerator RandomTimer()
+    {
+        waitingForTimer = true;
+        navAgent.speed = enemySpeed * 2;
+        navAgent.acceleration *= 2;
+        yield return new WaitForSeconds(Random.Range(1f, 4f));
+        navAgent.speed = enemySpeed;
+        navAgent.acceleration /= 2;
+        yield return new WaitForSeconds(Random.Range(1f, 4f));
+        waitingForTimer = false;
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        //change speed sporadically
+        if (aggro)
+        {
+            if (!waitingForTimer)
+            {
+                StartCoroutine("RandomTimer");
+            }
+        }
+    }
+
     public override bool MakeDistanceHelperOne()
     {
         lookAtPlayer = false;
@@ -205,5 +233,4 @@ public class RangedCharacterScript : CharacterScript
         navAgent.SetDestination(myVect);
         return true;
     }
-    //^^^put collision detection  in this boi so he can know to stop these coroutines if he yeets into a wall
 }

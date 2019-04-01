@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 54469011983446580}
   - component: {fileID: 114761429262368178}
   - component: {fileID: 82734152097385990}
+  - component: {fileID: 65090065825598970}
   m_Layer: 12
   m_Name: SniperCharacter
   m_TagString: Possessable
@@ -841,7 +842,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1594852165712796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -61.944565, y: 45.5533, z: 86.58858}
+  m_LocalPosition: {x: -8.540386, y: 24.5, z: 47.38442}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4434947811156944}
@@ -1326,6 +1327,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &65090065825598970
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1594852165712796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 7, z: 0}
 --- !u!65 &65217833014978528
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1476,8 +1489,10 @@ MonoBehaviour:
   jumpSpeed: 20
   gravity: 70
   enemyhealth: 3
+  cur_bullet: 0
   enemySpeed: 20
   invincible: 0
+  reloading: 0
   notPossessed: {fileID: 0}
   possessed: {fileID: 0}
   cam: {fileID: 0}
@@ -1496,8 +1511,11 @@ MonoBehaviour:
   slowCoolDown: 6
   slowSpeed: 4
   ammo_count: 1
+  max_ammo: 1
   reload: 4
   fire_rate: 0.1
+  my_health: 12
+  max_health: 12
 --- !u!114 &114962437012064500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1516,9 +1534,11 @@ MonoBehaviour:
   rifle_bullet_speed: 0.1
   short_bullet_speed: 0.1
   sniper_bullet_speed: 100
+  grunt_bullet_speed: 100
   rifle_damage: 2
   short_damage: 5
   sniper_damage: 10
+  grunt_damage: 2
   short_range: 0
 --- !u!137 &137179662806590668
 SkinnedMeshRenderer:

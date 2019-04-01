@@ -32,6 +32,16 @@ public class MeleeCharacterScript : CharacterScript
     private bool dashing = false;
     //remember to override movespeed in the inspector!
 
+    public bool aiDash = false;
+    public float aiDashTime = 0.1f;
+    private float aiDashEndTime = 0f;
+    private float aiDashStartTime = 0f;
+    private float aiDashCooldown = 1f;
+    public bool triggerInWall = false;
+
+    public bool shield = false;
+
+
     public override void SetEnemyHealth()
     {
         enemyhealth = my_health;
@@ -168,6 +178,68 @@ public class MeleeCharacterScript : CharacterScript
         phaseEndTime = Time.time;
     }
 
+    private bool StartAiDash()
+    //returns false if the conditions to start the AI Dash are not met
+    //returns true and flips the bool 'aiDash' to true if these conditions are met
+    {
+        if ((Time.time - aiDashEndTime) < aiDashCooldown || triggerInWall)
+        {
+            return false;
+        }
+        aiDash = true;
+        aiDashStartTime = Time.time;
+        return true;
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        //dash stuff
+        if ((Time.time - aiDashStartTime) >= aiDashTime || triggerInWall)
+        {
+            if (aiDash)
+            {
+                aiDashEndTime = Time.time;
+            }
+            aiDash = false;
+        }
+        if (aiDash)
+        {
+            navAgent.angularSpeed = 10;
+            transform.Translate(Vector3.forward * Time.deltaTime * 50f);
+        }
+        else
+        {
+            navAgent.angularSpeed = 120;
+        }
+
+        //shield stuff
+        if (!shield)
+        {
+            if (my_health / max_health <= 0.3f)
+            {
+                shield = true;
+                Collider myCollider = transform.Find("Shield").gameObject.GetComponent<Collider>();
+                myCollider.enabled = true;
+                Renderer myRenderer = transform.Find("Shield").gameObject.GetComponent<Renderer>();
+                myRenderer.enabled = true;
+            }
+        }
+        else
+        {
+            //Debug.Log("HEY!!!");
+            if ((my_health / max_health) > 0.3f) //<-- this boi right here doesn't feel like being true ever
+            {
+                shield = false;
+                Collider myCollider = transform.Find("Shield").gameObject.GetComponent<Collider>();
+                myCollider.enabled = false;
+                Renderer myRenderer = transform.Find("Shield").gameObject.GetComponent<Renderer>();
+                myRenderer.enabled = false;
+            }
+        }
+    }
+
     public override bool MakeDistanceHelperOne()
     {
         //put a lerp here to actually face the player smoothly
@@ -180,11 +252,29 @@ public class MeleeCharacterScript : CharacterScript
         float myDist = Vector3.Distance(player.transform.position, transform.position);
         if (myDist <= 10f)
         {
-            //navAgent.ResetPath();
             navAgent.SetDestination(transform.position);
             return false;
         }
+        if (!aiDash)
+        {
+            StartAiDash();
+        }
         navAgent.SetDestination(player.transform.position);
         return true;
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "Wall")
+        {
+            triggerInWall = true;
+        }
+    }
+    void OnTriggerExit(Collider collider)
+    {
+        if (collider.gameObject.tag == "Wall")
+        {
+            triggerInWall = false;
+        }
     }
 }

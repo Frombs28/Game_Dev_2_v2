@@ -11,6 +11,7 @@ public class InputManagerScript : MonoBehaviour
     public GameObject player; //whoms't'd've'ever is possessed rn
     private Camera mainCam; //the main camera in the scene, which should usually be showing the player's POV
     public bool receiveInput = true; //flag //set false by this script when i start possessing; set true by the camera (which sends a message to this) when the transition is complete
+                                            //also set false when the player gets dead and then set back to true when they respawn
     private int playerhealth=10;
     float timer = 0f;
     float possess_timer = 0f;
@@ -26,11 +27,11 @@ public class InputManagerScript : MonoBehaviour
 
     public GameObject reticle;
 
-    //when the player possesses a character, this is called to set the new character to our variable "player," which is used in turn to call movement functions on whichever character the player is controlling
-    //remember to set the old player's layer back to 0 (so it can be hit by raycasts and be possessed) before you call this
-    //i would put that in this function but setting up optional arguments is a hassle
-    //in fact i'll have to do this if we want to call this from anywhere other than here so i'll probably actually do it eventually
-    //this function is also called by InstantiateScript to determine who the player is when the scene just starts
+    public GameObject CheckpointManager;
+    public Canvas myCanvas;
+    public bool playerIsAlive;
+    public GameObject instantiateManager;
+
     void Start()
     {
         /*
@@ -43,6 +44,10 @@ public class InputManagerScript : MonoBehaviour
         abilityRechargeStartTime = 0f;
         attack_mode = true;
         SetAmmoText();
+        playerIsAlive = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     private void Update()
@@ -82,13 +87,13 @@ public class InputManagerScript : MonoBehaviour
         //if (Input.GetAxis("Attack") != 0 && player && receiveInput) { player.SendMessage("Attack"); }
         //else if (Input.GetAxis("TraversalAbility") != 0 && player && receiveInput) { player.SendMessage("TraversalAbility"); }
         //if (Input.GetAxis("Attack") != 0 && player && receiveInput) { player.SendMessage("Attack"); }
-        if (Input.GetButtonDown("TraversalAbility") && player && receiveInput) { player.SendMessage("TraversalAbility"); }
-        if (Input.GetButtonDown("Ability") && player && receiveInput) { player.SendMessage("Ability"); }
+        if (Input.GetButtonDown("TraversalAbility") && player && receiveInput && !PauseScript.paused) { player.SendMessage("TraversalAbility"); }
+        if (Input.GetButtonDown("Ability") && player && receiveInput && !PauseScript.paused) { player.SendMessage("Ability"); }
 
         //possession
         //if (Input.GetAxis("Possess") != 0 && player && !possessing)
         //if pressed, start timer
-        if (Input.GetButtonDown("Attack") && player && receiveInput && !attack_mode)
+        if (Input.GetButtonDown("Attack") && player && receiveInput && !attack_mode && !PauseScript.paused)
         {
             possess_timer = 0f;
             reticle.SendMessage("Possessing");
@@ -114,10 +119,9 @@ public class InputManagerScript : MonoBehaviour
         //^^^if ya want the slo-mos, un-comment that and also speed up the time it takes to possess someone (possession_rate in this script) and the animation on the reticle (literally just open the animator, select the reticle in the heirarchy, and change "speed" in the animator)
 
         //if released after enough time has passed, trigger possession
-        if (possess_timer >= possession_rate && Input.GetButtonUp("Attack") && player && receiveInput && !attack_mode)
+        if (possess_timer >= possession_rate && Input.GetButtonUp("Attack") && player && receiveInput && !attack_mode && !PauseScript.paused)
         {
             //do a raycast from the main camera
-            mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
             RaycastHit hit; //this will contain a path to a reference to whatever GameObject got hit
             int layerMask = 1 << 2;
             layerMask = ~layerMask; //the raycast will ignore anything on this layer
@@ -146,13 +150,13 @@ public class InputManagerScript : MonoBehaviour
             }
         }
 
-        if (Input.GetButton("Attack") && attack_mode)
+        if (Input.GetButton("Attack") && attack_mode && !PauseScript.paused)
         {
             player.SendMessage("Attack");
             SetAmmoText();
         }
 
-        if (Input.GetButtonDown("Aim"))
+        if (Input.GetButtonDown("Aim") && !PauseScript.paused)
         {
             mainCam.SendMessage("AimCam");
         }
@@ -178,6 +182,22 @@ public class InputManagerScript : MonoBehaviour
                 attack_mode = true;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R) && !playerIsAlive)
+        //respawn
+        {
+            Debug.Log("HRRRNNNNNGGGGHHHH i'm trying to respawn but i can't do it :(");
+            Vector3 respawnPoint = CheckpointManager.GetComponent<CheckpointManagerScript>().GetLastCheckpoint();
+            Debug.Log("Here it is: ");
+            Debug.Log(respawnPoint.x);
+            Debug.Log(" ");
+            Debug.Log(respawnPoint.y);
+            Debug.Log(" ");
+            Debug.Log(respawnPoint.z);
+            instantiateManager.SendMessage("Respawn", respawnPoint);
+            myCanvas.SendMessage("DeActivateRespawnUI");
+
+        }
     }
 
     public void AssignPlayer(GameObject myPlayer)
@@ -185,8 +205,9 @@ public class InputManagerScript : MonoBehaviour
         player = myPlayer;
         player.layer = 2; //ignore raycast //should probably eventually change to custom layer
         NewHealth(myPlayer.GetComponent<CharacterScript>().GetHealth());
-        healthBar.maxValue = myPlayer.GetComponent<CharacterScript>().GetMaxHealth();
+        //healthBar.maxValue = myPlayer.GetComponent<CharacterScript>().GetMaxHealth();
         receiveInput = true;
+        playerIsAlive = true;
     }
 
     public void NewHealth(int new_health)
@@ -206,7 +227,7 @@ public class InputManagerScript : MonoBehaviour
     public void TookDamage(int damage) //plz capitalize every word in your function names as per the standard many thank
     {
         playerhealth -= damage;
-        healthBar.value = playerhealth;
+        //healthBar.value = playerhealth;
         if (playerhealth <= 0)
         {
             GameOver();
@@ -217,7 +238,10 @@ public class InputManagerScript : MonoBehaviour
     public void GameOver()
     {
         player.SendMessage("Die");
-        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene("GameOver");
+        myCanvas.SendMessage("ActivateRespawnUI");
+        receiveInput = false;
+        playerIsAlive = false;
     }
 
     public void SetReceiveInputTrue()
