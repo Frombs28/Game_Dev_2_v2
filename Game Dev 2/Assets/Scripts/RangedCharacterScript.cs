@@ -113,6 +113,7 @@ public class RangedCharacterScript : CharacterScript
             dashDirection = new Vector3(0, 0, 1);
             Vector3.Normalize(dashDirection);
             cam.SendMessage("ChargeCam");
+            myAnimator.SetBool("charge", true);
             inputManager.SendMessage("RechargeTraversal");
             StartCoroutine("Charge");
         }
@@ -124,6 +125,7 @@ public class RangedCharacterScript : CharacterScript
         {
             shieldStartTime = Time.time;
             inputManager.SendMessage("RechargeAbility");
+            myAnimator.SetBool("shield", true);
             StartCoroutine("Shield");
         }
     }
@@ -141,6 +143,8 @@ public class RangedCharacterScript : CharacterScript
         cam.SendMessage("NormCam");
         dashEndTime = Time.time;
         dashing = false;
+        myAnimator.SetBool("charge", false);
+
     }
 
     IEnumerator Charge()
@@ -186,6 +190,8 @@ public class RangedCharacterScript : CharacterScript
         Destroy(newShield);
         shieldEndTime = Time.time;
         Debug.Log("Done Shielding!");
+        myAnimator.SetBool("shield", false);
+
     }
 
     IEnumerator RandomTimer()
