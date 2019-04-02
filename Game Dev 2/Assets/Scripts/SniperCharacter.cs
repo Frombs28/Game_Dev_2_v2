@@ -61,6 +61,7 @@ public class SniperCharacter : CharacterScript
                 reloading = false;
                 ammo_count = max_ammo;
                 myAnimator.SetBool("relaod", false);
+                inputManager.SendMessage("SetAmmoText");
 
             }
             gameObject.SendMessage("FireSniperGun");
@@ -113,7 +114,7 @@ public class SniperCharacter : CharacterScript
         {
             slowStartTime = Time.time;
             inputManager.SendMessage("RechargeAbility");
-            cam.SendMessage("SlowCam");
+            //cam.SendMessage("SlowCam");
             StartCoroutine("Slow");
         }
     }
@@ -141,7 +142,7 @@ public class SniperCharacter : CharacterScript
         }
         Time.timeScale = 1f;
         slowEndTime = Time.time;
-        cam.SendMessage("NormCam");
+        //cam.SendMessage("NormCam");
         Debug.Log("Done slow!");
     }
 
