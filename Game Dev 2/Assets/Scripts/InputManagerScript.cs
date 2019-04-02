@@ -18,8 +18,8 @@ public class InputManagerScript : MonoBehaviour
     public float possession_rate = 0.5f;
     private bool startingPossessing = false; //flag for slomo
     public Slider healthBar;
-    public Slider movementBar;
-    public Slider abilityBar;
+    //public Slider movementBar;
+    //public Slider abilityBar;
     public Text ammo_num;
     float traversalRechargeStartTime;
     float abilityRechargeStartTime;
@@ -36,8 +36,9 @@ public class InputManagerScript : MonoBehaviour
     void Start()
     {
         
-        /*
+        
         healthBar.value = playerhealth;
+        /*
         movementBar.maxValue = player.gameObject.GetComponent<CharacterScript>().TraversalMaxTime();
         abilityBar.maxValue = player.gameObject.GetComponent<CharacterScript>().AbilityMaxTime();
         */
@@ -213,8 +214,8 @@ public class InputManagerScript : MonoBehaviour
     {
         player = myPlayer;
         player.layer = 2; //ignore raycast //should probably eventually change to custom layer
-        NewHealth(myPlayer.GetComponent<CharacterScript>().GetHealth());
-        //healthBar.maxValue = myPlayer.GetComponent<CharacterScript>().GetMaxHealth();
+        healthBar.maxValue = myPlayer.GetComponent<CharacterScript>().GetMaxHealth();
+        healthBar.value = playerhealth;
         receiveInput = true;
         playerIsAlive = true;
         myAnimator = player.GetComponentInChildren<Animator>();
@@ -223,6 +224,7 @@ public class InputManagerScript : MonoBehaviour
     public void NewHealth(int new_health)
     {
         playerhealth = new_health;
+        healthBar.value = playerhealth;
     }
 
     public void PopulateCharacterList(GameObject myCharacter)
@@ -237,7 +239,7 @@ public class InputManagerScript : MonoBehaviour
     public void TookDamage(int damage) //plz capitalize every word in your function names as per the standard many thank
     {
         playerhealth -= damage;
-        //healthBar.value = playerhealth;
+        healthBar.value = playerhealth;
         if (playerhealth <= 0)
         {
             GameOver();
