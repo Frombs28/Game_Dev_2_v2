@@ -273,4 +273,9 @@ public class InputManagerScript : MonoBehaviour
     {
         ammo_num.text = player.gameObject.GetComponent<CharacterScript>().GetCurAmmo() + " / " + player.gameObject.GetComponent<CharacterScript>().GetMaxAmmo();
     }
+
+    public int GetListSize()
+    {
+        return characters.Count;
+    }
 }

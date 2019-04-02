@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 880a86380b45aec49aeac12d5f47da7d
+=======
+guid: d55f518ba61bc0d4295322bbeef06412
+>>>>>>> levelbuilding
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}

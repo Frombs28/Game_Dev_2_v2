@@ -68,6 +68,7 @@ public class RangedCharacterScript : CharacterScript
                 reloading = false;
                 ammo_count = max_ammo;
                 myAnimator.SetBool("relaod", false);
+                inputManager.SendMessage("SetAmmoText");
 
             }
             gameObject.SendMessage("FireShortGun");
