@@ -8206,7 +8206,7 @@ MonoBehaviour:
     type: 2}
   cam: {fileID: 6223367}
   spawn: {fileID: 809389565}
-  prefabNum: 3
+  prefabNum: 1
 --- !u!1 &458642426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 59c519947dc60f043829ae45d00fabec,
