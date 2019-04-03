@@ -44,11 +44,15 @@ public class StartCamScript : MonoBehaviour {
         t = (float)(((Time.time - startTime) * lerpSpeed) / totalDist);
         transform.position = Vector3.Lerp(startPosition, dest.position, t);
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartGame();
+        }
+
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene("level1", LoadSceneMode.Single);
-        Debug.Log("Hello?");
     }
 }
