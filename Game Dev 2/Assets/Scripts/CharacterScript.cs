@@ -116,7 +116,7 @@ public class CharacterScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && !PauseScript.paused)
         {
-            myAnimator.SetBool("relaod",true);
+            myAnimator.SetBool("reload",true);
             Reload();
 
         }

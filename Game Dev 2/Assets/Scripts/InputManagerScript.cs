@@ -21,6 +21,8 @@ public class InputManagerScript : MonoBehaviour
     //public Slider movementBar;
     //public Slider abilityBar;
     public Text ammo_num;
+    public Text timer_num;
+    float ui_timer;
     float traversalRechargeStartTime;
     float abilityRechargeStartTime;
     public bool attack_mode;
@@ -51,13 +53,16 @@ public class InputManagerScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        ui_timer = Time.deltaTime;
     }
 
     private void Update()
     {
         
         timer += Time.deltaTime;
+        ui_timer += Time.deltaTime;
         possess_timer += Time.deltaTime;
+        timer_num.text = ui_timer.ToString("#.00");
         /*
         if(Time.deltaTime - traversalRechargeStartTime < movementBar.maxValue)
         {
