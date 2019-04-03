@@ -499,7 +499,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 53b04d09006758849992ccf34551dd6f, type: 3}
+  - {fileID: 2100000, guid: 3baf437322ed67e469aa3383ff6e998b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11096,7 +11096,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 53b04d09006758849992ccf34551dd6f, type: 3}
+  - {fileID: 2100000, guid: 3baf437322ed67e469aa3383ff6e998b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25800,7 +25800,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4656047853964626, guid: 01e69006a339ac74e8b64d4f6fc284c9, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.103086464
+      value: 0.09773628
       objectReference: {fileID: 0}
     - target: {fileID: 4656047853964626, guid: 01e69006a339ac74e8b64d4f6fc284c9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -26895,7 +26895,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4656047853964626, guid: 01e69006a339ac74e8b64d4f6fc284c9, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.103086464
+      value: 0.09919495
       objectReference: {fileID: 0}
     - target: {fileID: 4656047853964626, guid: 01e69006a339ac74e8b64d4f6fc284c9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
