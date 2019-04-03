@@ -87,6 +87,7 @@ public class CharacterScript : MonoBehaviour
             myAnimator.SetBool("walk", false);
             material = possessed;
             gameObject.tag = "Player";
+            inputManager = GameObject.Find("Input Manager");
         }
         else {
             navAgent.enabled = true;
