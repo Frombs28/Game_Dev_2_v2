@@ -35417,6 +35417,10 @@ Prefab:
       propertyPath: CheckpointManager
       value: 
       objectReference: {fileID: 493510620}
+    - target: {fileID: 1652926057370078, guid: b602f4c049415e5479e71cc191d23969, type: 2}
+      propertyPath: m_Name
+      value: Input Manager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b602f4c049415e5479e71cc191d23969, type: 2}
   m_IsPrefabAsset: 0
