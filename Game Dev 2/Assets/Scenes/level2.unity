@@ -954,7 +954,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &52009747
 BoxCollider:
@@ -1128,8 +1128,8 @@ GameObject:
   m_Name: pCube1 (106)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &63367724
 Transform:
@@ -1340,6 +1340,10 @@ Prefab:
     - target: {fileID: 400000, guid: 0120a80595fde9a4985b4d03972f4e14, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.4258298
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 0120a80595fde9a4985b4d03972f4e14, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0120a80595fde9a4985b4d03972f4e14, type: 3}
@@ -3540,8 +3544,8 @@ GameObject:
   m_Name: pCube1 (45)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &229726544
 Transform:
@@ -3771,8 +3775,8 @@ GameObject:
   m_Name: pCube1 (69)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &236858551
 Transform:
@@ -4672,8 +4676,8 @@ GameObject:
   m_Name: pCube1 (68)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &305257874
 Transform:
@@ -5741,7 +5745,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &341603916
 BoxCollider:
@@ -5915,8 +5919,8 @@ GameObject:
   m_Name: pCube1 (89)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &352697054
 Transform:
@@ -8698,8 +8702,8 @@ GameObject:
   m_Name: pCube1 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &485621136
 Transform:
@@ -9643,6 +9647,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.90586
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 3ef8a03b0a84f8441a8e7a00c326a0cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ef8a03b0a84f8441a8e7a00c326a0cc, type: 3}
   m_IsPrefabAsset: 0
@@ -10403,7 +10411,7 @@ Transform:
   m_LocalScale: {x: 90.48562, y: 1, z: 126.17}
   m_Children: []
   m_Father: {fileID: 1755535037}
-  m_RootOrder: 31
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &564541475
 BoxCollider:
@@ -12538,8 +12546,8 @@ GameObject:
   m_Name: pCube1 (78)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &678672464
 Transform:
@@ -13162,8 +13170,8 @@ GameObject:
   m_Name: pCube1 (58)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &696161329
 Transform:
@@ -17896,8 +17904,8 @@ GameObject:
   m_Name: pCube1 (46)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &933986003
 Transform:
@@ -19272,8 +19280,8 @@ GameObject:
   m_Name: pCube1 (57)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &996230299
 Transform:
@@ -19450,7 +19458,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1005159469
 BoxCollider:
@@ -20211,8 +20219,8 @@ GameObject:
   m_Name: pCube1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1050680176
 Transform:
@@ -21017,8 +21025,8 @@ GameObject:
   m_Name: pCube1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1102995683
 Transform:
@@ -21894,8 +21902,8 @@ GameObject:
   m_Name: pCube1 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1149557267
 Transform:
@@ -22700,8 +22708,8 @@ GameObject:
   m_Name: pCube1 (341)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1197488758
 Transform:
@@ -23020,8 +23028,8 @@ GameObject:
   m_Name: pCube1 (126)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1210610275
 Transform:
@@ -24284,8 +24292,8 @@ GameObject:
   m_Name: pCube1 (101)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1262259592
 Transform:
@@ -24373,8 +24381,8 @@ GameObject:
   m_Name: pCube1 (76)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1264532363
 Transform:
@@ -27035,8 +27043,8 @@ GameObject:
   m_Name: pCube1 (120)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1408119112
 Transform:
@@ -27836,8 +27844,8 @@ GameObject:
   m_Name: pCube1 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1461587753
 Transform:
@@ -29401,8 +29409,8 @@ GameObject:
   m_Name: pCube1 (100)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1566670672
 Transform:
@@ -31383,8 +31391,8 @@ GameObject:
   m_Name: pCube1 (44)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1657885701
 Transform:
@@ -32041,8 +32049,8 @@ GameObject:
   m_Name: pCube1 (90)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1717890547
 Transform:
@@ -33255,9 +33263,9 @@ Transform:
   - {fileID: 1900455681}
   - {fileID: 1711931335}
   - {fileID: 1173250994}
+  - {fileID: 564541474}
   - {fileID: 518487719}
   - {fileID: 1326124449}
-  - {fileID: 564541474}
   - {fileID: 72828380}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -33719,8 +33727,8 @@ GameObject:
   m_Name: pCube1 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1770569627
 Transform:
@@ -33861,8 +33869,8 @@ GameObject:
   m_Name: pCube1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1776883035
 Transform:
@@ -34459,8 +34467,8 @@ GameObject:
   m_Name: pCube1 (122)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1801358393
 Transform:
@@ -35165,7 +35173,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1849113406
 BoxCollider:
@@ -35339,8 +35347,8 @@ GameObject:
   m_Name: pCube1 (56)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1859177366
 Transform:
@@ -37709,8 +37717,8 @@ GameObject:
   m_Name: pCube1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1971148926
 Transform:
@@ -38337,7 +38345,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1998671404
 BoxCollider:
@@ -38511,8 +38519,8 @@ GameObject:
   m_Name: pCube1 (124)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1999715798
 Transform:
@@ -38958,8 +38966,8 @@ GameObject:
   m_Name: pCube1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2013688341
 Transform:
@@ -39577,8 +39585,8 @@ GameObject:
   m_Name: pCube1 (88)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2032361809
 Transform:
@@ -40269,8 +40277,8 @@ GameObject:
   m_Name: pCube1 (77)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2069950844
 Transform:
