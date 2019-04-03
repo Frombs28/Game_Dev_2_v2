@@ -72,6 +72,9 @@ public class MeleeCharacterScript : CharacterScript
             {
                 reloading = false;
                 ammo_count = max_ammo;
+                myAnimator.SetBool("relaod", false);
+                inputManager.SendMessage("SetAmmoText");
+
             }
             gameObject.SendMessage("FireRifleGun");
             timer = 0f;
@@ -109,6 +112,8 @@ public class MeleeCharacterScript : CharacterScript
     {
         if ((Time.time - dashEndTime) >= dashCoolDown && !dashing)
         {
+            myAnimator.SetBool("dash", true);
+
             base.TraversalAbility();
             dashing = true;
             startPos = transform.position;
@@ -130,6 +135,7 @@ public class MeleeCharacterScript : CharacterScript
             dashDirection = new Vector3(myHor, 0, myVert);
             Vector3.Normalize(dashDirection);
             inputManager.SendMessage("RechargeTraversal");
+
             StartCoroutine("Dash");
         }
     }
@@ -165,6 +171,8 @@ public class MeleeCharacterScript : CharacterScript
         interruptMovement = false;
         dashEndTime = Time.time;
         dashing = false;
+        myAnimator.SetBool("dash", false);
+
     }
 
     IEnumerator Phase()

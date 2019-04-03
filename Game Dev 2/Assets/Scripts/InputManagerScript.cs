@@ -18,12 +18,13 @@ public class InputManagerScript : MonoBehaviour
     public float possession_rate = 0.5f;
     private bool startingPossessing = false; //flag for slomo
     public Slider healthBar;
-    public Slider movementBar;
-    public Slider abilityBar;
+    //public Slider movementBar;
+    //public Slider abilityBar;
     public Text ammo_num;
     float traversalRechargeStartTime;
     float abilityRechargeStartTime;
     public bool attack_mode;
+    public Animator myAnimator;
 
     public GameObject reticle;
 
@@ -34,8 +35,10 @@ public class InputManagerScript : MonoBehaviour
 
     void Start()
     {
-        /*
+        
+        
         healthBar.value = playerhealth;
+        /*
         movementBar.maxValue = player.gameObject.GetComponent<CharacterScript>().TraversalMaxTime();
         abilityBar.maxValue = player.gameObject.GetComponent<CharacterScript>().AbilityMaxTime();
         */
@@ -97,6 +100,8 @@ public class InputManagerScript : MonoBehaviour
         {
             possess_timer = 0f;
             reticle.SendMessage("Possessing");
+            myAnimator.SetBool("possescharge", true);
+
 
             startingPossessing = true;
         }
@@ -121,6 +126,9 @@ public class InputManagerScript : MonoBehaviour
         //if released after enough time has passed, trigger possession
         if (possess_timer >= possession_rate && Input.GetButtonUp("Attack") && player && receiveInput && !attack_mode && !PauseScript.paused)
         {
+            myAnimator.SetBool("possescharge", false);
+            myAnimator.SetBool("possesrelease", true);
+
             //do a raycast from the main camera
             RaycastHit hit; //this will contain a path to a reference to whatever GameObject got hit
             int layerMask = 1 << 2;
@@ -148,6 +156,8 @@ public class InputManagerScript : MonoBehaviour
                     }
                 }
             }
+            myAnimator.SetBool("possescharge", false);
+
         }
 
         if (Input.GetButton("Attack") && attack_mode && !PauseScript.paused)
@@ -204,15 +214,17 @@ public class InputManagerScript : MonoBehaviour
     {
         player = myPlayer;
         player.layer = 2; //ignore raycast //should probably eventually change to custom layer
-        NewHealth(myPlayer.GetComponent<CharacterScript>().GetHealth());
-        //healthBar.maxValue = myPlayer.GetComponent<CharacterScript>().GetMaxHealth();
+        healthBar.maxValue = myPlayer.GetComponent<CharacterScript>().GetMaxHealth();
+        healthBar.value = playerhealth;
         receiveInput = true;
         playerIsAlive = true;
+        myAnimator = player.GetComponentInChildren<Animator>();
     }
 
     public void NewHealth(int new_health)
     {
         playerhealth = new_health;
+        healthBar.value = playerhealth;
     }
 
     public void PopulateCharacterList(GameObject myCharacter)
@@ -227,7 +239,7 @@ public class InputManagerScript : MonoBehaviour
     public void TookDamage(int damage) //plz capitalize every word in your function names as per the standard many thank
     {
         playerhealth -= damage;
-        //healthBar.value = playerhealth;
+        healthBar.value = playerhealth;
         if (playerhealth <= 0)
         {
             GameOver();
@@ -262,5 +274,10 @@ public class InputManagerScript : MonoBehaviour
     public void SetAmmoText()
     {
         ammo_num.text = player.gameObject.GetComponent<CharacterScript>().GetCurAmmo() + " / " + player.gameObject.GetComponent<CharacterScript>().GetMaxAmmo();
+    }
+
+    public int GetListSize()
+    {
+        return characters.Count;
     }
 }

@@ -942,7 +942,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692642361996648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4932087, y: 2.13, z: -11.347936}
+  m_LocalPosition: {x: -57.445107, y: -0.27, z: -21.058964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4878655144224432}
@@ -1619,7 +1619,7 @@ MonoBehaviour:
   ammo_count: 20
   max_ammo: 20
   reload: 2
-  fire_rate: 1.2
+  fire_rate: 0.3
   my_health: 5
   max_health: 5
 --- !u!137 &137794905664892268
@@ -1637,7 +1637,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 9223f486fe5000a47bc0acf35b17ab94, type: 2}
+  - {fileID: 2100000, guid: e9e82b7dfb4b1a641bf66bb90b9297ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
