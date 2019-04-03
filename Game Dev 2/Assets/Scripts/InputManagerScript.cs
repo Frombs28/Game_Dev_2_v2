@@ -211,7 +211,6 @@ public class InputManagerScript : MonoBehaviour
             Debug.Log(respawnPoint.z);
             instantiateManager.SendMessage("Respawn", respawnPoint);
             myCanvas.SendMessage("DeActivateRespawnUI");
-
         }
     }
 
@@ -284,5 +283,13 @@ public class InputManagerScript : MonoBehaviour
     public int GetListSize()
     {
         return characters.Count;
+    }
+
+    public void AssignEveryCharacterPlayer(GameObject myPlayer)
+    {
+        foreach (GameObject character in characters)
+        {
+            character.SendMessage("AssignPlayer", myPlayer);
+        }
     }
 }

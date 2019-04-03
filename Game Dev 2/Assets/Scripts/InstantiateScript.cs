@@ -25,7 +25,7 @@ public class InstantiateScript : MonoBehaviour
     }
 
     //makes a guy
-    private void InstantiateCharacter(Vector3 pos)
+    private GameObject InstantiateCharacter(Vector3 pos)
     {
         GameObject myPrefab;
         if (prefabNum == 0)
@@ -50,6 +50,8 @@ public class InstantiateScript : MonoBehaviour
         myPlayer = myCharacter;
         myCharacter.SendMessage("AssignPlayer", myPlayer);
         inputManager.SendMessage("PopulateCharacterList", myCharacter);
+
+        return myCharacter;
     }
 
     public void Respawn(Vector3 pos)
@@ -57,7 +59,8 @@ public class InstantiateScript : MonoBehaviour
     //plops the player back down at the last checkpoint, passed as a vector3
     //i will eventually add functionality to spawn the correct character type and with the correct health, etc.
     {
-        InstantiateCharacter(pos);
+        myCharacter = InstantiateCharacter(pos);
+        inputManager.SendMessage("AssignEveryCharacterPlayer", myCharacter);
     }
 
     void ChangeNumber(int val)
