@@ -22,7 +22,7 @@ public class Switch2ToEnd : MonoBehaviour
     {
         if (collider.gameObject.layer == 2)
         {
-            SceneManager.LoadScene("level2", LoadSceneMode.Single);
+            SceneManager.LoadScene("outro", LoadSceneMode.Single);
         }
     }
 }

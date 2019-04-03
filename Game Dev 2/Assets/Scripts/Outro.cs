@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Intro : MonoBehaviour
+public class Outro : MonoBehaviour
 {
 
 
@@ -12,25 +12,25 @@ public class Intro : MonoBehaviour
     public Image picture;
     int i;
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         i = 0;
         picture.sprite = images[0];
         i++;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-		if((i < images.Count) && (Input.GetKeyDown(KeyCode.Space)))
+        if ((i < images.Count) && (Input.GetKeyDown(KeyCode.Space)))
         {
             NextSlide();
         }
-        else if(i == images.Count)
+        else if (i == images.Count)
         {
-            SceneManager.LoadScene("level1", LoadSceneMode.Single);
+            SceneManager.LoadScene("start", LoadSceneMode.Single);
         }
-	}
+    }
 
     void NextSlide()
     {
