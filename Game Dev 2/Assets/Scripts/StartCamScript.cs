@@ -53,6 +53,6 @@ public class StartCamScript : MonoBehaviour {
 
     public void StartGame()
     {
-        SceneManager.LoadScene("level1", LoadSceneMode.Single);
+        SceneManager.LoadScene("intro", LoadSceneMode.Single);
     }
 }
