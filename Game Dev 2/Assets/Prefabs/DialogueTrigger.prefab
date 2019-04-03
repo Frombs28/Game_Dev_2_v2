@@ -72,7 +72,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff71411c27f2c3d418064db12102908d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogues: []
+  dialogues:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   image: {fileID: 0}
   dialogue_timer: 0
   dialogue_length: 5
