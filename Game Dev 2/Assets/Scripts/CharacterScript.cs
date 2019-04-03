@@ -115,7 +115,7 @@ public class CharacterScript : MonoBehaviour
         grounded = controller.isGrounded;
         timer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.R) && !PauseScript.paused)
+        if (Input.GetKeyDown(KeyCode.G) && !PauseScript.paused)
         {
             myAnimator.SetBool("reload",true);
             Reload();
@@ -479,6 +479,8 @@ public class CharacterScript : MonoBehaviour
     {
         num_jumps += 1;
     }
+
+    public virtual void ResetHealth() {}
 
     void OnCollisionEnter(Collision collider)
     {

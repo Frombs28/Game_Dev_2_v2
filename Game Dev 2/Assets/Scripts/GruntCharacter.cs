@@ -60,6 +60,11 @@ public class GruntCharacter : CharacterScript
         }
     }
 
+    public override void ResetHealth()
+    {
+        enemyhealth = max_health;
+    }
+
     public override void Reload()
     {
         //do reload animation

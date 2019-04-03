@@ -198,17 +198,10 @@ public class InputManagerScript : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && !playerIsAlive)
+        if (Input.GetKeyDown(KeyCode.R))
         //respawn
         {
-            Debug.Log("HRRRNNNNNGGGGHHHH i'm trying to respawn but i can't do it :(");
             Vector3 respawnPoint = CheckpointManager.GetComponent<CheckpointManagerScript>().GetLastCheckpoint();
-            Debug.Log("Here it is: ");
-            Debug.Log(respawnPoint.x);
-            Debug.Log(" ");
-            Debug.Log(respawnPoint.y);
-            Debug.Log(" ");
-            Debug.Log(respawnPoint.z);
             instantiateManager.SendMessage("Respawn", respawnPoint);
             myCanvas.SendMessage("DeActivateRespawnUI");
         }
@@ -291,5 +284,6 @@ public class InputManagerScript : MonoBehaviour
         {
             character.SendMessage("AssignPlayer", myPlayer);
         }
+        myPlayer.SendMessage("ResetHealth");
     }
 }
