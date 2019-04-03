@@ -8,6 +8,7 @@ ModelImporter:
     400000: //RootNode
     400002: polySurface1_basic_wall:pCube1
     2100000: basic_wall_initialShadingGroup
+    2100002: polySurface1_basic_wall_pCube1Mat
     2300000: polySurface1_basic_wall:pCube1
     3300000: polySurface1_basic_wall:pCube1
     4300000: polySurface1_basic_wall:pCube1
