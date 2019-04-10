@@ -55,7 +55,7 @@ public class Gun : MonoBehaviour
         //cur_bullet.GetComponent<Rigidbody>().velocity = cam.transform.TransformDirection(Vector3.forward * bullet_speed);
         cur_bullet.GetComponent<Rigidbody>().velocity = myDirection.normalized * rifle_bullet_speed;
         cur_bullet.layer = 9;
-        cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(rifle_damage);
+        cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(grunt_damage);
         Destroy(cur_bullet, 5);
         laser.pitch = Random.Range(1.0f, 1.5f);
         laser.Play();
