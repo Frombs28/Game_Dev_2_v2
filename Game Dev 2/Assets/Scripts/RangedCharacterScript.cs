@@ -91,6 +91,7 @@ public class RangedCharacterScript : CharacterScript
         //do reload animation
         timer = -1 * reload;
         reloading = true;
+        myAnimator.SetBool("reload", true);
     }
 
     public override float TraversalMaxTime()

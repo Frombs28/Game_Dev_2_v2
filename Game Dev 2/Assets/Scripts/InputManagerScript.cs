@@ -88,7 +88,27 @@ public class InputManagerScript : MonoBehaviour
         //if ((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0) && player && receiveInput) { player.SendMessage("MovePlayer"); }
         //if (player && receiveInput) { player.SendMessage("MovePlayer"); }
         //if (Input.GetButton("Jump") && player && receiveInput) { player.SendMessage("JumpPlayer"); }
+
+
+        //Animation bools
         if (player && receiveInput) { player.SendMessage("RotatePlayer"); }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            myAnimator.SetBool("straferight", true);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            myAnimator.SetBool("strafeleft", true);
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            myAnimator.SetBool("straferight", false);
+        }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            myAnimator.SetBool("strafeleft", false);
+        }
+
 
         //attack and traversal ability
         //if the player is pressing the appropriate keys, call a function on the CharacterScript of whatever character the player is controlling
