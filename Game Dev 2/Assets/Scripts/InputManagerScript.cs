@@ -198,7 +198,7 @@ public class InputManagerScript : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && !playerIsAlive)
         //respawn
         {
             Vector3 respawnPoint = CheckpointManager.GetComponent<CheckpointManagerScript>().GetLastCheckpoint();
