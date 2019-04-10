@@ -29,6 +29,11 @@ public class ThirdPersonCamScript : MonoBehaviour
 
     public GameObject inputManager; //set in the inspector
 
+    void Awake()
+    {
+        NormCam();
+    }
+
     public void AssignPlayer(GameObject player)
     {
         lookAtObject = player;
@@ -131,15 +136,17 @@ public class ThirdPersonCamScript : MonoBehaviour
 
     void AimCam()
     {
-        distance = 2f;
-        sensitivityX = 2f;
-        sensitivityY = 2f;
+        gameObject.GetComponent<Camera>().fieldOfView = 30;
+        distance = 5f;
+        sensitivityX = 1f;
+        sensitivityY = 1f;
     }
 
     void NormCam()
     {
-        sensitivityX = 4f;
-        sensitivityY = 4f;
+        gameObject.GetComponent<Camera>().fieldOfView = 60;
+        sensitivityX = 2f;
+        sensitivityY = 2f;
         distance = 5f;
     }
 }
