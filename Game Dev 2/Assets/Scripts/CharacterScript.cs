@@ -507,6 +507,7 @@ public class CharacterScript : MonoBehaviour
                 {
                     if (!amPlayer)
                     {
+                        Debug.Log("dealing 6 damage to this enemy");
                         TakeDamage(6);
                     }
                 }
