@@ -5723,7 +5723,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4770098015746968, guid: c649ea1598cdbe244904c4084284d54a, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c649ea1598cdbe244904c4084284d54a, type: 2}
@@ -9652,7 +9652,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &458505155
 MonoBehaviour:
@@ -12215,7 +12215,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4794087889576952, guid: 1ee252ab75e108c4299fcb246528f6a8, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1901883208464374, guid: 1ee252ab75e108c4299fcb246528f6a8, type: 2}
       propertyPath: m_Layer
@@ -17891,7 +17891,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &811746485
 Prefab:
@@ -33643,6 +33643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   receiveInput: 1
+  playerhealth: 10
   possession_rate: 0.5
   healthBar: {fileID: 1255340480}
   ammo_num: {fileID: 226417777}
@@ -33665,7 +33666,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1643591784
 GameObject:

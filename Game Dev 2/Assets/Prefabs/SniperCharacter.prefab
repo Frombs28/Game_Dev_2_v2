@@ -1560,8 +1560,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   bullet: {fileID: 1613299391097858, guid: 6af1a404eaa40864abfa34b3b4fd8097, type: 2}
   barrel: {fileID: 0}
-  rifle_bullet_speed: 0.1
-  short_bullet_speed: 0.1
+  rifle_bullet_speed: 100
+  short_bullet_speed: 100
   sniper_bullet_speed: 100
   grunt_bullet_speed: 100
   rifle_damage: 2
