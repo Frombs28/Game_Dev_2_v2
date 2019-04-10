@@ -50,6 +50,7 @@ public class InstantiateScript : MonoBehaviour
         myPlayer = myCharacter;
         myCharacter.SendMessage("AssignPlayer", myPlayer);
         inputManager.SendMessage("PopulateCharacterList", myCharacter);
+        inputManager.SendMessage("NewHealth", myPlayer.GetComponent<CharacterScript>().GetHealth());
 
         return myCharacter;
     }
