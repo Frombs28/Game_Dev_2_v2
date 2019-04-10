@@ -64,6 +64,7 @@ public class ThirdPersonCamScript : MonoBehaviour
         }
         lookAtObject = newlookAtObject.transform.GetChild(1).gameObject;
         inputManager.SendMessage("SetReceiveInputTrue");
+        inputManager.SendMessage("NewHealth", newlookAtObject.GetComponent<CharacterScript>().GetHealth());
         transitioning = false;
     }
 

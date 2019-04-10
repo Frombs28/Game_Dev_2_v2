@@ -12,7 +12,7 @@ public class InputManagerScript : MonoBehaviour
     private Camera mainCam; //the main camera in the scene, which should usually be showing the player's POV
     public bool receiveInput = true; //flag //set false by this script when i start possessing; set true by the camera (which sends a message to this) when the transition is complete
                                             //also set false when the player gets dead and then set back to true when they respawn
-    private int playerhealth=10;
+    public int playerhealth=10;
     float timer = 0f;
     float possess_timer = 0f;
     public float possession_rate = 0.5f;
@@ -221,7 +221,6 @@ public class InputManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && !playerIsAlive)
         //respawn
         {
-            Debug.Log("about to call getlastcheckpoint");
             Vector3 respawnPoint = CheckpointManager.GetComponent<CheckpointManagerScript>().GetLastCheckpoint();
             instantiateManager.SendMessage("Respawn", respawnPoint);
             myCanvas.SendMessage("DeActivateRespawnUI");
@@ -306,5 +305,6 @@ public class InputManagerScript : MonoBehaviour
             character.SendMessage("AssignPlayer", myPlayer);
         }
         myPlayer.SendMessage("ResetHealth");
+        playerhealth = 3;
     }
 }
