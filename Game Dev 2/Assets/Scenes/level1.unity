@@ -12217,6 +12217,38 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1901883208464374, guid: 1ee252ab75e108c4299fcb246528f6a8, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687115121767768, guid: 1ee252ab75e108c4299fcb246528f6a8, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1616405241136552, guid: 1ee252ab75e108c4299fcb246528f6a8, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1568174696929474, guid: 1ee252ab75e108c4299fcb246528f6a8, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345418203161906, guid: 1ee252ab75e108c4299fcb246528f6a8, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487791569976808, guid: 1ee252ab75e108c4299fcb246528f6a8, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430166854132860, guid: 1ee252ab75e108c4299fcb246528f6a8, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800809173868064, guid: 1ee252ab75e108c4299fcb246528f6a8, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee252ab75e108c4299fcb246528f6a8, type: 2}
   m_IsPrefabAsset: 0
@@ -17841,7 +17873,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 809389565}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
