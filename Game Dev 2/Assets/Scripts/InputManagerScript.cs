@@ -181,7 +181,7 @@ public class InputManagerScript : MonoBehaviour
             mainCam.SendMessage("NormCam");
         }
 
-        if (Input.GetButtonUp("Attack") || !attack_mode)
+        if (Input.GetButtonUp("Attack") || !attack_mode && player)
         {
             player.SendMessage("StopAttack");
         }
@@ -201,6 +201,7 @@ public class InputManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && !playerIsAlive)
         //respawn
         {
+            Debug.Log("about to call getlastcheckpoint");
             Vector3 respawnPoint = CheckpointManager.GetComponent<CheckpointManagerScript>().GetLastCheckpoint();
             instantiateManager.SendMessage("Respawn", respawnPoint);
             myCanvas.SendMessage("DeActivateRespawnUI");
