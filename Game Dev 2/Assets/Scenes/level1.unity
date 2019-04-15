@@ -3036,15 +3036,15 @@ Transform:
   - {fileID: 2013309823}
   - {fileID: 1536488046}
   - {fileID: 1146960564}
+  - {fileID: 1327677954}
   - {fileID: 1558298937}
   - {fileID: 673593470}
   - {fileID: 1360312295}
   - {fileID: 774349849}
   - {fileID: 1308516270}
-  - {fileID: 1327677954}
   - {fileID: 1945619212}
-  - {fileID: 1035131556}
   - {fileID: 943371260}
+  - {fileID: 1035131556}
   - {fileID: 464785667}
   - {fileID: 373630944}
   - {fileID: 553713879}
@@ -10226,7 +10226,7 @@ MonoBehaviour:
     type: 2}
   rangedPrefab: {fileID: 1699993314130230, guid: 60e1ae336deb98a4092ef834cd0e8383,
     type: 2}
-  sniperPrefab: {fileID: 1594852165712796, guid: c46076d10c0fa274f9c56a768f9c1a88,
+  sniperPrefab: {fileID: 1594852165712796, guid: 15233871498dba44fa7437968b9c8e19,
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
@@ -21868,7 +21868,7 @@ Transform:
   - {fileID: 495412842}
   - {fileID: 910600261}
   m_Father: {fileID: 142244803}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &943747468
 GameObject:
@@ -29536,7 +29536,7 @@ Transform:
   m_LocalScale: {x: 0.86498, y: 0.83755, z: 4.8179197}
   m_Children: []
   m_Father: {fileID: 142244803}
-  m_RootOrder: 10
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1327677955
 BoxCollider:
