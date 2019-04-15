@@ -154,6 +154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4481751140955538}
+  - component: {fileID: 114504049142321122}
   m_Layer: 12
   m_Name: focus
   m_TagString: Untagged
@@ -1286,6 +1287,17 @@ MonoBehaviour:
   sniper_damage: 10
   grunt_damage: 2
   short_range: 0
+--- !u!114 &114504049142321122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1286346195126426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8441d94b7ed0a6546b61192b6906abc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114732743870573718
 MonoBehaviour:
   m_ObjectHideFlags: 1

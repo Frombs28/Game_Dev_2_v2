@@ -70,6 +70,7 @@ public class ThirdPersonCamScript : MonoBehaviour
         lookAtObject = newlookAtObject.transform.GetChild(1).gameObject;
         inputManager.SendMessage("SetReceiveInputTrue");
         inputManager.SendMessage("NewHealth", newlookAtObject.GetComponent<CharacterScript>().GetHealth());
+        NormCam();
         transitioning = false;
     }
 
@@ -138,8 +139,10 @@ public class ThirdPersonCamScript : MonoBehaviour
     {
         gameObject.GetComponent<Camera>().fieldOfView = 30;
         distance = 5f;
-        sensitivityX = 1f;
-        sensitivityY = 1f;
+        sensitivityX = 0.5f;
+        sensitivityY = 0.5f;
+
+        if (lookAtObject) { lookAtObject.SendMessage("CameraZoomedIn"); }
     }
 
     void NormCam()
@@ -148,5 +151,7 @@ public class ThirdPersonCamScript : MonoBehaviour
         sensitivityX = 2f;
         sensitivityY = 2f;
         distance = 5f;
+
+        if (lookAtObject) { lookAtObject.SendMessage("CameraNotZoomedIn"); }
     }
 }
