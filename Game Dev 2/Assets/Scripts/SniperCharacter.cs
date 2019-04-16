@@ -52,7 +52,7 @@ public class SniperCharacter : CharacterScript
 
     public override void Attack()
     {
-        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
+        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun", "sniper"); }
         else if ((ammo_count > 0 || reloading) && timer >= fire_rate)
         {
             base.Attack();
@@ -162,6 +162,11 @@ public class SniperCharacter : CharacterScript
     public override bool MakeDistanceHelperTwo()
     {
         if (amPlayer) { return false; }
+        if (!player)
+        {
+            aggro = false;
+            return true;
+        }
         float myDist = Vector3.Distance(player.transform.position, transform.position);
         if ((myDist >= 20 && !perchInRange) || hittingWall || (perchInRange && (new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(perchPosition.x, 0, perchPosition.z)).magnitude <= 0.5f))
         {

@@ -38,7 +38,7 @@ public class GruntCharacter : CharacterScript
 
     public override void Attack()
     {
-        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
+        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun", "grunt"); }
         else if ((ammo_count > 0 || reloading) && timer >= fire_rate)
         {
             base.Attack();
@@ -97,6 +97,11 @@ public class GruntCharacter : CharacterScript
     public override bool MakeDistanceHelperTwo()
     {
         if (amPlayer) { return false; }
+        if (!player)
+        {
+            aggro = false;
+            return true;
+        }
         float myDist = Vector3.Distance(player.transform.position, transform.position);
         if (myDist <= 10f)
         {

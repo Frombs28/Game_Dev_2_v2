@@ -59,7 +59,7 @@ public class RangedCharacterScript : CharacterScript
 
     public override void Attack()
     {
-        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
+        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun", "ranged"); }
         else if ((ammo_count > 0 || reloading) && timer >= fire_rate)
         {
             base.Attack();
@@ -236,6 +236,11 @@ public class RangedCharacterScript : CharacterScript
     public override bool MakeDistanceHelperTwo() //need a way to have the guy stop after a certain amount of time has passed / he walked into a wall    //actually flipping a bool to true as long as ya boi is hitting a wall might be helpful
     {
         if (amPlayer) { return false; }
+        if (!player)
+        {
+            aggro = false;
+            return true;
+        }
         float myDist = Vector3.Distance(player.transform.position, transform.position);
         if (myDist >= 20 || hittingWall)
         {

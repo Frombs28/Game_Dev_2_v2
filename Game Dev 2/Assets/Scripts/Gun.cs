@@ -8,17 +8,23 @@ public class Gun : MonoBehaviour
     public Camera cam;
     public GameObject bullet;
     public GameObject barrel;
-    public float rifle_bullet_speed = 0.1f;
-    public float short_bullet_speed = 0.1f;
-    public float sniper_bullet_speed = 0.1f;
+    public float rifle_bullet_speed = 100f;
+    public float short_bullet_speed = 100f;
+    public float sniper_bullet_speed = 100f;
     public float grunt_bullet_speed = 100f;
     public int rifle_damage = 3;
     public int short_damage = 5;
     public int sniper_damage = 10;
     public int grunt_damage = 2;
     float start_time = 0f;
-    float burst_rate = 60f;
-    int burst_num = 4;
+    public float grunt_burst_rate = 60f;
+    public float melee_burst_rate = 60f;
+    public float ranged_burst_rate = 60f;
+    public float sniper_burst_rate = 60f;
+    public int grunt_burst_num = 4;
+    public int melee_burst_num = 4;
+    public int ranged_burst_num = 4;
+    public int sniper_burst_num = 4;
     int i;
     public float short_range;
     AudioSource laser;
@@ -158,22 +164,76 @@ public class Gun : MonoBehaviour
 
     }
 
-    private void FireEnemyGun()
+    private void FireEnemyGun(string characterType)
     {
-        StartCoroutine("FireBurst");
-        i = 0;
+        if (characterType == "grunt")
+        //fire a short burst
+        {
+            StartCoroutine("FireEnemyGrunt");
+        }
+        else if (characterType == "melee")
+        {
+            StartCoroutine("FireEnemyMelee");
+        }
+        else if (characterType == "ranged")
+        {
+            StartCoroutine("FireEnemyRanged");
+        }
+        else
+        {
+            StartCoroutine("FireEnemySniper");
+        }
     }
 
-    IEnumerator FireBurst()
+    IEnumerator FireEnemyGrunt()
     {
-        for(i = 0; i < burst_num; i++)
+        for(i = 0; i < grunt_burst_num; i++)
         {
             GameObject cur_bullet;
             cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
             cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * (rifle_bullet_speed * 0.5f));
+            cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(grunt_damage);
             Destroy(cur_bullet, 3);
-            yield return new WaitForSeconds(burst_rate);
+            yield return new WaitForSeconds(grunt_burst_rate);
         }
+    }
 
+    IEnumerator FireEnemyMelee()
+    {
+        for (i = 0; i < melee_burst_num; i++)
+        {
+            GameObject cur_bullet;
+            cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * (rifle_bullet_speed * 0.5f));
+            cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(rifle_damage);
+            Destroy(cur_bullet, 3);
+            yield return new WaitForSeconds(melee_burst_rate);
+        }
+    }
+
+    IEnumerator FireEnemyRanged()
+    {
+        for (i = 0; i < ranged_burst_num; i++)
+        {
+            GameObject cur_bullet;
+            cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * (short_bullet_speed * 0.5f));
+            cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(short_damage);
+            Destroy(cur_bullet, 3);
+            yield return new WaitForSeconds(ranged_burst_rate);
+        }
+    }
+
+    IEnumerator FireEnemySniper()
+    {
+        for (i = 0; i < sniper_burst_num; i++)
+        {
+            GameObject cur_bullet;
+            cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * (sniper_bullet_speed * 0.5f));
+            cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(sniper_damage);
+            Destroy(cur_bullet, 3);
+            yield return new WaitForSeconds(sniper_burst_rate);
+        }
     }
 }
