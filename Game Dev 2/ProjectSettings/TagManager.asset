@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Shield
   - Perch
+  - ReloadTimer
   layers:
   - Default
   - TransparentFX

@@ -52,23 +52,15 @@ public class SniperCharacter : CharacterScript
 
     public override void Attack()
     {
-        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
-        else if ((ammo_count > 0 || reloading) && timer >= fire_rate)
+        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun", "sniper"); }
+        else if (ammo_count > 0 && !reloading && timer >= fire_rate)
         {
             base.Attack();
-            if (reloading)
-            {
-                reloading = false;
-                ammo_count = max_ammo;
-                myAnimator.SetBool("reload", false);
-                inputManager.SendMessage("SetAmmoText");
-
-            }
             gameObject.SendMessage("FireSniperGun");
             timer = 0f;
             ammo_count--;
         }
-        else if(ammo_count == 0 && !reloading)
+        else if (ammo_count == 0 && !reloading)
         {
             Reload();
         }
@@ -85,6 +77,22 @@ public class SniperCharacter : CharacterScript
         timer = -1 * reload;
         reloading = true;
         myAnimator.SetBool("reload", true);
+        StartCoroutine("ReloadTime");
+    }
+
+    IEnumerator ReloadTime()
+    {
+        for (int i = 0; i < reload_circles.Count; i++)
+        {
+            reload_circle.sprite = reload_circles[i];
+            reload_circle.enabled = true;
+            yield return new WaitForSeconds(reload / 8);
+        }
+        reloading = false;
+        reload_circle.enabled = false;
+        ammo_count = max_ammo;
+        myAnimator.SetBool("reload", false);
+        inputManager.SendMessage("SetAmmoText");
     }
 
     public override float TraversalMaxTime()
@@ -162,6 +170,11 @@ public class SniperCharacter : CharacterScript
     public override bool MakeDistanceHelperTwo()
     {
         if (amPlayer) { return false; }
+        if (!player)
+        {
+            aggro = false;
+            return true;
+        }
         float myDist = Vector3.Distance(player.transform.position, transform.position);
         if ((myDist >= 20 && !perchInRange) || hittingWall || (perchInRange && (new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(perchPosition.x, 0, perchPosition.z)).magnitude <= 0.5f))
         {

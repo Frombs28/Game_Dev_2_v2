@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 //the base character class
 //inherited by MeleeCharacterScript, RangedCharacterScript, and SniperCharacter
@@ -33,6 +34,8 @@ public class CharacterScript : MonoBehaviour
     public bool invincible = false;
     GameObject marker;
     bool marker_bool = true;
+    public List<Sprite> reload_circles;
+    public Image reload_circle;
 
     public bool reloading;
 
@@ -70,6 +73,8 @@ public class CharacterScript : MonoBehaviour
         material = GetComponent<Material>();
         SetEnemyHealth();
         reloading = false;
+        reload_circle = GameObject.FindWithTag("ReloadTimer").GetComponent<Image>();
+        reload_circle.enabled = false;
     }
 
     public void AssignPlayer(GameObject myPlayer)
@@ -117,9 +122,7 @@ public class CharacterScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G) && !PauseScript.paused)
         {
-            myAnimator.SetBool("reload",true);
             Reload();
-
         }
 
         if (!interruptMovement && amPlayer && !PauseScript.paused)
@@ -227,6 +230,28 @@ public class CharacterScript : MonoBehaviour
         //        gameObject.SendMessage("FireEnemyGun");
         //    }
         }
+
+        if (amPlayer)
+        {
+            RaycastHit hit;
+            Debug.DrawRay(transform.position, cam.transform.position - transform.position);
+            if (Physics.Raycast(transform.position, cam.transform.position - transform.position, out hit, 5f))
+            {
+                if (hit.transform != cam.transform && hit.transform.gameObject.layer == 0)
+                {
+                    cam.SendMessage("WallCam",hit.transform);
+                    Debug.Log(hit.transform.position);
+                }
+                else
+                {
+                    cam.SendMessage("NoWallCam");
+                }
+            }
+            else
+            {
+                cam.SendMessage("NoWallCam");
+            }
+        }
         
         //some AI stuff
         //initializes the AI behavior tree if this gameobject has just been possessed out of
@@ -319,8 +344,8 @@ public class CharacterScript : MonoBehaviour
             yield return null;
         }
         */
-        //^^^idk why that's not working
-        yield return null; //comment this out if you get the stuff up there working
+            //^^^idk why that's not working
+            yield return null; //comment this out if you get the stuff up there working
         lookAtPlayer = true;
         if (!amPlayer)
         {

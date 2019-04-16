@@ -59,23 +59,15 @@ public class RangedCharacterScript : CharacterScript
 
     public override void Attack()
     {
-        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
-        else if ((ammo_count > 0 || reloading) && timer >= fire_rate)
+        if (!amPlayer) { gameObject.SendMessage("FireEnemyGun", "ranged"); }
+        else if (ammo_count > 0 && !reloading && timer >= fire_rate)
         {
             base.Attack();
-            if (reloading)
-            {
-                reloading = false;
-                ammo_count = max_ammo;
-                myAnimator.SetBool("reload", false);
-                inputManager.SendMessage("SetAmmoText");
-
-            }
             gameObject.SendMessage("FireShortGun");
             timer = 0f;
             ammo_count--;
         }
-        else if(ammo_count==0 && !reloading)
+        else if (ammo_count == 0 && !reloading)
         {
             Reload();
         }
@@ -92,6 +84,22 @@ public class RangedCharacterScript : CharacterScript
         timer = -1 * reload;
         reloading = true;
         myAnimator.SetBool("reload", true);
+        StartCoroutine("ReloadTime");
+    }
+
+    IEnumerator ReloadTime()
+    {
+        for (int i = 0; i < reload_circles.Count; i++)
+        {
+            reload_circle.sprite = reload_circles[i];
+            reload_circle.enabled = true;
+            yield return new WaitForSeconds(reload / 8);
+        }
+        reloading = false;
+        reload_circle.enabled = false;
+        ammo_count = max_ammo;
+        myAnimator.SetBool("reload", false);
+        inputManager.SendMessage("SetAmmoText");
     }
 
     public override float TraversalMaxTime()
@@ -236,6 +244,11 @@ public class RangedCharacterScript : CharacterScript
     public override bool MakeDistanceHelperTwo() //need a way to have the guy stop after a certain amount of time has passed / he walked into a wall    //actually flipping a bool to true as long as ya boi is hitting a wall might be helpful
     {
         if (amPlayer) { return false; }
+        if (!player)
+        {
+            aggro = false;
+            return true;
+        }
         float myDist = Vector3.Distance(player.transform.position, transform.position);
         if (myDist >= 20 || hittingWall)
         {

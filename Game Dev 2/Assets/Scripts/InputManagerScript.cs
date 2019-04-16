@@ -21,6 +21,7 @@ public class InputManagerScript : MonoBehaviour
     //public Slider movementBar;
     //public Slider abilityBar;
     public Text ammo_num;
+    public List<Image> images;
     public Text timer_num;
     float ui_timer;
     float traversalRechargeStartTime;
@@ -54,11 +55,34 @@ public class InputManagerScript : MonoBehaviour
         Cursor.visible = false;
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         ui_timer = Time.deltaTime;
+
+        for(int i = 0; i < images.Count; i++)
+        {
+            if(i <= 1)
+            {
+                images[i].enabled = false;
+            }
+            else
+            {
+                images[i].enabled = true;
+            }
+        }
+        ammo_num.enabled = true;
     }
 
     private void Update()
     {
-        
+        //Quit the game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            SceneManager.LoadScene("start", LoadSceneMode.Single);
+        }
+
         timer += Time.deltaTime;
         ui_timer += Time.deltaTime;
         possess_timer += Time.deltaTime;
@@ -181,7 +205,8 @@ public class InputManagerScript : MonoBehaviour
                     }
                 }
             }
-            myAnimator.SetBool("possescharge", false);
+            //myAnimator.SetBool("possescharge", false);
+            myAnimator.SetBool("possesrelease", false);
 
         }
 
@@ -211,10 +236,34 @@ public class InputManagerScript : MonoBehaviour
             if (attack_mode)
             {
                 attack_mode = false;
+                for (int i = 0; i < images.Count; i++)
+                {
+                    if (i <= 1)
+                    {
+                        images[i].enabled = true;
+                    }
+                    else
+                    {
+                        images[i].enabled = false;
+                    }
+                }
+                ammo_num.enabled = false;
             }
             else
             {
                 attack_mode = true;
+                for (int i = 0; i < images.Count; i++)
+                {
+                    if (i <= 1)
+                    {
+                        images[i].enabled = false;
+                    }
+                    else
+                    {
+                        images[i].enabled = true;
+                    }
+                }
+                ammo_num.enabled = true;
             }
         }
 
@@ -290,7 +339,7 @@ public class InputManagerScript : MonoBehaviour
 
     public void SetAmmoText()
     {
-        ammo_num.text = player.gameObject.GetComponent<CharacterScript>().GetCurAmmo() + " / " + player.gameObject.GetComponent<CharacterScript>().GetMaxAmmo();
+        ammo_num.text = player.gameObject.GetComponent<CharacterScript>().GetCurAmmo().ToString("00") + " / " + player.gameObject.GetComponent<CharacterScript>().GetMaxAmmo().ToString("00");
     }
 
     public int GetListSize()
