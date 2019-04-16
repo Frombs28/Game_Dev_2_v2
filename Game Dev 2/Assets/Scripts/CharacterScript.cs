@@ -227,6 +227,28 @@ public class CharacterScript : MonoBehaviour
         //        gameObject.SendMessage("FireEnemyGun");
         //    }
         }
+
+        if (amPlayer)
+        {
+            RaycastHit hit;
+            Debug.DrawRay(transform.position, cam.transform.position - transform.position);
+            if (Physics.Raycast(transform.position, cam.transform.position - transform.position, out hit, 5f))
+            {
+                if (hit.transform != cam.transform && hit.transform.gameObject.layer == 0)
+                {
+                    cam.SendMessage("WallCam",hit.transform);
+                    Debug.Log(hit.transform.position);
+                }
+                else
+                {
+                    cam.SendMessage("NoWallCam");
+                }
+            }
+            else
+            {
+                cam.SendMessage("NoWallCam");
+            }
+        }
         
         //some AI stuff
         //initializes the AI behavior tree if this gameobject has just been possessed out of
@@ -319,8 +341,8 @@ public class CharacterScript : MonoBehaviour
             yield return null;
         }
         */
-        //^^^idk why that's not working
-        yield return null; //comment this out if you get the stuff up there working
+            //^^^idk why that's not working
+            yield return null; //comment this out if you get the stuff up there working
         lookAtPlayer = true;
         if (!amPlayer)
         {
