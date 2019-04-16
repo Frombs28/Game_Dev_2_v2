@@ -17,7 +17,7 @@ public class ReticleScript : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(0))
         {
             anim.SetBool("Possess", false);
         }
