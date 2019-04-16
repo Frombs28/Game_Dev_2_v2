@@ -25,7 +25,7 @@ public class MeleeCharacterScript : CharacterScript
     public float ammo_count = 25f;
     public float max_ammo = 25f;
     public float reload = 2f;
-    public float fire_rate = 1f;
+    public float fire_rate = 0.2f;
     public int my_health = 9;
     public int max_health = 9;
 

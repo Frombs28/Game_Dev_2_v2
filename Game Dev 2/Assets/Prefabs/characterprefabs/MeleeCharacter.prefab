@@ -1583,14 +1583,26 @@ MonoBehaviour:
   cam: {fileID: 0}
   bullet: {fileID: 1613299391097858, guid: 6af1a404eaa40864abfa34b3b4fd8097, type: 2}
   barrel: {fileID: 0}
-  rifle_bullet_speed: 100
-  short_bullet_speed: 100
-  sniper_bullet_speed: 100
-  grunt_bullet_speed: 100
+  rifle_bullet_speed: 400
+  short_bullet_speed: 300
+  sniper_bullet_speed: 600
+  grunt_bullet_speed: 300
   rifle_damage: 3
   short_damage: 5
   sniper_damage: 10
   grunt_damage: 2
+  grunt_burst_rate: 40
+  melee_burst_rate: 10
+  ranged_burst_rate: 60
+  sniper_burst_rate: 120
+  grunt_burst_num: 5
+  melee_burst_num: 10
+  ranged_burst_num: 3
+  sniper_burst_num: 2
+  gruntInaccuracy: 10
+  meleeInaccuracy: 20
+  rangedInacuracy: 10
+  sniperInaccuracy: 3
   short_range: 0
 --- !u!114 &114504049142321122
 MonoBehaviour:
