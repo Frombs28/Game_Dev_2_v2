@@ -53,22 +53,14 @@ public class SniperCharacter : CharacterScript
     public override void Attack()
     {
         if (!amPlayer) { gameObject.SendMessage("FireEnemyGun", "sniper"); }
-        else if ((ammo_count > 0 || reloading) && timer >= fire_rate)
+        else if (ammo_count > 0 && !reloading && timer >= fire_rate)
         {
             base.Attack();
-            if (reloading)
-            {
-                reloading = false;
-                ammo_count = max_ammo;
-                myAnimator.SetBool("reload", false);
-                inputManager.SendMessage("SetAmmoText");
-
-            }
             gameObject.SendMessage("FireSniperGun");
             timer = 0f;
             ammo_count--;
         }
-        else if(ammo_count == 0 && !reloading)
+        else if (ammo_count == 0 && !reloading)
         {
             Reload();
         }
@@ -85,6 +77,22 @@ public class SniperCharacter : CharacterScript
         timer = -1 * reload;
         reloading = true;
         myAnimator.SetBool("reload", true);
+        StartCoroutine("ReloadTime");
+    }
+
+    IEnumerator ReloadTime()
+    {
+        for (int i = 0; i < reload_circles.Count; i++)
+        {
+            reload_circle.sprite = reload_circles[i];
+            reload_circle.enabled = true;
+            yield return new WaitForSeconds(reload / 8);
+        }
+        reloading = false;
+        reload_circle.enabled = false;
+        ammo_count = max_ammo;
+        myAnimator.SetBool("reload", false);
+        inputManager.SendMessage("SetAmmoText");
     }
 
     public override float TraversalMaxTime()

@@ -1595,6 +1595,16 @@ MonoBehaviour:
   cur_bullet: 0
   enemySpeed: 20
   invincible: 0
+  reload_circles:
+  - {fileID: 21300000, guid: edc16dbccd9fcff438f1cdbff3fc2ea7, type: 3}
+  - {fileID: 21300002, guid: edc16dbccd9fcff438f1cdbff3fc2ea7, type: 3}
+  - {fileID: 21300004, guid: edc16dbccd9fcff438f1cdbff3fc2ea7, type: 3}
+  - {fileID: 21300006, guid: edc16dbccd9fcff438f1cdbff3fc2ea7, type: 3}
+  - {fileID: 21300008, guid: edc16dbccd9fcff438f1cdbff3fc2ea7, type: 3}
+  - {fileID: 21300010, guid: edc16dbccd9fcff438f1cdbff3fc2ea7, type: 3}
+  - {fileID: 21300012, guid: edc16dbccd9fcff438f1cdbff3fc2ea7, type: 3}
+  - {fileID: 21300014, guid: edc16dbccd9fcff438f1cdbff3fc2ea7, type: 3}
+  reload_circle: {fileID: 0}
   reloading: 0
   notPossessed: {fileID: 0}
   possessed: {fileID: 0}
