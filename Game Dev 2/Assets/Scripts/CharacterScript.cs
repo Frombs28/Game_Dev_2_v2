@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 //the base character class
 //inherited by MeleeCharacterScript, RangedCharacterScript, and SniperCharacter
@@ -33,6 +34,8 @@ public class CharacterScript : MonoBehaviour
     public bool invincible = false;
     GameObject marker;
     bool marker_bool = true;
+    public List<Sprite> reload_circles;
+    public Image reload_circle;
 
     public bool reloading;
 
@@ -70,6 +73,8 @@ public class CharacterScript : MonoBehaviour
         material = GetComponent<Material>();
         SetEnemyHealth();
         reloading = false;
+        reload_circle = GameObject.FindWithTag("ReloadTimer").GetComponent<Image>();
+        reload_circle.enabled = false;
     }
 
     public void AssignPlayer(GameObject myPlayer)
@@ -117,9 +122,7 @@ public class CharacterScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G) && !PauseScript.paused)
         {
-            myAnimator.SetBool("reload",true);
             Reload();
-
         }
 
         if (!interruptMovement && amPlayer && !PauseScript.paused)

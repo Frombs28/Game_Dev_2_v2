@@ -6055,12 +6055,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4704868952744504, guid: 6228e977801798349bb73c5a1beee96c,
     type: 2}
   m_PrefabInternal: {fileID: 266400007}
---- !u!114 &267830318 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114791555403421754, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1255340477}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &279897123
 GameObject:
   m_ObjectHideFlags: 0
@@ -27914,6 +27908,26 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ed8fe63cf1564e24185f7e151e1ca424, type: 2}
+    - target: {fileID: 114351765847798094, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114351765847798094, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114351765847798094, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114351765847798094, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a, type: 2}
   m_IsPrefabAsset: 0
@@ -35931,7 +35945,6 @@ MonoBehaviour:
   - {fileID: 1333138029}
   - {fileID: 97043217}
   - {fileID: 1061055095}
-  - {fileID: 267830318}
   timer_num: {fileID: 1654850684}
   attack_mode: 0
   myAnimator: {fileID: 0}

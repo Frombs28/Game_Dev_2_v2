@@ -205,7 +205,8 @@ public class InputManagerScript : MonoBehaviour
                     }
                 }
             }
-            myAnimator.SetBool("possescharge", false);
+            //myAnimator.SetBool("possescharge", false);
+            myAnimator.SetBool("possesrelease", false);
 
         }
 
@@ -338,7 +339,7 @@ public class InputManagerScript : MonoBehaviour
 
     public void SetAmmoText()
     {
-        ammo_num.text = player.gameObject.GetComponent<CharacterScript>().GetCurAmmo() + " / " + player.gameObject.GetComponent<CharacterScript>().GetMaxAmmo();
+        ammo_num.text = player.gameObject.GetComponent<CharacterScript>().GetCurAmmo().ToString("00") + " / " + player.gameObject.GetComponent<CharacterScript>().GetMaxAmmo().ToString("00");
     }
 
     public int GetListSize()

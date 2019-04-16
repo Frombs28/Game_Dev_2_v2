@@ -65,17 +65,9 @@ public class MeleeCharacterScript : CharacterScript
     public override void Attack()
     {
         if(!amPlayer) { gameObject.SendMessage("FireEnemyGun"); }
-        else if ((ammo_count > 0 || reloading) && timer >= fire_rate)
+        else if (ammo_count > 0 && !reloading && timer >= fire_rate)
         {
             base.Attack();
-            if (reloading)
-            {
-                reloading = false;
-                ammo_count = max_ammo;
-                myAnimator.SetBool("reload", false);
-                inputManager.SendMessage("SetAmmoText");
-
-            }
             gameObject.SendMessage("FireRifleGun");
             timer = 0f;
             ammo_count--;
@@ -94,9 +86,26 @@ public class MeleeCharacterScript : CharacterScript
     public override void Reload()
     {
         //do reload animation
-        timer = -1 * reload;
+        //timer = -1 * reload;
+        timer = 0;
         reloading = true;
         myAnimator.SetBool("reload", true);
+        StartCoroutine("ReloadTime");
+    }
+
+    IEnumerator ReloadTime()
+    {
+        for (int i = 0; i < reload_circles.Count; i++)
+        {
+            reload_circle.sprite = reload_circles[i];
+            reload_circle.enabled = true;
+            yield return new WaitForSeconds(reload / 8);
+        }
+        reloading = false;
+        reload_circle.enabled = false;
+        ammo_count = max_ammo;
+        myAnimator.SetBool("reload", false);
+        inputManager.SendMessage("SetAmmoText");
     }
 
     public override float TraversalMaxTime()
