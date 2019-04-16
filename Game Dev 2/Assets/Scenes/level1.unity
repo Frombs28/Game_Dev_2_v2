@@ -10238,7 +10238,7 @@ MonoBehaviour:
     type: 2}
   cam: {fileID: 6223367}
   spawn: {fileID: 809389565}
-  prefabNum: 0
+  prefabNum: 3
 --- !u!1001 &459526235
 Prefab:
   m_ObjectHideFlags: 0
@@ -27908,6 +27908,11 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ed8fe63cf1564e24185f7e151e1ca424, type: 2}
+    - target: {fileID: 114948249885454118, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a, type: 2}
   m_IsPrefabAsset: 0
@@ -35917,6 +35922,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiveInput: 1
   playerhealth: 10
+  minusDuration: 3
   possession_rate: 0.5
   healthBar: {fileID: 1255340480}
   ammo_num: {fileID: 226417777}
@@ -35933,6 +35939,11 @@ MonoBehaviour:
   myCanvas: {fileID: 1255340481}
   playerIsAlive: 0
   instantiateManager: {fileID: 458505153}
+  minus: {fileID: 1801635811}
+  minuses:
+  - {fileID: 21300000, guid: ac3cf20518278044dbf0d45ffd2c6cd3, type: 3}
+  - {fileID: 21300000, guid: 0a533ad49d5530a468d96196480eeca9, type: 3}
+  - {fileID: 21300000, guid: bc4f98cde14017d46bc8f24f36e28f99, type: 3}
 --- !u!4 &1642832492
 Transform:
   m_ObjectHideFlags: 0
@@ -39727,6 +39738,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1801635811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114948249885454118, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1255340477}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1805557069
 GameObject:
   m_ObjectHideFlags: 0

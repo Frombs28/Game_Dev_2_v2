@@ -43,6 +43,8 @@ public class CharacterScript : MonoBehaviour
     public Material possessed;
     Material material;
 
+    bool dead = false;
+
     GameObject figure;
 
     public Camera cam; //player character rotation is based on camera rotation //this is the MAIN CAMERA,  *not*  your personal VIRTUAL CAMERA
@@ -478,8 +480,9 @@ public class CharacterScript : MonoBehaviour
     public virtual void TakeDamage(int damage)
     {
         enemyhealth -= damage;
-        if (enemyhealth <= 0 && !amPlayer)
+        if (enemyhealth <= 0 && !amPlayer && !dead)
         {
+            dead = true;
             Die();
         }
         else if(enemyhealth <=0 && amPlayer)

@@ -107,6 +107,12 @@ public class RangedCharacterScript : CharacterScript
         return dashCoolDown;
     }
 
+    public override void Die()
+    {
+        inputManager.SendMessage("ChangeTime", 15);
+        base.Die();
+    }
+
     public override float AbilityMaxTime()
     {
         return shieldCoolDown;

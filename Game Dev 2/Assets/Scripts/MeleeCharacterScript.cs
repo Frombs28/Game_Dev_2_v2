@@ -113,6 +113,12 @@ public class MeleeCharacterScript : CharacterScript
         return dashCoolDown;
     }
 
+    public override void Die()
+    {
+        inputManager.SendMessage("ChangeTime", 10);
+        base.Die();
+    }
+
     public override float AbilityMaxTime()
     {
         return phaseCoolDown;

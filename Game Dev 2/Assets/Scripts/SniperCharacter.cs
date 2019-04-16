@@ -100,6 +100,12 @@ public class SniperCharacter : CharacterScript
         return jumpCoolDown;
     }
 
+    public override void Die()
+    {
+        inputManager.SendMessage("ChangeTime", 5);
+        base.Die();
+    }
+
     public override float AbilityMaxTime()
     {
         return slowCoolDown;

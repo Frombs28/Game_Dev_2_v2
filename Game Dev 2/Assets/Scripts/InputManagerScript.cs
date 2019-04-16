@@ -15,6 +15,8 @@ public class InputManagerScript : MonoBehaviour
     public int playerhealth=10;
     float timer = 0f;
     float possess_timer = 0f;
+    public float minusDuration = 3f;
+    float minus_timer;
     public float possession_rate = 0.5f;
     private bool startingPossessing = false; //flag for slomo
     public Slider healthBar;
@@ -36,6 +38,9 @@ public class InputManagerScript : MonoBehaviour
     public bool playerIsAlive;
     public GameObject instantiateManager;
 
+    public Image minus;
+    public List<Sprite> minuses;
+
     void Start()
     {
         
@@ -55,6 +60,7 @@ public class InputManagerScript : MonoBehaviour
         Cursor.visible = false;
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         ui_timer = Time.deltaTime;
+        minus.enabled = false;
 
         for(int i = 0; i < images.Count; i++)
         {
@@ -85,6 +91,10 @@ public class InputManagerScript : MonoBehaviour
 
         timer += Time.deltaTime;
         ui_timer += Time.deltaTime;
+        if(ui_timer < 0)
+        {
+            ui_timer = 0f;
+        }
         possess_timer += Time.deltaTime;
         timer_num.text = ui_timer.ToString("#.00");
         /*
@@ -355,5 +365,38 @@ public class InputManagerScript : MonoBehaviour
         }
         myPlayer.SendMessage("ResetHealth");
         playerhealth = 3;
+    }
+
+    void ChangeTime(int time)
+    {
+        ui_timer = ui_timer - time;
+        minus_timer = Time.deltaTime;
+        if(time == 5)
+        {
+            minus.sprite = minuses[0];
+        }
+        else if (time == 10)
+        {
+            minus.sprite = minuses[1];
+        }
+        else
+        {
+            minus.sprite = minuses[2];
+        }
+        Color temp_color = minus.color;
+        temp_color.a = 255f;
+        minus.color = temp_color;
+        StartCoroutine("MinusFade");
+    }
+
+    IEnumerator MinusFade()
+    {
+        while (Time.deltaTime - minus_timer <= minusDuration)
+        {
+            Color temp_color = minus.color;
+            temp_color.a -= 1;
+            minus.color = temp_color;
+            yield return null;
+        }
     }
 }
