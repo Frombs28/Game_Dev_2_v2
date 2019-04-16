@@ -40,6 +40,8 @@ public class InputManagerScript : MonoBehaviour
 
     public Image minus;
     public List<Sprite> minuses;
+    bool minus_bool = false;
+    public Image hurt;
 
     void Start()
     {
@@ -87,6 +89,11 @@ public class InputManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             SceneManager.LoadScene("start", LoadSceneMode.Single);
+        }
+
+        if (minus_bool)
+        {
+            minus.CrossFadeAlpha(0, minusDuration, false);
         }
 
         timer += Time.deltaTime;
@@ -274,6 +281,8 @@ public class InputManagerScript : MonoBehaviour
                     }
                 }
                 ammo_num.enabled = true;
+                myAnimator.SetBool("possescharge", false);
+                myAnimator.SetBool("possesrelease", false);
             }
         }
 
@@ -386,17 +395,22 @@ public class InputManagerScript : MonoBehaviour
         Color temp_color = minus.color;
         temp_color.a = 255f;
         minus.color = temp_color;
+        minus.enabled = true;
+        //Debug.Log("Minus");
         StartCoroutine("MinusFade");
+        minus_bool = true;
     }
 
     IEnumerator MinusFade()
     {
         while (Time.deltaTime - minus_timer <= minusDuration)
         {
-            Color temp_color = minus.color;
-            temp_color.a -= 1;
-            minus.color = temp_color;
+            //Color temp_color = minus.color;
+            //temp_color.a -= 2;
+            //minus.color = temp_color;
             yield return null;
         }
+        minus_bool = false;
+        //minus.enabled = false;
     }
 }

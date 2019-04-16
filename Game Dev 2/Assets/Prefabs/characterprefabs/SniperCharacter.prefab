@@ -1625,7 +1625,7 @@ MonoBehaviour:
   slowSpeed: 4
   ammo_count: 1
   max_ammo: 1
-  reload: 4
+  reload: 2
   fire_rate: 0.1
   my_health: 12
   max_health: 12
