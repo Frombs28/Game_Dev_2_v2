@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: wallmat2
+  m_Name: bridgemat
   m_Shader: {fileID: 4800000, guid: c2d7e794131b6ac46bee98a478d0bd3c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,11 +19,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: ef6f6711e36059d429b5eb76f5fec9ff, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5d3791b50e2a05d4d86143c58c9b673e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CombMap:
-        m_Texture: {fileID: 2800000, guid: 3cf358cf46723724eae050b89bd403eb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5c8edebcd7a844144bf143c08afb14d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -43,11 +43,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MKGlowTex:
-        m_Texture: {fileID: 2800000, guid: 1c70b371da925d348bcb65304048abf3, type: 3}
+        m_Texture: {fileID: 2800000, guid: ba5966ac20ff818418cf182f6de3cdd8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3cf358cf46723724eae050b89bd403eb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5c8edebcd7a844144bf143c08afb14d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SSSTex:
-        m_Texture: {fileID: 2800000, guid: 3cf358cf46723724eae050b89bd403eb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5c8edebcd7a844144bf143c08afb14d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -75,12 +75,12 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _LitOffset: 0.25
-    - _MKGlowPower: 4.15
-    - _MKGlowTexStrength: 6.46
+    - _MKGlowPower: 3.89
+    - _MKGlowTexStrength: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineThickness: 1
+    - _OutlineThickness: 0.3
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecPower: 20
@@ -92,7 +92,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MKGlowColor: {r: 1, g: 1, b: 0.47450984, a: 1}
+    - _MKGlowColor: {r: 1, g: 0.98823535, b: 0, a: 1}
     - _MKGlowTexColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 1, g: 1, b: 0, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SSSColor: {r: 1, g: 1, b: 1, a: 1}
