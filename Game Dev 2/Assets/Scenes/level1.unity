@@ -8546,7 +8546,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 49b1df33525a56a49974c4890f4cefb6, type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 49b1df33525a56a49974c4890f4cefb6, type: 3}
       propertyPath: m_LocalScale.x
@@ -10232,7 +10232,7 @@ MonoBehaviour:
     type: 2}
   cam: {fileID: 6223367}
   spawn: {fileID: 809389565}
-  prefabNum: 2
+  prefabNum: 0
 --- !u!1001 &459526235
 Prefab:
   m_ObjectHideFlags: 0
@@ -10316,7 +10316,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0731653c69b5b5e41924dc0d20510b80, type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0731653c69b5b5e41924dc0d20510b80, type: 3}
       propertyPath: m_LocalScale.x
@@ -13067,7 +13067,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3ef8a03b0a84f8441a8e7a00c326a0cc, type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3ef8a03b0a84f8441a8e7a00c326a0cc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23180,7 +23180,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118345950177944, guid: 3f324e57c223b92488cee217e058362a, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f324e57c223b92488cee217e058362a, type: 2}
@@ -28368,7 +28368,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3b0c119f66d2ed947a245a74db4203e9, type: 3}
       propertyPath: m_RootOrder
-      value: 31
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3b0c119f66d2ed947a245a74db4203e9, type: 3}
       propertyPath: m_LocalScale.x
@@ -38481,7 +38481,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1375b8eb7d1ca614d90af46b83994cd6, type: 3}
       propertyPath: m_RootOrder
-      value: 64
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 1375b8eb7d1ca614d90af46b83994cd6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38746,7 +38746,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4656047853964626, guid: 01e69006a339ac74e8b64d4f6fc284c9, type: 2}
       propertyPath: m_RootOrder
-      value: 61
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4656047853964626, guid: 01e69006a339ac74e8b64d4f6fc284c9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
