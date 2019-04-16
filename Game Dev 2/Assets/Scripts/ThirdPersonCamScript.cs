@@ -26,12 +26,14 @@ public class ThirdPersonCamScript : MonoBehaviour
     public float lerpSpeed = 5f;
     public float lerpCurve = 5f; //bigger value, bigger ease in / ease out
     private float t;
+    bool free;
 
     public GameObject inputManager; //set in the inspector
 
     void Awake()
     {
         NormCam();
+        free = true;
     }
 
     public void AssignPlayer(GameObject player)
@@ -88,9 +90,13 @@ public class ThirdPersonCamScript : MonoBehaviour
     {
         if (!transitioning && !PauseScript.paused && lookAtObject)
         {
-            Vector3 direction = new Vector3(0, 0, -distance);
-            Quaternion rotation = Quaternion.Euler(-currentY, currentX, 0);
-            transform.position = lookAtObject.transform.position + (rotation * direction);
+            if (free)
+            { 
+                Vector3 direction = new Vector3(0, 0, -distance);
+                Quaternion rotation = Quaternion.Euler(-currentY, currentX, 0);
+                transform.position = lookAtObject.transform.position + (rotation * direction);
+            }
+            
             /*
             temp = new Vector3(offset, 0f, 0f);
             transform.position += temp;
@@ -153,5 +159,18 @@ public class ThirdPersonCamScript : MonoBehaviour
         distance = 5f;
 
         if (lookAtObject) { lookAtObject.SendMessage("CameraNotZoomedIn"); }
+    }
+
+    void WallCam(Transform otherTransform)
+    {
+        Vector3 direction = new Vector3(0, 0, -distance);
+        Quaternion rotation = Quaternion.Euler(-currentY, currentX, 0);
+        transform.position = otherTransform.position + (rotation * direction);
+        free = false;
+    }
+
+    void NoWallCam()
+    {
+        free = true;
     }
 }
