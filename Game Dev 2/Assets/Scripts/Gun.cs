@@ -29,6 +29,10 @@ public class Gun : MonoBehaviour
     public float meleeInaccuracy = 20f;
     public float rangedInacuracy = 10f;
     public float sniperInaccuracy = 3f;
+    public float gruntRecoil = 4f;
+    public float meleeRecoil = 2f;
+    public float rangedRecoil = 6f;
+    public float sniperRecoil = 8f;
     int i;
     public float short_range;
     AudioSource laser;
@@ -69,7 +73,7 @@ public class Gun : MonoBehaviour
         Destroy(cur_bullet, 5);
         laser.pitch = Random.Range(1.0f, 1.5f);
         laser.Play();
-
+        cam.SendMessage("Recoil", gruntRecoil);
     }
 
     private void FireRifleGun()
@@ -94,7 +98,7 @@ public class Gun : MonoBehaviour
         Destroy(cur_bullet, 5);
         laser.pitch = Random.Range(1.0f, 1.5f);
         laser.Play();
-
+        cam.SendMessage("Recoil", meleeRecoil);
     }
 
     private void FireShortGun()
@@ -141,7 +145,7 @@ public class Gun : MonoBehaviour
             cur_bullet2.gameObject.GetComponent<Bullet>().SetDamage(short_damage);
             Destroy(cur_bullet2, 0.25f);
         }
-        
+        cam.SendMessage("Recoil", rangedRecoil);
     }
     
     private void FireSniperGun()
@@ -165,7 +169,7 @@ public class Gun : MonoBehaviour
         Destroy(cur_bullet, 7);
         laser.pitch = Random.Range(1.0f, 1.5f);
         laser.Play();
-
+        cam.SendMessage("Recoil", sniperRecoil);
     }
 
     private void FireEnemyGun(string characterType)

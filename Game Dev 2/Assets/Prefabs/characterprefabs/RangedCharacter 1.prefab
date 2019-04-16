@@ -1496,6 +1496,10 @@ MonoBehaviour:
   meleeInaccuracy: 20
   rangedInacuracy: 10
   sniperInaccuracy: 3
+  gruntRecoil: 4
+  meleeRecoil: 2
+  rangedRecoil: 6
+  sniperRecoil: 8
   short_range: 3000
 --- !u!137 &137556444205087560
 SkinnedMeshRenderer:

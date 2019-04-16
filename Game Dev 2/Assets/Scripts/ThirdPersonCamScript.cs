@@ -173,4 +173,10 @@ public class ThirdPersonCamScript : MonoBehaviour
     {
         free = true;
     }
+
+    void Recoil(float amount)
+    {
+        //transform.Rotate(amount, 0f, 0f);
+        currentY += amount;
+    }
 }
