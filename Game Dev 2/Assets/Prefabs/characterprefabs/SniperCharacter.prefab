@@ -1664,10 +1664,10 @@ MonoBehaviour:
   meleeInaccuracy: 20
   rangedInacuracy: 10
   sniperInaccuracy: 3
-  gruntRecoil: 4
-  meleeRecoil: 2
-  rangedRecoil: 6
-  sniperRecoil: 8
+  gruntRecoil: 2
+  meleeRecoil: 1
+  rangedRecoil: 3
+  sniperRecoil: 4
   short_range: 0
 --- !u!114 &114992630327624544
 MonoBehaviour:
