@@ -1646,12 +1646,28 @@ MonoBehaviour:
   barrel: {fileID: 0}
   rifle_bullet_speed: 100
   short_bullet_speed: 100
-  sniper_bullet_speed: 100
+  sniper_bullet_speed: 600
   grunt_bullet_speed: 100
   rifle_damage: 2
   short_damage: 5
   sniper_damage: 10
   grunt_damage: 2
+  grunt_burst_rate: 60
+  melee_burst_rate: 60
+  ranged_burst_rate: 60
+  sniper_burst_rate: 120
+  grunt_burst_num: 4
+  melee_burst_num: 4
+  ranged_burst_num: 4
+  sniper_burst_num: 2
+  gruntInaccuracy: 10
+  meleeInaccuracy: 20
+  rangedInacuracy: 10
+  sniperInaccuracy: 3
+  gruntRecoil: 4
+  meleeRecoil: 2
+  rangedRecoil: 6
+  sniperRecoil: 8
   short_range: 0
 --- !u!114 &114992630327624544
 MonoBehaviour:

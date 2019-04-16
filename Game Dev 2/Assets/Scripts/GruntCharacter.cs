@@ -11,7 +11,7 @@ public class GruntCharacter : CharacterScript
     public float ammo_count = 20f;
     public float max_ammo = 20f;
     public float reload = 2f;
-    public float fire_rate = 1.2f;
+    public float fire_rate = 0.4f;
     public int my_health = 5;
     public int max_health = 5;
 

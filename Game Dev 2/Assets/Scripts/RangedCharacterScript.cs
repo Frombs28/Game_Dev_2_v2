@@ -25,7 +25,7 @@ public class RangedCharacterScript : CharacterScript
     public float ammo_count = 5f;
     public float max_ammo = 5f;
     public float reload = 3f;
-    public float fire_rate = 2f;
+    public float fire_rate = 1f;
     public int my_health = 40;
     public int max_health = 40;
 

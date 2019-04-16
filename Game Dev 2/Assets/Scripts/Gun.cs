@@ -8,23 +8,31 @@ public class Gun : MonoBehaviour
     public Camera cam;
     public GameObject bullet;
     public GameObject barrel;
-    public float rifle_bullet_speed = 100f;
+    public float rifle_bullet_speed = 150f;
     public float short_bullet_speed = 100f;
-    public float sniper_bullet_speed = 100f;
+    public float sniper_bullet_speed = 200f;
     public float grunt_bullet_speed = 100f;
-    public int rifle_damage = 3;
-    public int short_damage = 5;
-    public int sniper_damage = 10;
+    public int rifle_damage = 2;
+    public int short_damage = 4;
+    public int sniper_damage = 8;
     public int grunt_damage = 2;
     float start_time = 0f;
-    public float grunt_burst_rate = 60f;
-    public float melee_burst_rate = 60f;
+    public float grunt_burst_rate = 40f;
+    public float melee_burst_rate = 10f;
     public float ranged_burst_rate = 60f;
-    public float sniper_burst_rate = 60f;
-    public int grunt_burst_num = 4;
-    public int melee_burst_num = 4;
-    public int ranged_burst_num = 4;
-    public int sniper_burst_num = 4;
+    public float sniper_burst_rate = 120f;
+    public int grunt_burst_num = 5;
+    public int melee_burst_num = 10;
+    public int ranged_burst_num = 3;
+    public int sniper_burst_num = 2;
+    public float gruntInaccuracy = 10f;
+    public float meleeInaccuracy = 20f;
+    public float rangedInacuracy = 10f;
+    public float sniperInaccuracy = 3f;
+    public float gruntRecoil = 4f;
+    public float meleeRecoil = 2f;
+    public float rangedRecoil = 6f;
+    public float sniperRecoil = 8f;
     int i;
     public float short_range;
     AudioSource laser;
@@ -65,7 +73,7 @@ public class Gun : MonoBehaviour
         Destroy(cur_bullet, 5);
         laser.pitch = Random.Range(1.0f, 1.5f);
         laser.Play();
-
+        cam.SendMessage("Recoil", gruntRecoil);
     }
 
     private void FireRifleGun()
@@ -90,7 +98,7 @@ public class Gun : MonoBehaviour
         Destroy(cur_bullet, 5);
         laser.pitch = Random.Range(1.0f, 1.5f);
         laser.Play();
-
+        cam.SendMessage("Recoil", meleeRecoil);
     }
 
     private void FireShortGun()
@@ -137,7 +145,7 @@ public class Gun : MonoBehaviour
             cur_bullet2.gameObject.GetComponent<Bullet>().SetDamage(short_damage);
             Destroy(cur_bullet2, 0.25f);
         }
-        
+        cam.SendMessage("Recoil", rangedRecoil);
     }
     
     private void FireSniperGun()
@@ -161,7 +169,7 @@ public class Gun : MonoBehaviour
         Destroy(cur_bullet, 7);
         laser.pitch = Random.Range(1.0f, 1.5f);
         laser.Play();
-
+        cam.SendMessage("Recoil", sniperRecoil);
     }
 
     private void FireEnemyGun(string characterType)
@@ -191,7 +199,9 @@ public class Gun : MonoBehaviour
         {
             GameObject cur_bullet;
             cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
-            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * (rifle_bullet_speed * 0.5f));
+            Vector3 myDirection = new Vector3(Random.Range(-gruntInaccuracy, gruntInaccuracy), Random.Range(-gruntInaccuracy, gruntInaccuracy), 100f);
+            myDirection.Normalize();
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (rifle_bullet_speed * 0.5f));
             cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(grunt_damage);
             Destroy(cur_bullet, 3);
             yield return new WaitForSeconds(grunt_burst_rate);
@@ -204,7 +214,9 @@ public class Gun : MonoBehaviour
         {
             GameObject cur_bullet;
             cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
-            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * (rifle_bullet_speed * 0.5f));
+            Vector3 myDirection = new Vector3(Random.Range(-meleeInaccuracy, meleeInaccuracy), Random.Range(-meleeInaccuracy, meleeInaccuracy), 100f);
+            myDirection.Normalize();
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (rifle_bullet_speed * 0.5f));
             cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(rifle_damage);
             Destroy(cur_bullet, 3);
             yield return new WaitForSeconds(melee_burst_rate);
@@ -217,7 +229,9 @@ public class Gun : MonoBehaviour
         {
             GameObject cur_bullet;
             cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
-            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * (short_bullet_speed * 0.5f));
+            Vector3 myDirection = new Vector3(Random.Range(-rangedInacuracy, rangedInacuracy), Random.Range(-rangedInacuracy, rangedInacuracy), 100f);
+            myDirection.Normalize();
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (short_bullet_speed * 0.5f));
             cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(short_damage);
             Destroy(cur_bullet, 3);
             yield return new WaitForSeconds(ranged_burst_rate);
@@ -230,7 +244,9 @@ public class Gun : MonoBehaviour
         {
             GameObject cur_bullet;
             cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
-            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * (sniper_bullet_speed * 0.5f));
+            Vector3 myDirection = new Vector3(Random.Range(-sniperInaccuracy, sniperInaccuracy), Random.Range(-sniperInaccuracy, sniperInaccuracy), 100f);
+            myDirection.Normalize();
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (sniper_bullet_speed * 0.5f));
             cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(sniper_damage);
             Destroy(cur_bullet, 3);
             yield return new WaitForSeconds(sniper_burst_rate);
