@@ -120,7 +120,7 @@ public class GruntCharacter : CharacterScript
             return true;
         }
         float myDist = Vector3.Distance(player.transform.position, transform.position);
-        if (myDist <= 10f)
+        if (myDist <= 15f)
         {
             //navAgent.ResetPath();
             navAgent.SetDestination(transform.position);

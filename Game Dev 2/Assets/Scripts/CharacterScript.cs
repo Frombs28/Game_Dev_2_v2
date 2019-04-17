@@ -407,8 +407,10 @@ public class CharacterScript : MonoBehaviour
         bool strafingRight = (Random.value >= 0.5f);
         float startTime = Time.time;
         float myTimer = Random.Range(5f, 10f);
-        while (Time.time - startTime <= myTimer)
+        float myDist = Vector3.Distance(player.transform.position, transform.position);
+        while (Time.time - startTime <= myTimer && myDist >= 5f)
         {
+            myDist = Vector3.Distance(player.transform.position, transform.position);
             if (strafingRight)
             {
                 Vector3 myVect = transform.TransformDirection(Vector3.right);

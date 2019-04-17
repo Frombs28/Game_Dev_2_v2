@@ -287,7 +287,7 @@ public class MeleeCharacterScript : CharacterScript
             return true;
         }
         float myDist = Vector3.Distance(player.transform.position, transform.position);
-        if (myDist <= 10f)
+        if (myDist <= 15f)
         {
             navAgent.SetDestination(transform.position);
             return false;
