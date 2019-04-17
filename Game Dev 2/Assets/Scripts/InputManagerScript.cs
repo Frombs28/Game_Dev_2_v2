@@ -44,6 +44,9 @@ public class InputManagerScript : MonoBehaviour
     bool minus_bool = false;
     public Image hurt;
 
+    public Text speech;
+    public List<string> speech_list;
+
     void Start()
     {
         
@@ -404,6 +407,7 @@ public class InputManagerScript : MonoBehaviour
         minus.canvasRenderer.SetAlpha(1f);
         minus.enabled = true;
         minus.CrossFadeAlpha(0, minusDuration, false);
+        speech.text = speech_list[Random.Range(0, speech_list.Count)].ToString() + "\n" + speech.text;
         //Debug.Log("Minus");
         //StartCoroutine("MinusFade");
         //minus_bool = true;
