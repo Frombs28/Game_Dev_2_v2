@@ -57,7 +57,9 @@ public class Gun : MonoBehaviour
         GameObject cur_bullet;
         Vector3 myDirection;
         RaycastHit hit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
+        int layerMask = 1 << 2;
+        layerMask = ~layerMask; //the raycast will ignore anything on this layer
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, layerMask))
         {
             myDirection = hit.point - barrel.transform.position;
         }
@@ -82,7 +84,9 @@ public class Gun : MonoBehaviour
         GameObject cur_bullet;
         Vector3 myDirection;
         RaycastHit hit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
+        int layerMask = 1 << 2;
+        layerMask = ~layerMask; //the raycast will ignore anything on this layer
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, layerMask))
         {
             myDirection = hit.point - barrel.transform.position;
         }
@@ -107,7 +111,9 @@ public class Gun : MonoBehaviour
         GameObject cur_bullet;
         Vector3 myDirection;
         RaycastHit hit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
+        int layerMask = 1 << 2;
+        layerMask = ~layerMask; //the raycast will ignore anything on this layer
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, layerMask))
         {
             myDirection = hit.point - barrel.transform.position;
         }
@@ -154,7 +160,9 @@ public class Gun : MonoBehaviour
         GameObject cur_bullet;
         Vector3 myDirection;
         RaycastHit hit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
+        int layerMask = 1 << 2;
+        layerMask = ~layerMask; //the raycast will ignore anything on this layer
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, layerMask))
         {
             myDirection = hit.point - barrel.transform.position;
         }
