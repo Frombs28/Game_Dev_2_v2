@@ -7725,7 +7725,7 @@ SpriteRenderer:
   m_Size: {x: 6.64, y: 2.71}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &334041453
@@ -7979,23 +7979,25 @@ Prefab:
         type: 2}
       propertyPath: dialogues.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 319aaa704e7bd9147861863bd0dd0d48,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114421753845633504, guid: 76b614652afccec4fbd742a964612a37,
         type: 2}
       propertyPath: dialogues.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: cd8da7edbb12930428c27a41b0da2c37,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114421753845633504, guid: 76b614652afccec4fbd742a964612a37,
         type: 2}
       propertyPath: dialogues.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 9cef6f025d297a149bf2b665e745960a,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1671962964482440, guid: 76b614652afccec4fbd742a964612a37, type: 2}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421753845633504, guid: 76b614652afccec4fbd742a964612a37,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b614652afccec4fbd742a964612a37, type: 2}
@@ -13905,20 +13907,17 @@ Prefab:
         type: 2}
       propertyPath: dialogues.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 0d8d8dcf065a93d4e9d40dbba6e00882,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114421753845633504, guid: 76b614652afccec4fbd742a964612a37,
         type: 2}
       propertyPath: dialogues.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 1f304ae32607e584cb9036f0ecec900d,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114421753845633504, guid: 76b614652afccec4fbd742a964612a37,
         type: 2}
       propertyPath: dialogues.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: bedcabcdf2724b141a7e67365f9375b1,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114421753845633504, guid: 76b614652afccec4fbd742a964612a37,
         type: 2}
       propertyPath: image
@@ -13927,6 +13926,11 @@ Prefab:
     - target: {fileID: 1671962964482440, guid: 76b614652afccec4fbd742a964612a37, type: 2}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421753845633504, guid: 76b614652afccec4fbd742a964612a37,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b614652afccec4fbd742a964612a37, type: 2}
@@ -19226,23 +19230,25 @@ Prefab:
         type: 2}
       propertyPath: dialogues.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: cce5e39dc44cc6245a92032e88f47ca5,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114421753845633504, guid: 76b614652afccec4fbd742a964612a37,
         type: 2}
       propertyPath: dialogues.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 360925988b3610f47869d5445ff11ae8,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114421753845633504, guid: 76b614652afccec4fbd742a964612a37,
         type: 2}
       propertyPath: dialogues.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 641e823e9c3ca49468d501d36773343e,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1671962964482440, guid: 76b614652afccec4fbd742a964612a37, type: 2}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421753845633504, guid: 76b614652afccec4fbd742a964612a37,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b614652afccec4fbd742a964612a37, type: 2}
@@ -38133,6 +38139,41 @@ MonoBehaviour:
   speech: {fileID: 923503513}
   speech_list:
   - Uh oh! The Bad man killed me!
+  - I just got DDoSed!
+  - 'WTF BRO '
+  - UREMDFCNRSIUFN
+  - 'F**K YOU '
+  - '**** **** ***** ****** '
+  - Who build attack speed
+  - So this game is still broken on console apparently
+  - You Rock, Cancel That
+  - Good Game
+  - 'Good Game, Cancel that '
+  - Mozambique here!
+  - GG, Not really
+  - Strategic Feeding Right?
+  - Disgusting
+  - Yeet
+  - This quack
+  - Did I just get rekt??
+  - '#nolife'
+  - Bitch
+  - Reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+  - Give yer balls a tug
+  - Hello??
+  - ??
+  - Bamboozled
+  - F
+  - Wtf
+  - "( \u0361\xB0 \u035C\u0296 \u0361\xB0)"
+  - Reported
+  - Dude you aren't even good. That's my smurf
+  - You're in the endgame now
+  - Rip
+  - "(\u256F\xB0\u25A1\xB0)\u256F\uFE35 \u253B\u2501\u253B"
+  - Where tha FUCK was my HEALER
+  - "We have a \u201Cbadass\u201D over here"
+  - U H8 2 C IT
 --- !u!4 &1642832492
 Transform:
   m_ObjectHideFlags: 0
