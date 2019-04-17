@@ -14204,7 +14204,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 565711544}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 105.99, y: -0.209, z: -1.013}
+  m_LocalPosition: {x: 105.99, y: -0.209, z: -0.927}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1789966934}
@@ -15947,6 +15947,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1594852165712796, guid: 15233871498dba44fa7437968b9c8e19,
         type: 2}
+    - target: {fileID: 114053339277746160, guid: ff3280533eb3d3641a791cc3610e0807,
+        type: 2}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1642832490}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff3280533eb3d3641a791cc3610e0807, type: 2}
   m_IsPrefabAsset: 0
@@ -16326,7 +16331,7 @@ Transform:
   m_GameObject: {fileID: 636073202}
   m_LocalRotation: {x: -0, y: -0.0051997737, z: -0, w: 0.99998647}
   m_LocalPosition: {x: 354.93225, y: 84.8, z: 112.5147}
-  m_LocalScale: {x: 343.37283, y: 2.8309293, z: 137.07675}
+  m_LocalScale: {x: 343.37283, y: 2.8309293, z: 169.92033}
   m_Children: []
   m_Father: {fileID: 1945619212}
   m_RootOrder: 11
@@ -24069,7 +24074,7 @@ Transform:
   m_GameObject: {fileID: 1014776186}
   m_LocalRotation: {x: -0, y: 0.0007803303, z: -0, w: 0.9999997}
   m_LocalPosition: {x: 422.23227, y: 85.30978, z: -38.7023}
-  m_LocalScale: {x: 29.548956, y: 0.9872017, z: 166.81024}
+  m_LocalScale: {x: 35.23713, y: 0.9872017, z: 169.1}
   m_Children: []
   m_Father: {fileID: 1945619212}
   m_RootOrder: 12
@@ -34487,6 +34492,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1594852165712796, guid: 15233871498dba44fa7437968b9c8e19,
         type: 2}
+    - target: {fileID: 114053339277746160, guid: ff3280533eb3d3641a791cc3610e0807,
+        type: 2}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1642832490}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff3280533eb3d3641a791cc3610e0807, type: 2}
   m_IsPrefabAsset: 0

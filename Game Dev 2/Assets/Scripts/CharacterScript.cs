@@ -555,6 +555,18 @@ public class CharacterScript : MonoBehaviour
         num_jumps += 1;
     }
 
+    public void Invincibility()
+    {
+        StartCoroutine("Frames");
+    }
+
+    IEnumerator Frames()
+    {
+        invincible = true;
+        yield return new WaitForSeconds(2);
+        invincible = false;
+    }
+
     public virtual void ResetHealth() {}
 
     void OnCollisionEnter(Collision collider)

@@ -211,6 +211,7 @@ public class InputManagerScript : MonoBehaviour
                 if (hit.collider.gameObject.tag == "Possessable")
                 {
                     receiveInput = false;
+                    hit.collider.gameObject.SendMessage("Invincibility");
                     //set the player to the new character
                     player.layer = 0; //i would put this in AssignPlayer but it's a hassle so do it here
                     AssignPlayer(hit.collider.gameObject);
