@@ -5641,7 +5641,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1 &248144220
 GameObject:
@@ -6394,7 +6394,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1 &279897123
 GameObject:
@@ -10722,7 +10722,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1001 &450640859
 Prefab:
@@ -11041,7 +11041,7 @@ MonoBehaviour:
     type: 2}
   cam: {fileID: 6223367}
   spawn: {fileID: 809389565}
-  prefabNum: 0
+  prefabNum: 3
 --- !u!1001 &459526235
 Prefab:
   m_ObjectHideFlags: 0
@@ -11159,7 +11159,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1001 &464785666
 Prefab:
@@ -12858,7 +12858,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1001 &521856385
 Prefab:
@@ -14384,7 +14384,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1001 &567764382
 Prefab:
@@ -23264,7 +23264,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1001 &952688517
 Prefab:
@@ -23398,7 +23398,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1001 &959508982
 Prefab:
@@ -24169,7 +24169,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1 &1005497183
 GameObject:
@@ -31381,7 +31381,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1337430826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.254, z: 0}
+  m_LocalPosition: {x: 245.74, y: -0.254, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1680511441}
@@ -35742,7 +35742,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1 &1537817317
 GameObject:
@@ -36425,7 +36425,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1 &1567267746
 GameObject:
@@ -37204,7 +37204,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1 &1606813287
 GameObject:
@@ -38131,7 +38131,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bc4f98cde14017d46bc8f24f36e28f99, type: 3}
   hurt: {fileID: 302197560}
   speech: {fileID: 923503513}
-  speech_list: []
+  speech_list:
+  - Uh oh! The Bad man killed me!
 --- !u!4 &1642832492
 Transform:
   m_ObjectHideFlags: 0
@@ -44728,7 +44729,7 @@ MonoBehaviour:
     type: 2}
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
-  prefabNum: 0
+  prefabNum: 3
   inputManager: {fileID: 1642832490}
 --- !u!1 &1955958971
 GameObject:

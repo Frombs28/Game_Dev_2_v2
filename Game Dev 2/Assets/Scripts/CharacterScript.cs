@@ -11,6 +11,7 @@ using UnityEngine.UI;
 public class CharacterScript : MonoBehaviour
 {
     public bool grounded;
+    public bool hit_wall;
 
     public GameObject player;
     public bool amPlayer;
@@ -77,6 +78,7 @@ public class CharacterScript : MonoBehaviour
         reloading = false;
         reload_circle = GameObject.FindWithTag("ReloadTimer").GetComponent<Image>();
         reload_circle.enabled = false;
+        hit_wall = false;
     }
 
     public void AssignPlayer(GameObject myPlayer)
@@ -122,7 +124,7 @@ public class CharacterScript : MonoBehaviour
         grounded = controller.isGrounded;
         timer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.G) && !PauseScript.paused)
+        if (Input.GetKeyDown(KeyCode.R) && !PauseScript.paused)
         {
             Reload();
         }
@@ -239,19 +241,22 @@ public class CharacterScript : MonoBehaviour
             Debug.DrawRay(transform.position, cam.transform.position - transform.position);
             if (Physics.Raycast(transform.position, cam.transform.position - transform.position, out hit, 5f))
             {
-                if (hit.transform != cam.transform && hit.transform.gameObject.layer == 0)
+                if (hit.transform != cam.transform && hit.transform.gameObject.layer == 0 && !hit_wall)
                 {
                     cam.SendMessage("WallCam",hit.transform);
-                    //Debug.Log(hit.transform.position);
+                    hit_wall = true;
+                    //Debug.Log("yert");
                 }
-                else
+                else if(hit_wall)
                 {
                     cam.SendMessage("NoWallCam");
+                    hit_wall = false;
                 }
             }
-            else
+            else if(hit_wall)
             {
                 cam.SendMessage("NoWallCam");
+                hit_wall = false;
             }
         }
         
