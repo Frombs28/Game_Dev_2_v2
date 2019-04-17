@@ -240,7 +240,7 @@ public class CharacterScript : MonoBehaviour
         {
             RaycastHit hit;
             Debug.DrawRay(transform.position, cam.transform.position - transform.position);
-            if (Physics.Raycast(transform.position, cam.transform.position - transform.position, out hit, 5f))
+            if (Physics.Raycast(transform.position, ((cam.transform.position - transform.position) / Vector3.Distance(cam.transform.position, transform.position)), out hit, 5f))
             {
                 if (hit.transform != cam.transform && hit.transform.gameObject.layer == 0 && !hit_wall)
                 {
@@ -248,16 +248,23 @@ public class CharacterScript : MonoBehaviour
                     hit_wall = true;
                     //Debug.Log("yert");
                 }
-                //else if(hit.transform == cam.transform && hit_wall)
+                //else if (hit.transform == cam.transform && hit_wall)
                 //{
-                //    cam.SendMessage("NoWallCam");
-                //    hit_wall = false;
+                //    if(!( Vector3.Distance(cam.transform.position, transform.position) < 5) )
+                //    {
+                //        cam.SendMessage("NoWallCam");
+                //        hit_wall = false;
+                //    }
+
                 //}
             }
             else if(hit_wall)
             {
-                cam.SendMessage("NoWallCam");
-                hit_wall = false;
+                //if (!(Vector3.Distance(cam.transform.position, transform.position) < 5))
+                //{
+                    cam.SendMessage("NoWallCam");
+                    hit_wall = false;
+                //}
             }
         }
         

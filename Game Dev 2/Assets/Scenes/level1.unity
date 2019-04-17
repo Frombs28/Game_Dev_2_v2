@@ -11043,7 +11043,7 @@ MonoBehaviour:
     type: 2}
   cam: {fileID: 6223367}
   spawn: {fileID: 809389565}
-  prefabNum: 2
+  prefabNum: 3
 --- !u!1001 &459526235
 Prefab:
   m_ObjectHideFlags: 0
@@ -38200,7 +38200,7 @@ MonoBehaviour:
   hurt: {fileID: 302197560}
   speech: {fileID: 923503513}
   speech_list:
-  - Uh oh! The Bad man killed me!
+  - '******* hacker'
   - I just got DDoSed!
   - 'WTF BRO '
   - UREMDFCNRSIUFN
@@ -38233,7 +38233,7 @@ MonoBehaviour:
   - You're in the endgame now
   - Rip
   - "(\u256F\xB0\u25A1\xB0)\u256F\uFE35 \u253B\u2501\u253B"
-  - Where tha FUCK was my HEALER
+  - Where tha FUCK was my TEAM
   - "We have a \u201Cbadass\u201D over here"
   - U H8 2 C IT
 --- !u!4 &1642832492

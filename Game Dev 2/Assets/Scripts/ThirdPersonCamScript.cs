@@ -168,7 +168,7 @@ public class ThirdPersonCamScript : MonoBehaviour
         //transform.position = lookAtObject.transform.position + (rotation * direction);
         //free = false;
         distance = 1f;
-        gameObject.GetComponent<Camera>().fieldOfView = 100f;
+        gameObject.GetComponent<Camera>().fieldOfView = 100;
     }
 
     void NoWallCam()
