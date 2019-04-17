@@ -52,6 +52,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 0}
-  camPrefab: {fileID: 0}
-  meleePrefab: {fileID: 0}
-  rangedPrefab: {fileID: 0}
+  meleePrefab: {fileID: 1408844105495096, guid: 03dbc8cc61bbe2e4bb3749cbc1fa43dd,
+    type: 2}
+  rangedPrefab: {fileID: 1699993314130230, guid: 60e1ae336deb98a4092ef834cd0e8383,
+    type: 2}
+  sniperPrefab: {fileID: 1594852165712796, guid: 15233871498dba44fa7437968b9c8e19,
+    type: 2}
+  gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
+    type: 2}
+  cam: {fileID: 0}
+  spawn: {fileID: 0}
+  prefabNum: 3

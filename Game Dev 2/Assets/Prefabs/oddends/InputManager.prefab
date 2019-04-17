@@ -52,3 +52,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  receiveInput: 1
+  playerhealth: 10
+  minusDuration: 0.35
+  hurtDuration: 0.75
+  possession_rate: 0.5
+  healthBar: {fileID: 0}
+  ammo_num: {fileID: 0}
+  images:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  timer_num: {fileID: 0}
+  attack_mode: 0
+  myAnimator: {fileID: 0}
+  reticle: {fileID: 0}
+  CheckpointManager: {fileID: 0}
+  myCanvas: {fileID: 0}
+  playerIsAlive: 0
+  instantiateManager: {fileID: 0}
+  minus: {fileID: 0}
+  minuses:
+  - {fileID: 21300000, guid: ac3cf20518278044dbf0d45ffd2c6cd3, type: 3}
+  - {fileID: 21300000, guid: 0a533ad49d5530a468d96196480eeca9, type: 3}
+  - {fileID: 21300000, guid: bc4f98cde14017d46bc8f24f36e28f99, type: 3}
+  hurt: {fileID: 0}
