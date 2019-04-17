@@ -58,6 +58,7 @@ public class CharacterScript : MonoBehaviour
     private bool canStartAggroTimer = true;
     public float distanceToAggro = 25f;
     public float timer = 100f;
+    public float makeDistanceTimer;
 
     private void Awake()
     //this function is mostly used to get references to components on this game object
@@ -378,9 +379,12 @@ public class CharacterScript : MonoBehaviour
         {
             yield return null;
         }
-        
-        while (MakeDistanceHelperTwo())
+
+        makeDistanceTimer = 0;
+        float myTimeLimit = Random.Range(0f, 7f);
+        while (MakeDistanceHelperTwo() && makeDistanceTimer <= myTimeLimit)
         {
+            makeDistanceTimer += Time.deltaTime;
             yield return null;
         }
         if (!amPlayer)
@@ -402,7 +406,8 @@ public class CharacterScript : MonoBehaviour
     {
         bool strafingRight = (Random.value >= 0.5f);
         float startTime = Time.time;
-        while (Time.time - startTime <= 1.5f)
+        float myTimer = Random.Range(5f, 10f);
+        while (Time.time - startTime <= myTimer)
         {
             if (strafingRight)
             {
