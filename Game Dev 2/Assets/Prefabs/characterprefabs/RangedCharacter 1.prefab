@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 195137940265540290}
   - component: {fileID: 114233315696609010}
   - component: {fileID: 54496385416972460}
+  - component: {fileID: 65693724115509982}
   m_Layer: 12
   m_Name: RangedCharacter 1
   m_TagString: Possessable
@@ -1066,7 +1067,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1699993314130230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -628.9614, y: -1.8493102, z: 123.442924}
+  m_LocalPosition: {x: -519.1278, y: 4.56, z: 180.72}
   m_LocalScale: {x: 1.49, y: 1.49, z: 1.49}
   m_Children:
   - {fileID: 4063509468530644}
@@ -1368,6 +1369,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.43, y: 4.19, z: 1.15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65693724115509982
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699993314130230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.94, y: 5.35, z: 3.46}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95104003514455078
 Animator:
   serializedVersion: 3
@@ -1409,6 +1422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 0
+  hit_wall: 0
   player: {fileID: 0}
   amPlayer: 0
   inputManager: {fileID: 0}

@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 54515417702033700}
   - component: {fileID: 82758429963894694}
   - component: {fileID: 135112759708621960}
+  - component: {fileID: 65074976835616464}
   m_Layer: 12
   m_Name: MeleeCharacter
   m_TagString: Possessable
@@ -742,7 +743,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1408844105495096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -624.97, y: -1.07, z: 102.22252}
+  m_LocalPosition: {x: -523.711, y: 4.6819525, z: 181.86505}
   m_LocalScale: {x: 0.86062175, y: 0.86062175, z: 0.86062175}
   m_Children:
   - {fileID: 4474747664256640}
@@ -1431,6 +1432,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 1
+--- !u!65 &65074976835616464
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1408844105495096}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.68, y: 5.67, z: 3.61}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65256620341159522
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1631,6 +1644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 0
+  hit_wall: 0
   player: {fileID: 0}
   amPlayer: 0
   inputManager: {fileID: 0}

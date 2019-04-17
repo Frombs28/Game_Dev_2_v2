@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 195671918742772836}
   - component: {fileID: 54460256720358166}
   - component: {fileID: 82989222735127186}
+  - component: {fileID: 65433298982718534}
   m_Layer: 12
   m_Name: GruntCharacter
   m_TagString: Possessable
@@ -869,7 +870,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692642361996648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -638.1675, y: -2.8345366, z: 115.68247}
+  m_LocalPosition: {x: -523.2, y: 4.27, z: 182.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4878655144224432}
@@ -1368,6 +1369,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 4.19, z: 1.15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65433298982718534
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1692642361996648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.59, y: 6.05, z: 2.84}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82989222735127186
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1544,6 +1557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 0
+  hit_wall: 0
   player: {fileID: 0}
   amPlayer: 0
   inputManager: {fileID: 0}

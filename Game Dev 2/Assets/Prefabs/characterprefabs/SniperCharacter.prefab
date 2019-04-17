@@ -457,6 +457,7 @@ GameObject:
   - component: {fileID: 114761429262368178}
   - component: {fileID: 82734152097385990}
   - component: {fileID: 65090065825598970}
+  - component: {fileID: 65939337424089014}
   m_Layer: 12
   m_Name: SniperCharacter
   m_TagString: Possessable
@@ -848,7 +849,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1594852165712796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -642.2836, y: -2.3345366, z: 120.72835}
+  m_LocalPosition: {x: -522.10785, y: 2.85, z: 174.18999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4434947811156944}
@@ -1453,6 +1454,18 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.4, y: 4.19, z: 1.15}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65939337424089014
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1594852165712796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.07, y: 5.74, z: 3.02}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82734152097385990
 AudioSource:
