@@ -19,7 +19,7 @@ public class InstantiateScript : MonoBehaviour
 
     private GameObject myPlayer;
 
-    private void Start()
+    private void Awake()
     {
         InstantiateCharacter(spawn.position);   
     }
