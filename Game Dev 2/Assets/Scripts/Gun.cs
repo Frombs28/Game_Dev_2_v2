@@ -59,7 +59,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         int layerMask = 1 << 2;
         layerMask = ~layerMask; //the raycast will ignore anything on this layer
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, layerMask))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit/*, layerMask*/))
         {
             myDirection = hit.point - barrel.transform.position;
         }
@@ -86,7 +86,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         int layerMask = 1 << 2;
         layerMask = ~layerMask; //the raycast will ignore anything on this layer
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, layerMask))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit/*, layerMask*/))
         {
             myDirection = hit.point - barrel.transform.position;
         }
@@ -113,7 +113,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         int layerMask = 1 << 2;
         layerMask = ~layerMask; //the raycast will ignore anything on this layer
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, layerMask))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit/*, layerMask*/))
         {
             myDirection = hit.point - barrel.transform.position;
         }
@@ -162,7 +162,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         int layerMask = 1 << 2;
         layerMask = ~layerMask; //the raycast will ignore anything on this layer
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, layerMask))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit/*, layerMask*/))
         {
             myDirection = hit.point - barrel.transform.position;
         }
