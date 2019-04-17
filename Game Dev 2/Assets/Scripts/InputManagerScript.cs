@@ -16,6 +16,7 @@ public class InputManagerScript : MonoBehaviour
     float timer = 0f;
     float possess_timer = 0f;
     public float minusDuration = 3f;
+    public float hurtDuration = 0.75f;
     float minus_timer;
     public float possession_rate = 0.5f;
     private bool startingPossessing = false; //flag for slomo
@@ -76,6 +77,8 @@ public class InputManagerScript : MonoBehaviour
             }
         }
         ammo_num.enabled = true;
+        minus.canvasRenderer.SetAlpha(0f);
+        hurt.canvasRenderer.SetAlpha(0f);
     }
 
     private void Update()
@@ -300,6 +303,7 @@ public class InputManagerScript : MonoBehaviour
         player = myPlayer;
         player.layer = 2; //ignore raycast //should probably eventually change to custom layer
         healthBar.maxValue = myPlayer.GetComponent<CharacterScript>().GetMaxHealth();
+        playerhealth = myPlayer.GetComponent<CharacterScript>().GetHealth();
         healthBar.value = playerhealth;
         receiveInput = true;
         playerIsAlive = true;
@@ -325,6 +329,9 @@ public class InputManagerScript : MonoBehaviour
     {
         playerhealth -= damage;
         healthBar.value = playerhealth;
+        hurt.canvasRenderer.SetAlpha(1f);
+        hurt.enabled = true;
+        hurt.CrossFadeAlpha(0, minusDuration, false);
         if (playerhealth <= 0)
         {
             GameOver();
@@ -372,8 +379,9 @@ public class InputManagerScript : MonoBehaviour
         {
             character.SendMessage("AssignPlayer", myPlayer);
         }
+        AssignPlayer(myPlayer);
         myPlayer.SendMessage("ResetHealth");
-        playerhealth = 3;
+        //playerhealth = 3;
     }
 
     void ChangeTime(int time)
@@ -392,13 +400,13 @@ public class InputManagerScript : MonoBehaviour
         {
             minus.sprite = minuses[2];
         }
-        Color temp_color = minus.color;
-        temp_color.a = 255f;
-        minus.color = temp_color;
+        //Color temp_color = minus.color;
+        minus.canvasRenderer.SetAlpha(1f);
         minus.enabled = true;
+        minus.CrossFadeAlpha(0, minusDuration, false);
         //Debug.Log("Minus");
-        StartCoroutine("MinusFade");
-        minus_bool = true;
+        //StartCoroutine("MinusFade");
+        //minus_bool = true;
     }
 
     IEnumerator MinusFade()

@@ -102,7 +102,10 @@ public class SniperCharacter : CharacterScript
 
     public override void Die()
     {
-        inputManager.SendMessage("ChangeTime", 5);
+        if (!amPlayer)
+        {
+            inputManager.SendMessage("ChangeTime", 5);
+        }
         base.Die();
     }
 
