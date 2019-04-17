@@ -11041,7 +11041,7 @@ MonoBehaviour:
     type: 2}
   cam: {fileID: 6223367}
   spawn: {fileID: 809389565}
-  prefabNum: 3
+  prefabNum: 2
 --- !u!1001 &459526235
 Prefab:
   m_ObjectHideFlags: 0

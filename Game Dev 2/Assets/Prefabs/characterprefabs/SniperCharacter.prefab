@@ -1579,6 +1579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 0
+  hit_wall: 0
   player: {fileID: 0}
   amPlayer: 0
   inputManager: {fileID: 0}
@@ -1617,10 +1618,10 @@ MonoBehaviour:
   distanceToAggro: 25
   timer: 100
   jumpDistance: 10
-  newJumpSpeed: 100
-  jumpTime: 0.1
+  newJumpSpeed: 40
+  jumpTime: 4
   jumpCoolDown: 1
-  slowTime: 3
+  slowTime: 2
   slowCoolDown: 6
   slowSpeed: 4
   ammo_count: 1

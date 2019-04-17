@@ -144,16 +144,19 @@ public class SniperCharacter : CharacterScript
 
     IEnumerator Jump()
     {
-        moveDirection.y += newJumpSpeed;
+        //moveDirection.y += newJumpSpeed;
+        float myJumpSpeed = jumpSpeed;
+        jumpSpeed = newJumpSpeed;
         while ((Time.time - jumpStartTime) <= jumpTime)
         {
-            HasJumped();
-            myAnimator.SetBool("jumping", true);
-            moveDirection = transform.TransformDirection(moveDirection);
+            //HasJumped();
+            //myAnimator.SetBool("jumping", true);
+            //moveDirection = transform.TransformDirection(moveDirection);
             yield return null;
         }
-        jumpEndTime = Time.time;
-        dashing = false;
+        jumpSpeed = myJumpSpeed;
+        //jumpEndTime = Time.time;
+        //dashing = false;
     }
 
     IEnumerator Slow()

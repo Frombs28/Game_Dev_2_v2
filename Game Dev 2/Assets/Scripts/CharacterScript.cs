@@ -124,7 +124,7 @@ public class CharacterScript : MonoBehaviour
         grounded = controller.isGrounded;
         timer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.R) && !PauseScript.paused)
+        if (Input.GetKeyDown(KeyCode.G) && !PauseScript.paused)
         {
             Reload();
         }
