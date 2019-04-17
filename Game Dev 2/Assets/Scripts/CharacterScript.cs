@@ -125,7 +125,7 @@ public class CharacterScript : MonoBehaviour
         grounded = controller.isGrounded;
         timer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.G) && !PauseScript.paused)
+        if (Input.GetKeyDown(KeyCode.G) && !PauseScript.paused && amPlayer)
         {
             Reload();
         }
@@ -211,7 +211,10 @@ public class CharacterScript : MonoBehaviour
         if (zeroMovement)
         {
             moveDirection = new Vector3(0f, moveDirection.y, 0f);
-            myAnimator.SetBool("run", false);
+            if (amPlayer)
+            {
+                myAnimator.SetBool("run", false);
+            }
         }
         else
         {
@@ -219,7 +222,7 @@ public class CharacterScript : MonoBehaviour
         }
         if (!amPlayer)
         {
-            myAnimator.SetBool("run", false);
+            //myAnimator.SetBool("run", false);
         }
         moveDirection.y -= (gravity * Time.deltaTime);
 
@@ -372,6 +375,7 @@ public class CharacterScript : MonoBehaviour
             else
             {
                 state = "idle";
+                myAnimator.SetBool("run", false);
                 StartCoroutine("Idle");
             }
         }
@@ -389,6 +393,7 @@ public class CharacterScript : MonoBehaviour
 
         makeDistanceTimer = 0;
         float myTimeLimit = Random.Range(0f, 7f);
+        myAnimator.SetBool("run", true);
         while (MakeDistanceHelperTwo() && makeDistanceTimer <= myTimeLimit)
         {
             makeDistanceTimer += Time.deltaTime;
@@ -404,6 +409,7 @@ public class CharacterScript : MonoBehaviour
             else
             {
                 state = "idle";
+                myAnimator.SetBool("run", false);
                 StartCoroutine("Idle");
             }
         }
@@ -415,6 +421,16 @@ public class CharacterScript : MonoBehaviour
         float startTime = Time.time;
         float myTimer = Random.Range(5f, 10f);
         float myDist = Vector3.Distance(player.transform.position, transform.position);
+        if (strafingRight)
+        {
+            myAnimator.SetBool("straferight", true);
+            myAnimator.SetBool("run", true);
+        }
+        else
+        {
+            myAnimator.SetBool("strafeleft", true);
+            myAnimator.SetBool("run", true);
+        }
         while (Time.time - startTime <= myTimer && myDist >= 5f)
         {
             myDist = Vector3.Distance(player.transform.position, transform.position);
@@ -434,16 +450,21 @@ public class CharacterScript : MonoBehaviour
             }
             yield return null;
         }
+        myAnimator.SetBool("straferight", false);
+        myAnimator.SetBool("strafeleft", false);
+        myAnimator.SetBool("run", false);
         if (!amPlayer)
         {
             if (aggro)
             {
                 state = "firing";
+                myAnimator.SetBool("run", false);
                 StartCoroutine("Fire");
             }
             else
             {
                 state = "idle";
+                myAnimator.SetBool("run", false);
                 StartCoroutine("Idle");
             }
         }
@@ -455,9 +476,11 @@ public class CharacterScript : MonoBehaviour
         while (i < 5)
         {
             Attack();
+            myAnimator.SetBool("firing", true);
             yield return new WaitForSeconds(0.5f);
             i++;
         }
+        myAnimator.SetBool("firing", false);
         if (!amPlayer)
         {
             if (aggro)
@@ -514,6 +537,11 @@ public class CharacterScript : MonoBehaviour
     {
         inputManager.SendMessage("RemoveCharacterFromList", gameObject);
         myAnimator.SetBool("die", true);
+        myAnimator.SetBool("reload", false);
+        myAnimator.SetBool("straferight", false);
+        myAnimator.SetBool("strafeleft", false);
+        myAnimator.SetBool("run", false);
+        myAnimator.SetBool("jumping", false);
         Destroy(gameObject, 0.5f);
     }
 

@@ -81,6 +81,30 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!1101 &1101002931941928774
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: strafeleft
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102615090002717580}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.96753246
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &1101012698209859362
 AnimatorStateTransition:
   m_ObjectHideFlags: 3
@@ -2082,6 +2106,30 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &1101532027053563714
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: straferight
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102593670138153924}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.96753246
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &1101541280855169518
 AnimatorStateTransition:
   m_ObjectHideFlags: 3
@@ -3938,6 +3986,8 @@ AnimatorState:
   - {fileID: 1101398860487935162}
   - {fileID: 1101569041092192460}
   - {fileID: 1101913710443838328}
+  - {fileID: 1101002931941928774}
+  - {fileID: 1101532027053563714}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -4971,7 +5021,7 @@ AnimatorStateMachine:
     m_Position: {x: 1057.3099, y: 633.36743, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102053804765258794}
-    m_Position: {x: 157.30994, y: 381.36743, z: 0}
+    m_Position: {x: 156, y: 384, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102014961752237088}
     m_Position: {x: -240, y: 84, z: 0}

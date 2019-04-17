@@ -539,9 +539,6 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: run
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
     m_ConditionEvent: strafeleft
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -1870,9 +1867,6 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: run
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: straferight
     m_EventTreshold: 0
