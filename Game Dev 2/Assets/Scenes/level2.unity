@@ -129,8 +129,8 @@ GameObject:
   m_Name: pCube1 (136)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &3588822
 Transform:
@@ -218,8 +218,8 @@ GameObject:
   m_Name: pCube1 (220)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &3988486
 Transform:
@@ -334,6 +334,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -353,8 +357,8 @@ GameObject:
   m_Name: pCube1 (215)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &10335076
 Transform:
@@ -495,8 +499,8 @@ GameObject:
   m_Name: pCube1 (237)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &15380713
 Transform:
@@ -637,8 +641,8 @@ GameObject:
   m_Name: pCube1 (294)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &27034132
 Transform:
@@ -753,6 +757,10 @@ Prefab:
       propertyPath: m_Name
       value: betterboxpipes (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1276013332962718, guid: 5e1a2c8da9d046149878657a00a16b38, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1a2c8da9d046149878657a00a16b38, type: 2}
   m_IsPrefabAsset: 0
@@ -772,8 +780,8 @@ GameObject:
   m_Name: pCube1 (324)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &29467706
 Transform:
@@ -999,8 +1007,8 @@ GameObject:
   m_Name: pCube1 (247)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &57133108
 Transform:
@@ -1410,6 +1418,26 @@ Prefab:
       propertyPath: m_Name
       value: snipertower (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1744047858723216, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966018039974516, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297696113422500, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585354902359284, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584100630757642, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f324e57c223b92488cee217e058362a, type: 2}
   m_IsPrefabAsset: 0
@@ -1455,6 +1483,10 @@ Prefab:
     - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
       propertyPath: m_Name
       value: pillarcover (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
@@ -1653,8 +1685,8 @@ GameObject:
   m_Name: pCube1 (225)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &97092057
 Transform:
@@ -1742,8 +1774,8 @@ GameObject:
   m_Name: pCube1 (290)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &97226545
 Transform:
@@ -2329,8 +2361,8 @@ GameObject:
   m_Name: pCube1 (278)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &124234707
 Transform:
@@ -2676,6 +2708,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -2900,8 +2936,8 @@ GameObject:
   m_Name: pCube1 (287)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &193537270
 Transform:
@@ -3444,8 +3480,8 @@ GameObject:
   m_Name: pCube1 (179)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &221130531
 Transform:
@@ -3995,8 +4031,8 @@ GameObject:
   m_Name: pCube1 (317)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &249353109
 Transform:
@@ -4172,6 +4208,10 @@ Prefab:
       propertyPath: m_Name
       value: betterboxpipes (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1276013332962718, guid: 5e1a2c8da9d046149878657a00a16b38, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1a2c8da9d046149878657a00a16b38, type: 2}
   m_IsPrefabAsset: 0
@@ -4264,6 +4304,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 73
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -4283,8 +4327,8 @@ GameObject:
   m_Name: pCube1 (165)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &256707604
 Transform:
@@ -4372,8 +4416,8 @@ GameObject:
   m_Name: pCube1 (311)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &273377920
 Transform:
@@ -4792,6 +4836,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 63
       objectReference: {fileID: 0}
+    - target: {fileID: 1276013332962718, guid: 5e1a2c8da9d046149878657a00a16b38, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1a2c8da9d046149878657a00a16b38, type: 2}
   m_IsPrefabAsset: 0
@@ -4837,6 +4885,10 @@ Prefab:
     - target: {fileID: 1276013332962718, guid: 5e1a2c8da9d046149878657a00a16b38, type: 2}
       propertyPath: m_Name
       value: betterboxpipes (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276013332962718, guid: 5e1a2c8da9d046149878657a00a16b38, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1a2c8da9d046149878657a00a16b38, type: 2}
@@ -5163,6 +5215,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 348.00027
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -5182,8 +5238,8 @@ GameObject:
   m_Name: pCube1 (143)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &312422307
 Transform:
@@ -5271,8 +5327,8 @@ GameObject:
   m_Name: pCube1 (233)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &316557529
 Transform:
@@ -5360,8 +5416,8 @@ GameObject:
   m_Name: pCube1 (284)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &319927919
 Transform:
@@ -5905,8 +5961,8 @@ GameObject:
   m_Name: pCube1 (275)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &336237266
 Transform:
@@ -6079,8 +6135,8 @@ GameObject:
   m_Name: pCube1 (232)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &345366663
 Transform:
@@ -6206,6 +6262,10 @@ Prefab:
     - target: {fileID: 4784925204289756, guid: 2714890de7332224da7318559b2fec8f, type: 2}
       propertyPath: m_LocalScale.z
       value: 956.73083
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
@@ -6337,6 +6397,10 @@ Prefab:
     - target: {fileID: 4784925204289756, guid: 2714890de7332224da7318559b2fec8f, type: 2}
       propertyPath: m_LocalScale.z
       value: 431.7127
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
@@ -6535,8 +6599,8 @@ GameObject:
   m_Name: pCube1 (325)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &352915239
 Transform:
@@ -6819,8 +6883,8 @@ GameObject:
   m_Name: pCube1 (134)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &364352931
 Transform:
@@ -6997,8 +7061,8 @@ GameObject:
   m_Name: pCube1 (246)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &374602961
 Transform:
@@ -7795,6 +7859,10 @@ Prefab:
       propertyPath: m_Name
       value: box (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -8045,8 +8113,8 @@ GameObject:
   m_Name: pCube1 (219)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &442821693
 Transform:
@@ -8482,8 +8550,8 @@ GameObject:
   m_Name: pCube1 (140)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &462464922
 Transform:
@@ -8741,12 +8809,12 @@ Prefab:
     - target: {fileID: 224965089197098212, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
         type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 224804922623766696, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
         type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 224593593609152042, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
         type: 2}
@@ -9226,8 +9294,8 @@ GameObject:
   m_Name: pCube1 (214)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &482554542
 Transform:
@@ -9531,8 +9599,8 @@ GameObject:
   m_Name: pCube1 (132)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &495767970
 Transform:
@@ -10239,8 +10307,8 @@ GameObject:
   m_Name: pCube1 (137)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &511967988
 Transform:
@@ -10442,6 +10510,10 @@ Prefab:
       propertyPath: m_Name
       value: box (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -10461,8 +10533,8 @@ GameObject:
   m_Name: pCube1 (146)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &532748309
 Transform:
@@ -10550,7 +10622,7 @@ GameObject:
   m_Name: pCube1 (181)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &535991334
@@ -10776,8 +10848,8 @@ GameObject:
   m_Name: pCube1 (296)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &545572065
 Transform:
@@ -11029,8 +11101,8 @@ GameObject:
   m_Name: pCube1 (307)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &555143186
 Transform:
@@ -11347,6 +11419,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -11532,8 +11608,8 @@ GameObject:
   m_Name: pCube1 (202)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &581827216
 Transform:
@@ -11795,8 +11871,8 @@ GameObject:
   m_Name: pCube1 (298)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &606243535
 Transform:
@@ -12271,6 +12347,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -12290,8 +12370,8 @@ GameObject:
   m_Name: pCube1 (182)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &622215389
 Transform:
@@ -12468,8 +12548,8 @@ GameObject:
   m_Name: pCube1 (245)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &639070255
 Transform:
@@ -12939,8 +13019,8 @@ GameObject:
   m_Name: pCube1 (160)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &659961114
 Transform:
@@ -13028,8 +13108,8 @@ GameObject:
   m_Name: pCube1 (177)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &673124299
 Transform:
@@ -13597,8 +13677,8 @@ GameObject:
   m_Name: pCube1 (310)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &689959150
 Transform:
@@ -13956,6 +14036,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 942.5007
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -14149,7 +14233,7 @@ GameObject:
   m_Name: pCube1 (243)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &699930748
@@ -14240,8 +14324,8 @@ GameObject:
   m_Name: pCube1 (314)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &700581359
 Transform:
@@ -14329,8 +14413,8 @@ GameObject:
   m_Name: pCube1 (263)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &701878548
 Transform:
@@ -14596,8 +14680,8 @@ GameObject:
   m_Name: pCube1 (190)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &714373056
 Transform:
@@ -14685,8 +14769,8 @@ GameObject:
   m_Name: pCube1 (133)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &723160702
 Transform:
@@ -14952,8 +15036,8 @@ GameObject:
   m_Name: pCube1 (333)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &734756765
 Transform:
@@ -15041,8 +15125,8 @@ GameObject:
   m_Name: pCube1 (189)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &739571532
 Transform:
@@ -15156,6 +15240,10 @@ Prefab:
     - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
       propertyPath: m_Name
       value: pillarcover (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
@@ -15275,8 +15363,8 @@ GameObject:
   m_Name: pCube1 (142)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &747704422
 Transform:
@@ -15453,8 +15541,8 @@ GameObject:
   m_Name: pCube1 (204)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &752379757
 Transform:
@@ -15898,8 +15986,8 @@ GameObject:
   m_Name: pCube1 (172)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &767300552
 Transform:
@@ -15987,8 +16075,8 @@ GameObject:
   m_Name: pCube1 (257)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &771107416
 Transform:
@@ -16825,6 +16913,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -16871,6 +16963,26 @@ Prefab:
       propertyPath: m_Name
       value: snipertower (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1585354902359284, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744047858723216, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297696113422500, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584100630757642, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966018039974516, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f324e57c223b92488cee217e058362a, type: 2}
   m_IsPrefabAsset: 0
@@ -16916,6 +17028,10 @@ Prefab:
     - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
       propertyPath: m_Name
       value: box (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
@@ -16989,8 +17105,8 @@ GameObject:
   m_Name: pCube1 (229)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &815268216
 Transform:
@@ -17273,8 +17389,8 @@ GameObject:
   m_Name: pCube1 (196)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &833172996
 Transform:
@@ -17362,8 +17478,8 @@ GameObject:
   m_Name: pCube1 (270)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &835444450
 Transform:
@@ -17826,6 +17942,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -17929,6 +18049,10 @@ Prefab:
     - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
       propertyPath: m_Name
       value: pillarcover (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
@@ -18034,8 +18158,8 @@ GameObject:
   m_Name: pCube1 (273)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &886544606
 Transform:
@@ -18739,6 +18863,26 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 18.42872
       objectReference: {fileID: 0}
+    - target: {fileID: 1297696113422500, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584100630757642, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966018039974516, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585354902359284, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744047858723216, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f324e57c223b92488cee217e058362a, type: 2}
   m_IsPrefabAsset: 0
@@ -18932,8 +19076,8 @@ GameObject:
   m_Name: pCube1 (260)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &938591611
 Transform:
@@ -19137,6 +19281,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -19156,8 +19304,8 @@ GameObject:
   m_Name: pCube1 (145)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &957590775
 Transform:
@@ -19245,8 +19393,8 @@ GameObject:
   m_Name: pCube1 (198)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &958548874
 Transform:
@@ -19419,8 +19567,8 @@ GameObject:
   m_Name: pCube1 (340)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &963446163
 Transform:
@@ -19597,7 +19745,7 @@ GameObject:
   m_Name: pCube1 (213)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &969069578
@@ -19688,8 +19836,8 @@ GameObject:
   m_Name: pCube1 (319)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &969325606
 Transform:
@@ -19777,8 +19925,8 @@ GameObject:
   m_Name: pCube1 (269)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &970111350
 Transform:
@@ -19866,7 +20014,7 @@ GameObject:
   m_Name: pCube1 (148)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &980251722
@@ -19984,6 +20132,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -20056,8 +20208,8 @@ GameObject:
   m_Name: pCube1 (135)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &996133245
 Transform:
@@ -20234,8 +20386,8 @@ GameObject:
   m_Name: pCube1 (194)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &998829047
 Transform:
@@ -20408,8 +20560,8 @@ GameObject:
   m_Name: pCube1 (175)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1005696308
 Transform:
@@ -20586,8 +20738,8 @@ GameObject:
   m_Name: pCube1 (183)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1009715725
 Transform:
@@ -20721,8 +20873,8 @@ GameObject:
   m_Name: pCube1 (216)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1025883640
 Transform:
@@ -21157,6 +21309,10 @@ Prefab:
       propertyPath: m_Name
       value: box (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -21298,6 +21454,10 @@ Prefab:
       propertyPath: m_Name
       value: box (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -21317,8 +21477,8 @@ GameObject:
   m_Name: pCube1 (235)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1057588565
 Transform:
@@ -21660,6 +21820,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -21759,6 +21923,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -21778,8 +21946,8 @@ GameObject:
   m_Name: pCube1 (197)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1097449527
 Transform:
@@ -22161,6 +22329,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -22208,8 +22380,8 @@ GameObject:
   m_Name: pCube1 (254)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1111668700
 Transform:
@@ -22350,8 +22522,8 @@ GameObject:
   m_Name: pCube1 (167)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1114751090
 Transform:
@@ -22439,8 +22611,8 @@ GameObject:
   m_Name: pCube1 (338)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1129941459
 Transform:
@@ -22756,8 +22928,8 @@ GameObject:
   m_Name: pCube1 (252)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1140598029
 Transform:
@@ -22934,7 +23106,7 @@ GameObject:
   m_Name: pCube1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1166777997
@@ -23599,8 +23771,8 @@ GameObject:
   m_Name: pCube1 (176)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1197135302
 Transform:
@@ -23830,8 +24002,8 @@ GameObject:
   m_Name: pCube1 (234)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1206312253
 Transform:
@@ -23919,8 +24091,8 @@ GameObject:
   m_Name: pCube1 (330)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1209627826
 Transform:
@@ -24097,8 +24269,8 @@ GameObject:
   m_Name: pCube1 (291)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1211792976
 Transform:
@@ -24595,8 +24767,8 @@ GameObject:
   m_Name: pCube1 (300)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1225352542
 Transform:
@@ -24773,8 +24945,8 @@ GameObject:
   m_Name: pCube1 (218)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1230676751
 Transform:
@@ -24862,8 +25034,8 @@ GameObject:
   m_Name: pCube1 (212)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1231129331
 Transform:
@@ -25079,6 +25251,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1271.4575
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -25098,8 +25274,8 @@ GameObject:
   m_Name: pCube1 (299)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1239760966
 Transform:
@@ -25303,6 +25479,10 @@ Prefab:
       propertyPath: m_Name
       value: box (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -25344,6 +25524,10 @@ Prefab:
     - target: {fileID: 4784925204289756, guid: 2714890de7332224da7318559b2fec8f, type: 2}
       propertyPath: m_RootOrder
       value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
@@ -25868,6 +26052,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -26346,6 +26534,14 @@ Prefab:
     - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
       propertyPath: m_Name
       value: pillarcover (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_NavMeshLayer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
@@ -27792,8 +27988,8 @@ GameObject:
   m_Name: pCube1 (144)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1372125881
 Transform:
@@ -27881,8 +28077,8 @@ GameObject:
   m_Name: pCube1 (236)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1373162257
 Transform:
@@ -28187,6 +28383,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 654.3465
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -28206,8 +28406,8 @@ GameObject:
   m_Name: pCube1 (271)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1396019829
 Transform:
@@ -28562,8 +28762,8 @@ GameObject:
   m_Name: pCube1 (285)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1414095745
 Transform:
@@ -28740,8 +28940,8 @@ GameObject:
   m_Name: pCube1 (138)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1420774713
 Transform:
@@ -28829,8 +29029,8 @@ GameObject:
   m_Name: pCube1 (239)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1424448261
 Transform:
@@ -28918,8 +29118,8 @@ GameObject:
   m_Name: pCube1 (174)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1437707592
 Transform:
@@ -29007,7 +29207,7 @@ GameObject:
   m_Name: pCube1 (230)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1448712481
@@ -29136,6 +29336,10 @@ Prefab:
     - target: {fileID: 4784925204289756, guid: 2714890de7332224da7318559b2fec8f, type: 2}
       propertyPath: m_LocalScale.z
       value: 874.8339
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
@@ -29531,6 +29735,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -29688,8 +29896,8 @@ GameObject:
   m_Name: pCube1 (327)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1477177825
 Transform:
@@ -29816,6 +30024,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 874.8339
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -29861,6 +30073,10 @@ Prefab:
     - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
       propertyPath: m_Name
       value: pillarcover (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
@@ -29908,6 +30124,10 @@ Prefab:
       propertyPath: m_Name
       value: box (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -29927,8 +30147,8 @@ GameObject:
   m_Name: pCube1 (224)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1508982845
 Transform:
@@ -30069,8 +30289,8 @@ GameObject:
   m_Name: pCube1 (217)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1528794726
 Transform:
@@ -30158,8 +30378,8 @@ GameObject:
   m_Name: pCube1 (159)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1528903208
 Transform:
@@ -30603,8 +30823,8 @@ GameObject:
   m_Name: pCube1 (205)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1537910887
 Transform:
@@ -30718,6 +30938,10 @@ Prefab:
     - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
       propertyPath: m_Name
       value: box (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
@@ -30946,6 +31170,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -31143,8 +31371,8 @@ GameObject:
   m_Name: pCube1 (187)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1567162534
 Transform:
@@ -31259,6 +31487,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -31331,8 +31563,8 @@ GameObject:
   m_Name: pCube1 (337)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1567937344
 Transform:
@@ -31420,8 +31652,8 @@ GameObject:
   m_Name: pCube1 (141)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1573057659
 Transform:
@@ -31548,6 +31780,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 323.78455
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -31656,8 +31892,8 @@ GameObject:
   m_Name: pCube1 (265)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1583976623
 Transform:
@@ -32207,8 +32443,8 @@ GameObject:
   m_Name: pCube1 (279)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1605140389
 Transform:
@@ -32679,6 +32915,10 @@ Prefab:
       propertyPath: m_Name
       value: box (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -32698,8 +32938,8 @@ GameObject:
   m_Name: pCube1 (221)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1636727588
 Transform:
@@ -33305,6 +33545,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -33350,6 +33594,10 @@ Prefab:
     - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
       propertyPath: m_Name
       value: pillarcover (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
@@ -33783,6 +34031,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -34066,8 +34318,8 @@ GameObject:
   m_Name: pCube1 (180)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1723936106
 Transform:
@@ -34475,8 +34727,8 @@ GameObject:
   m_Name: pCube1 (244)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1732996241
 Transform:
@@ -34653,8 +34905,8 @@ GameObject:
   m_Name: pCube1 (249)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1741386829
 Transform:
@@ -34821,6 +35073,10 @@ Prefab:
     - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
       propertyPath: m_Name
       value: pillarcover (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
@@ -35112,6 +35368,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 874.8339
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -35131,8 +35391,8 @@ GameObject:
   m_Name: pCube1 (157)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1762633793
 Transform:
@@ -35247,6 +35507,10 @@ Prefab:
       propertyPath: m_Name
       value: box (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -35266,8 +35530,8 @@ GameObject:
   m_Name: pCube1 (222)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1764182352
 Transform:
@@ -36514,6 +36778,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -37387,6 +37655,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -37548,8 +37820,8 @@ GameObject:
   m_Name: pCube1 (304)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1873730518
 Transform:
@@ -37868,8 +38140,8 @@ GameObject:
   m_Name: pCube1 (206)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1883483017
 Transform:
@@ -37957,8 +38229,8 @@ GameObject:
   m_Name: pCube1 (139)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1889102199
 Transform:
@@ -38451,7 +38723,7 @@ GameObject:
   m_Name: pCube1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1911454586
@@ -39163,6 +39435,26 @@ Prefab:
       propertyPath: m_Name
       value: snipertower (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1584100630757642, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585354902359284, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744047858723216, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966018039974516, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297696113422500, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f324e57c223b92488cee217e058362a, type: 2}
   m_IsPrefabAsset: 0
@@ -39208,6 +39500,10 @@ Prefab:
     - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
       propertyPath: m_Name
       value: pillarcover (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
@@ -39486,6 +39782,10 @@ Prefab:
       propertyPath: m_Name
       value: betterboxpipes (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1276013332962718, guid: 5e1a2c8da9d046149878657a00a16b38, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1a2c8da9d046149878657a00a16b38, type: 2}
   m_IsPrefabAsset: 0
@@ -39505,8 +39805,8 @@ GameObject:
   m_Name: pCube1 (262)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1968139217
 Transform:
@@ -39621,6 +39921,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -39640,8 +39944,8 @@ GameObject:
   m_Name: pCube1 (331)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1969553462
 Transform:
@@ -39907,8 +40211,8 @@ GameObject:
   m_Name: pCube1 (281)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1977056584
 Transform:
@@ -39996,7 +40300,7 @@ GameObject:
   m_Name: pCube1 (223)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1981388561
@@ -40203,6 +40507,10 @@ Prefab:
       propertyPath: m_Name
       value: box (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -40222,8 +40530,8 @@ GameObject:
   m_Name: pCube1 (238)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1989267666
 Transform:
@@ -40316,8 +40624,8 @@ GameObject:
   m_Name: pCube1 (240)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1994715390
 Transform:
@@ -40672,8 +40980,8 @@ GameObject:
   m_Name: pCube1 (297)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2004274554
 Transform:
@@ -40888,6 +41196,10 @@ Prefab:
     - target: {fileID: 4784925204289756, guid: 2714890de7332224da7318559b2fec8f, type: 2}
       propertyPath: m_LocalScale.z
       value: 246.40738
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
@@ -41127,6 +41439,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 265.83353
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -41281,8 +41597,8 @@ GameObject:
   m_Name: pCube1 (168)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2020856965
 Transform:
@@ -41455,8 +41771,8 @@ GameObject:
   m_Name: pCube1 (303)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2024740970
 Transform:
@@ -41544,8 +41860,8 @@ GameObject:
   m_Name: pCube1 (322)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2027809455
 Transform:
@@ -41761,6 +42077,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 810.8889
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -41806,6 +42126,10 @@ Prefab:
     - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
       propertyPath: m_Name
       value: pillarcover (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
@@ -41915,8 +42239,8 @@ GameObject:
   m_Name: pCube1 (151)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2034702139
 Transform:
@@ -42042,6 +42366,26 @@ Prefab:
     - target: {fileID: 4118345950177944, guid: 3f324e57c223b92488cee217e058362a, type: 2}
       propertyPath: m_LocalScale.z
       value: 20.753458
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584100630757642, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744047858723216, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585354902359284, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297696113422500, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966018039974516, guid: 3f324e57c223b92488cee217e058362a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f324e57c223b92488cee217e058362a, type: 2}
@@ -42608,8 +42952,8 @@ GameObject:
   m_Name: pCube1 (153)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2072182430
 Transform:
@@ -42803,8 +43147,8 @@ GameObject:
   m_Name: pCube1 (210)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2083714747
 Transform:
@@ -42918,6 +43262,10 @@ Prefab:
     - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
       propertyPath: m_Name
       value: pillarcover (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
@@ -43197,8 +43545,8 @@ GameObject:
   m_Name: pCube1 (161)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2101430350
 Transform:
@@ -43566,8 +43914,8 @@ GameObject:
   m_Name: pCube1 (241)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2131829641
 Transform:
@@ -43860,6 +44208,10 @@ Prefab:
       propertyPath: m_Name
       value: pillarcover (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
   m_IsPrefabAsset: 0
@@ -43905,6 +44257,10 @@ Prefab:
     - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
       propertyPath: m_Name
       value: pillarcover (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805845887779702, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4609060626aa4469bf20cc1429ef4c, type: 2}
@@ -43952,6 +44308,10 @@ Prefab:
       propertyPath: m_Name
       value: box (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 1625383719170956, guid: 2714890de7332224da7318559b2fec8f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
@@ -43971,8 +44331,8 @@ GameObject:
   m_Name: pCube1 (178)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2146715864
 Transform:
