@@ -242,7 +242,7 @@ public class CharacterScript : MonoBehaviour
                 if (hit.transform != cam.transform && hit.transform.gameObject.layer == 0)
                 {
                     cam.SendMessage("WallCam",hit.transform);
-                    Debug.Log(hit.transform.position);
+                    //Debug.Log(hit.transform.position);
                 }
                 else
                 {

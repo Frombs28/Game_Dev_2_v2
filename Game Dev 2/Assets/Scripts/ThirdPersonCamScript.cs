@@ -163,15 +163,19 @@ public class ThirdPersonCamScript : MonoBehaviour
 
     void WallCam(Transform otherTransform)
     {
-        Vector3 direction = new Vector3(0, 0, -distance);
-        Quaternion rotation = Quaternion.Euler(-currentY, currentX, 0);
-        transform.position = otherTransform.position + (rotation * direction);
-        free = false;
+        //Vector3 direction = new Vector3(0, 0, Vector3.Distance(otherTransform.position, lookAtObject.transform.position));
+        //Quaternion rotation = Quaternion.Euler(-currentY, currentX, 0);
+        //transform.position = lookAtObject.transform.position + (rotation * direction);
+        //free = false;
+        distance = 1f;
+        gameObject.GetComponent<Camera>().fieldOfView = 100f;
     }
 
     void NoWallCam()
     {
-        free = true;
+        //free = true;
+        //distance = 5f;
+        NormCam();
     }
 
     void Recoil(float amount)
