@@ -42960,7 +42960,7 @@ MonoBehaviour:
   maxY: 70
   transitioning: 0
   newlookAtObject: {fileID: 0}
-  lerpSpeed: 5
+  lerpSpeed: 50
   lerpCurve: 5
   inputManager: {fileID: 1991040169}
 --- !u!82 &2060307580
