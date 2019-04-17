@@ -247,11 +247,11 @@ public class CharacterScript : MonoBehaviour
                     hit_wall = true;
                     //Debug.Log("yert");
                 }
-                else if(hit_wall)
-                {
-                    cam.SendMessage("NoWallCam");
-                    hit_wall = false;
-                }
+                //else if(hit.transform == cam.transform && hit_wall)
+                //{
+                //    cam.SendMessage("NoWallCam");
+                //    hit_wall = false;
+                //}
             }
             else if(hit_wall)
             {
