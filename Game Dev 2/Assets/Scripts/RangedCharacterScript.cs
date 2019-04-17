@@ -109,7 +109,10 @@ public class RangedCharacterScript : CharacterScript
 
     public override void Die()
     {
-        inputManager.SendMessage("ChangeTime", 15);
+        if (!amPlayer)
+        {
+            inputManager.SendMessage("ChangeTime", 15);
+        }
         base.Die();
     }
 

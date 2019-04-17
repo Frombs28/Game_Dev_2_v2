@@ -115,7 +115,10 @@ public class MeleeCharacterScript : CharacterScript
 
     public override void Die()
     {
-        inputManager.SendMessage("ChangeTime", 10);
+        if (!amPlayer)
+        {
+            inputManager.SendMessage("ChangeTime", 10);
+        }
         base.Die();
     }
 
