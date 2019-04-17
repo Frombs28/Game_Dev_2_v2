@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: baseenemypurple texture
+  m_Name: shieldmat
   m_Shader: {fileID: 4800000, guid: c2d7e794131b6ac46bee98a478d0bd3c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,11 +19,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: d91f597f118c7534d8c6c92dd04e8455, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6130add74bd32e345b9e9d5fae2fa2e8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CombMap:
-        m_Texture: {fileID: 2800000, guid: 653bc6570fad00d4c94e4b2431859ac9, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -43,11 +43,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MKGlowTex:
-        m_Texture: {fileID: 2800000, guid: 74e3910df422d6c48a87e018ea6747e7, type: 3}
+        m_Texture: {fileID: 2800000, guid: f468bfddfc02b4346a0269390e2fac34, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 653bc6570fad00d4c94e4b2431859ac9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 56873048802a6a34f820a58ea4bf640e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SSSTex:
-        m_Texture: {fileID: 2800000, guid: 653bc6570fad00d4c94e4b2431859ac9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 56873048802a6a34f820a58ea4bf640e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -75,12 +75,12 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _LitOffset: 0.25
-    - _MKGlowPower: 1.22
+    - _MKGlowPower: 1.51
     - _MKGlowTexStrength: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineThickness: 1
+    - _OutlineThickness: 0.3
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecPower: 20
@@ -94,5 +94,5 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MKGlowColor: {r: 1, g: 1, b: 1, a: 1}
     - _MKGlowTexColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0.2901961, g: 0.10196079, b: 0.34509805, a: 1}
-    - _SSSColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0.9058824, b: 1, a: 1}
+    - _SSSColor: {r: 0.37647063, g: 0.37647063, b: 0.37647063, a: 1}
