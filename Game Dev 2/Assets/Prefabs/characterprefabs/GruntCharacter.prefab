@@ -1513,11 +1513,11 @@ MonoBehaviour:
   short_bullet_speed: 300
   sniper_bullet_speed: 600
   grunt_bullet_speed: 300
-  rifle_damage: 3
-  short_damage: 5
+  rifle_damage: 2
+  short_damage: 4
   sniper_damage: 10
-  grunt_damage: 2
-  grunt_burst_rate: 40
+  grunt_damage: 1
+  grunt_burst_rate: 20
   melee_burst_rate: 10
   ranged_burst_rate: 60
   sniper_burst_rate: 120
@@ -1595,10 +1595,11 @@ MonoBehaviour:
   aggro: 0
   distanceToAggro: 100
   timer: 100
+  makeDistanceTimer: 0
   ammo_count: 20
   max_ammo: 20
   reload: 2
-  fire_rate: 0.3
+  fire_rate: 0.2
   my_health: 5
   max_health: 5
 --- !u!137 &137534956174064068

@@ -1460,6 +1460,7 @@ MonoBehaviour:
   aggro: 0
   distanceToAggro: 25
   timer: 100
+  makeDistanceTimer: 0
   dashDistance: 70
   dashSpeed: 75
   dashTime: 1
@@ -1495,9 +1496,9 @@ MonoBehaviour:
   sniper_bullet_speed: 600
   grunt_bullet_speed: 300
   rifle_damage: 2
-  short_damage: 5
+  short_damage: 4
   sniper_damage: 10
-  grunt_damage: 2
+  grunt_damage: 1
   grunt_burst_rate: 10
   melee_burst_rate: 2
   ranged_burst_rate: 40
