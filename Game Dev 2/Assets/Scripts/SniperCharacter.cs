@@ -155,7 +155,7 @@ public class SniperCharacter : CharacterScript
             yield return null;
         }
         jumpSpeed = myJumpSpeed;
-        //jumpEndTime = Time.time;
+        jumpEndTime = Time.time;
         //dashing = false;
     }
 
