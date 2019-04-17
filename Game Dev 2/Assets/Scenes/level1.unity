@@ -2278,7 +2278,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &95291096
 GameObject:
   m_ObjectHideFlags: 0
@@ -3368,7 +3368,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 2
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &147652133
 GameObject:
   m_ObjectHideFlags: 0
@@ -5031,11 +5031,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 225081665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 157.00005, y: -0.22499995, z: 0.472}
+  m_LocalPosition: {x: 69.06, y: 0.0823, z: -0.3811}
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1492227374}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &225081667
 MonoBehaviour:
@@ -5058,7 +5058,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!114 &226417777 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114985366733509718, guid: dbb2c1e8b398d9c4084ad2610d1f8d2a,
@@ -6157,7 +6157,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 258227432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 66.95, y: -0.25699997, z: -0.032999903}
+  m_LocalPosition: {x: 42.02, y: -0.25699997, z: -0.032999903}
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1492227374}
@@ -6184,7 +6184,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 2
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1001 &260207196
 Prefab:
   m_ObjectHideFlags: 0
@@ -6858,7 +6858,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1001 &294982945
 Prefab:
   m_ObjectHideFlags: 0
@@ -6961,7 +6961,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 2
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &300051315
 GameObject:
   m_ObjectHideFlags: 0
@@ -7313,7 +7313,7 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1492227374}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &310761387
 MonoBehaviour:
@@ -7336,7 +7336,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &313408563
 GameObject:
   m_ObjectHideFlags: 0
@@ -9779,7 +9779,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1001 &415555076
 Prefab:
   m_ObjectHideFlags: 0
@@ -10856,59 +10856,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2714890de7332224da7318559b2fec8f, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &454453034
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1346409770618006, guid: ff3280533eb3d3641a791cc3610e0807,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 454453035}
-  - component: {fileID: 454453036}
-  m_Layer: 2
-  m_Name: Spawn (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &454453035
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4964287784958656, guid: ff3280533eb3d3641a791cc3610e0807,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 454453034}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 83.7, y: -0.25699997, z: -0.142}
-  m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1492227374}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &454453036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114824381936422730, guid: ff3280533eb3d3641a791cc3610e0807,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 454453034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e08b78129f9674999e429171907d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meleePrefab: {fileID: 1408844105495096, guid: 03dbc8cc61bbe2e4bb3749cbc1fa43dd,
-    type: 2}
-  rangedPrefab: {fileID: 1699993314130230, guid: 60e1ae336deb98a4092ef834cd0e8383,
-    type: 2}
-  sniperPrefab: {fileID: 1594852165712796, guid: 15233871498dba44fa7437968b9c8e19,
-    type: 2}
-  gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
-    type: 2}
-  prefabNum: 3
-  inputManager: {fileID: 0}
 --- !u!1 &458505153
 GameObject:
   m_ObjectHideFlags: 0
@@ -11587,7 +11534,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 2
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &493341840
 GameObject:
   m_ObjectHideFlags: 0
@@ -13776,7 +13723,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 0
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1001 &553251257
 Prefab:
   m_ObjectHideFlags: 0
@@ -14384,7 +14331,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 0
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1001 &570126046
 Prefab:
   m_ObjectHideFlags: 0
@@ -15952,6 +15899,11 @@ Prefab:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1642832490}
+    - target: {fileID: 114824381936422730, guid: ff3280533eb3d3641a791cc3610e0807,
+        type: 2}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1642832490}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff3280533eb3d3641a791cc3610e0807, type: 2}
   m_IsPrefabAsset: 0
@@ -17114,7 +17066,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &666694872
 GameObject:
   m_ObjectHideFlags: 0
@@ -18048,7 +18000,7 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1492227374}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &703401061
 MonoBehaviour:
@@ -18071,7 +18023,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &703980784
 GameObject:
   m_ObjectHideFlags: 0
@@ -21320,59 +21272,6 @@ MonoBehaviour:
     type: 2}
   prefabNum: 3
   inputManager: {fileID: 1642832490}
---- !u!1 &870354338
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1346409770618006, guid: ff3280533eb3d3641a791cc3610e0807,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 870354339}
-  - component: {fileID: 870354340}
-  m_Layer: 2
-  m_Name: Spawn (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &870354339
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4964287784958656, guid: ff3280533eb3d3641a791cc3610e0807,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 870354338}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 66.950035, y: -0.25699997, z: -0.71}
-  m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1492227374}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &870354340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114824381936422730, guid: ff3280533eb3d3641a791cc3610e0807,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 870354338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e08b78129f9674999e429171907d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meleePrefab: {fileID: 1408844105495096, guid: 03dbc8cc61bbe2e4bb3749cbc1fa43dd,
-    type: 2}
-  rangedPrefab: {fileID: 1699993314130230, guid: 60e1ae336deb98a4092ef834cd0e8383,
-    type: 2}
-  sniperPrefab: {fileID: 1594852165712796, guid: 15233871498dba44fa7437968b9c8e19,
-    type: 2}
-  gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
-    type: 2}
-  prefabNum: 2
-  inputManager: {fileID: 0}
 --- !u!1 &873709175
 GameObject:
   m_ObjectHideFlags: 0
@@ -24606,7 +24505,7 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1492227374}
-  m_RootOrder: 12
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1040347900
 MonoBehaviour:
@@ -24629,7 +24528,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 2
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1045465415
 GameObject:
   m_ObjectHideFlags: 0
@@ -25387,7 +25286,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1077431445
 GameObject:
   m_ObjectHideFlags: 0
@@ -27195,11 +27094,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1176100971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 135.65005, y: 0.012000004, z: 0.766}
+  m_LocalPosition: {x: 135.65005, y: 0.012000004, z: 0.564}
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1492227374}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1176100973
 MonoBehaviour:
@@ -27222,7 +27121,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1178543372
 GameObject:
   m_ObjectHideFlags: 0
@@ -29096,7 +28995,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 2
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1250758446
 GameObject:
   m_ObjectHideFlags: 0
@@ -30011,7 +29910,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 0
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1284360337
 GameObject:
   m_ObjectHideFlags: 0
@@ -32387,7 +32286,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 0
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1382161039
 GameObject:
   m_ObjectHideFlags: 0
@@ -32529,7 +32428,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1392142714
 GameObject:
   m_ObjectHideFlags: 0
@@ -34484,7 +34383,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4964287784958656, guid: ff3280533eb3d3641a791cc3610e0807, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.033
+      value: 0.656
       objectReference: {fileID: 0}
     - target: {fileID: 114824381936422730, guid: ff3280533eb3d3641a791cc3610e0807,
         type: 2}
@@ -34493,6 +34392,11 @@ Prefab:
       objectReference: {fileID: 1594852165712796, guid: 15233871498dba44fa7437968b9c8e19,
         type: 2}
     - target: {fileID: 114053339277746160, guid: ff3280533eb3d3641a791cc3610e0807,
+        type: 2}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1642832490}
+    - target: {fileID: 114824381936422730, guid: ff3280533eb3d3641a791cc3610e0807,
         type: 2}
       propertyPath: inputManager
       value: 
@@ -34597,11 +34501,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1499914164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 157.00005, y: -0.22499995, z: -0.675}
+  m_LocalPosition: {x: 72.8, y: 0.0874, z: 0.51}
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1492227374}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1499914166
 MonoBehaviour:
@@ -34624,7 +34528,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1504689437
 GameObject:
   m_ObjectHideFlags: 0
@@ -35160,59 +35064,6 @@ Transform:
   m_Father: {fileID: 599930359}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1524235839
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1346409770618006, guid: ff3280533eb3d3641a791cc3610e0807,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1524235840}
-  - component: {fileID: 1524235841}
-  m_Layer: 2
-  m_Name: Spawn (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1524235840
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4964287784958656, guid: ff3280533eb3d3641a791cc3610e0807,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1524235839}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 66.950035, y: -0.25699997, z: 0.657}
-  m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1492227374}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1524235841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114824381936422730, guid: ff3280533eb3d3641a791cc3610e0807,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1524235839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e08b78129f9674999e429171907d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meleePrefab: {fileID: 1408844105495096, guid: 03dbc8cc61bbe2e4bb3749cbc1fa43dd,
-    type: 2}
-  rangedPrefab: {fileID: 1699993314130230, guid: 60e1ae336deb98a4092ef834cd0e8383,
-    type: 2}
-  sniperPrefab: {fileID: 1594852165712796, guid: 15233871498dba44fa7437968b9c8e19,
-    type: 2}
-  gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
-    type: 2}
-  prefabNum: 2
-  inputManager: {fileID: 0}
 --- !u!1 &1524612001
 GameObject:
   m_ObjectHideFlags: 0
@@ -40280,7 +40131,7 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1492227374}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1733312422
 MonoBehaviour:
@@ -40303,7 +40154,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 2
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1001 &1740865312
 Prefab:
   m_ObjectHideFlags: 0
@@ -41488,7 +41339,7 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1492227374}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1797376601
 MonoBehaviour:
@@ -41511,7 +41362,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1797698511
 GameObject:
   m_ObjectHideFlags: 0
@@ -42735,7 +42586,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 2
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1862572920
 GameObject:
   m_ObjectHideFlags: 0
@@ -43764,7 +43615,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 0
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1908015965
 GameObject:
   m_ObjectHideFlags: 0
@@ -45321,7 +45172,7 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1492227374}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1997789296
 MonoBehaviour:
@@ -45344,7 +45195,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 3
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &1997822719
 GameObject:
   m_ObjectHideFlags: 0
@@ -47531,7 +47382,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 2
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1001 &2111364616
 Prefab:
   m_ObjectHideFlags: 0
@@ -47634,7 +47485,7 @@ MonoBehaviour:
   gruntPrefab: {fileID: 1692642361996648, guid: 40083ef3872004d40825a655a8382c9f,
     type: 2}
   prefabNum: 0
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1642832490}
 --- !u!1 &2119461250
 GameObject:
   m_ObjectHideFlags: 0
