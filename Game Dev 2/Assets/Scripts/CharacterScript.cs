@@ -59,6 +59,7 @@ public class CharacterScript : MonoBehaviour
     public float distanceToAggro = 25f;
     public float timer = 100f;
     public float makeDistanceTimer;
+    public float myAiFireSeconds; //set in inspector: [(burst_rate) * (burst_num)] <-- get those variables from Gun on this character in the inspector
 
     private void Awake()
     //this function is mostly used to get references to components on this game object
@@ -420,7 +421,8 @@ public class CharacterScript : MonoBehaviour
         bool strafingRight = (Random.value >= 0.5f);
         float startTime = Time.time;
         float myTimer = Random.Range(5f, 10f);
-        float myDist = Vector3.Distance(player.transform.position, transform.position);
+        float myDist = 10f;
+        if (player) { myDist = Vector3.Distance(player.transform.position, transform.position); }
         if (strafingRight)
         {
             myAnimator.SetBool("straferight", true);
@@ -433,7 +435,7 @@ public class CharacterScript : MonoBehaviour
         }
         while (Time.time - startTime <= myTimer && myDist >= 5f)
         {
-            myDist = Vector3.Distance(player.transform.position, transform.position);
+            if (player) { myDist = Vector3.Distance(player.transform.position, transform.position); }
             if (strafingRight)
             {
                 Vector3 myVect = transform.TransformDirection(Vector3.right);
@@ -472,14 +474,9 @@ public class CharacterScript : MonoBehaviour
 
     IEnumerator Fire()
     {
-        int i = 0;
-        while (i < 5)
-        {
-            Attack();
-            myAnimator.SetBool("firing", true);
-            yield return new WaitForSeconds(0.5f);
-            i++;
-        }
+        myAnimator.SetBool("firing", true);
+        Attack();
+        yield return new WaitForSeconds(myAiFireSeconds);
         myAnimator.SetBool("firing", false);
         if (!amPlayer)
         {
