@@ -67,7 +67,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _MKGlowPower: 1
-    - _MKGlowTexStrength: 1
+    - _MKGlowTexStrength: 4.1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
