@@ -1631,6 +1631,7 @@ MonoBehaviour:
   distanceToAggro: 25
   timer: 100
   makeDistanceTimer: 0
+  myAiFireSeconds: 2
   jumpDistance: 10
   newJumpSpeed: 40
   jumpTime: 4
@@ -1667,13 +1668,13 @@ MonoBehaviour:
   short_damage: 4
   sniper_damage: 10
   grunt_damage: 1
-  grunt_burst_rate: 60
-  melee_burst_rate: 60
-  ranged_burst_rate: 60
-  sniper_burst_rate: 120
-  grunt_burst_num: 4
-  melee_burst_num: 4
-  ranged_burst_num: 4
+  grunt_burst_rate: 0.2
+  melee_burst_rate: 0.15
+  ranged_burst_rate: 1.15
+  sniper_burst_rate: 2
+  grunt_burst_num: 5
+  melee_burst_num: 10
+  ranged_burst_num: 3
   sniper_burst_num: 2
   gruntInaccuracy: 10
   meleeInaccuracy: 20

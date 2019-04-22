@@ -1461,6 +1461,7 @@ MonoBehaviour:
   distanceToAggro: 25
   timer: 100
   makeDistanceTimer: 0
+  myAiFireSeconds: 3.45
   dashDistance: 70
   dashSpeed: 75
   dashTime: 1
@@ -1499,14 +1500,14 @@ MonoBehaviour:
   short_damage: 4
   sniper_damage: 10
   grunt_damage: 1
-  grunt_burst_rate: 10
-  melee_burst_rate: 2
-  ranged_burst_rate: 40
-  sniper_burst_rate: 10
-  grunt_burst_num: 4
-  melee_burst_num: 4
-  ranged_burst_num: 4
-  sniper_burst_num: 4
+  grunt_burst_rate: 0.2
+  melee_burst_rate: 0.15
+  ranged_burst_rate: 1.15
+  sniper_burst_rate: 2
+  grunt_burst_num: 5
+  melee_burst_num: 10
+  ranged_burst_num: 3
+  sniper_burst_num: 2
   gruntInaccuracy: 10
   meleeInaccuracy: 20
   rangedInacuracy: 10

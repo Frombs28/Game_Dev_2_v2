@@ -17,10 +17,10 @@ public class Gun : MonoBehaviour
     public int sniper_damage = 8;
     public int grunt_damage = 2;
     float start_time = 0f;
-    public float grunt_burst_rate = 40f;
-    public float melee_burst_rate = 10f;
-    public float ranged_burst_rate = 60f;
-    public float sniper_burst_rate = 120f;
+    public float grunt_burst_rate = 0.2f;
+    public float melee_burst_rate = 0.15f;
+    public float ranged_burst_rate = 1.15f;
+    public float sniper_burst_rate = 2f;
     public int grunt_burst_num = 5;
     public int melee_burst_num = 10;
     public int ranged_burst_num = 3;
