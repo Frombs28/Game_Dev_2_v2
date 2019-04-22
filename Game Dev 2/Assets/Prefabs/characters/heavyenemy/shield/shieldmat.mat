@@ -75,7 +75,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _LitOffset: 0.25
-    - _MKGlowPower: 1.51
+    - _MKGlowPower: 0.32
     - _MKGlowTexStrength: 1
     - _Metallic: 0
     - _Mode: 0

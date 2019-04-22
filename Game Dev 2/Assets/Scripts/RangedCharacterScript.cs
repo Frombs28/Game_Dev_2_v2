@@ -176,6 +176,7 @@ public class RangedCharacterScript : CharacterScript
         {
             //invincible = true;
             zeroMovement = false;
+            Debug.Log(Time.time - dashStartTime);
             interruptMovement = true;
             //transform.Translate(dashDirection * dashSpeed * Time.deltaTime);
             moveDirection = dashDirection * dashSpeed;

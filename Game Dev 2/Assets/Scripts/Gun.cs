@@ -126,9 +126,9 @@ public class Gun : MonoBehaviour
         cur_bullet.GetComponent<Rigidbody>().velocity = myDirection.normalized * short_bullet_speed;
         cur_bullet.layer = 9;
         cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(short_damage);
-        Destroy(cur_bullet, 0.25f);
-        
-        for (float i = 0f; i < (2 * Mathf.PI); i+=(Mathf.PI / 4))
+        Destroy(cur_bullet, 1f);
+
+        for (float i = 0f; i < (2 * Mathf.PI); i += (Mathf.PI / 4))
         {
             GameObject cur_bullet2;
             Vector3 myDirection2;
@@ -149,8 +149,10 @@ public class Gun : MonoBehaviour
             cur_bullet2.GetComponent<Rigidbody>().velocity = myDirection2.normalized * short_bullet_speed;
             cur_bullet2.layer = 9;
             cur_bullet2.gameObject.GetComponent<Bullet>().SetDamage(short_damage);
-            Destroy(cur_bullet2, 0.25f);
+            Destroy(cur_bullet2, 1f);
         }
+        laser.pitch = Random.Range(1.0f, 1.5f);
+        laser.Play();
         cam.SendMessage("Recoil", rangedRecoil);
     }
     

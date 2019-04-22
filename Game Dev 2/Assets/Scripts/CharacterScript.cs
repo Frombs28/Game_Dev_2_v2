@@ -238,7 +238,7 @@ public class CharacterScript : MonoBehaviour
         //        gameObject.SendMessage("FireEnemyGun");
         //    }
         }
-
+        //Wall sensor
         if (amPlayer)
         {
             RaycastHit hit;
