@@ -211,7 +211,7 @@ public class Gun : MonoBehaviour
             cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
             Vector3 myDirection = new Vector3(Random.Range(-gruntInaccuracy, gruntInaccuracy), Random.Range(-gruntInaccuracy, gruntInaccuracy), 100f);
             myDirection.Normalize();
-            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (rifle_bullet_speed * 0.5f));
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (rifle_bullet_speed * 0.3f));
             cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(grunt_damage);
             Destroy(cur_bullet, 3);
             yield return new WaitForSeconds(grunt_burst_rate);
@@ -226,7 +226,7 @@ public class Gun : MonoBehaviour
             cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
             Vector3 myDirection = new Vector3(Random.Range(-meleeInaccuracy, meleeInaccuracy), Random.Range(-meleeInaccuracy, meleeInaccuracy), 100f);
             myDirection.Normalize();
-            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (rifle_bullet_speed * 0.5f));
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (rifle_bullet_speed * 0.3f));
             cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(rifle_damage);
             Destroy(cur_bullet, 3);
             yield return new WaitForSeconds(melee_burst_rate);
@@ -241,7 +241,7 @@ public class Gun : MonoBehaviour
             cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
             Vector3 myDirection = new Vector3(Random.Range(-rangedInacuracy, rangedInacuracy), Random.Range(-rangedInacuracy, rangedInacuracy), 100f);
             myDirection.Normalize();
-            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (short_bullet_speed * 0.5f));
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (short_bullet_speed * 0.3f));
             cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(short_damage);
             Destroy(cur_bullet, 3);
             yield return new WaitForSeconds(ranged_burst_rate);
@@ -256,7 +256,7 @@ public class Gun : MonoBehaviour
             cur_bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
             Vector3 myDirection = new Vector3(Random.Range(-sniperInaccuracy, sniperInaccuracy), Random.Range(-sniperInaccuracy, sniperInaccuracy), 100f);
             myDirection.Normalize();
-            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (sniper_bullet_speed * 0.5f));
+            cur_bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(myDirection * (sniper_bullet_speed * 0.3f));
             cur_bullet.gameObject.GetComponent<Bullet>().SetDamage(sniper_damage);
             Destroy(cur_bullet, 3);
             yield return new WaitForSeconds(sniper_burst_rate);
