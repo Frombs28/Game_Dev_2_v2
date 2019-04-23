@@ -1596,6 +1596,7 @@ MonoBehaviour:
   player: {fileID: 0}
   amPlayer: 0
   inputManager: {fileID: 0}
+  instantiateManager: {fileID: 0}
   navAgent: {fileID: 0}
   myAnimator: {fileID: 0}
   controller: {fileID: 0}
@@ -1607,7 +1608,7 @@ MonoBehaviour:
   gravity: 70
   enemyhealth: 3
   cur_bullet: 0
-  enemySpeed: 20
+  enemySpeed: 12
   invincible: 0
   reload_circles:
   - {fileID: 21300000, guid: edc16dbccd9fcff438f1cdbff3fc2ea7, type: 3}
@@ -1622,6 +1623,7 @@ MonoBehaviour:
   reloading: 0
   notPossessed: {fileID: 0}
   possessed: {fileID: 0}
+  wall_time: 0.2
   cam: {fileID: 0}
   state: none
   lookAtPlayer: 0

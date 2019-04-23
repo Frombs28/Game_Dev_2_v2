@@ -1534,7 +1534,7 @@ MonoBehaviour:
   gravity: 70
   enemyhealth: 6
   cur_bullet: 0
-  enemySpeed: 9
+  enemySpeed: 6
   invincible: 0
   reload_circles:
   - {fileID: 21300000, guid: edc16dbccd9fcff438f1cdbff3fc2ea7, type: 3}
