@@ -442,19 +442,30 @@ public class CharacterScript : MonoBehaviour
         while (Time.time - startTime <= myTimer && myDist >= 5f)
         {
             if (player) { myDist = Vector3.Distance(player.transform.position, transform.position); }
-            if (strafingRight)
+            if (strafingRight && !hittingWall)
             {
                 Vector3 myVect = transform.TransformDirection(Vector3.right);
                 myVect *= 10;
                 myVect += transform.position;
                 navAgent.SetDestination(myVect);
             }
-            else
+            else if (!hittingWall)
             {
                 Vector3 myVect = transform.TransformDirection(-Vector3.right);
                 myVect *= 10;
                 myVect += transform.position;
                 navAgent.SetDestination(myVect);
+            }
+            if (hittingWall)
+            {
+                if (player)
+                {
+                    navAgent.SetDestination(player.transform.position);
+                }
+                else
+                {
+                    break;
+                }
             }
             yield return null;
         }
@@ -463,7 +474,7 @@ public class CharacterScript : MonoBehaviour
         myAnimator.SetBool("run", false);
         if (!amPlayer)
         {
-            if (aggro)
+            if (aggro && player)
             {
                 state = "firing";
                 myAnimator.SetBool("run", false);
