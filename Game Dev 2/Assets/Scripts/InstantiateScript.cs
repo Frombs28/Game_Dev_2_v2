@@ -24,6 +24,14 @@ public class InstantiateScript : MonoBehaviour
         InstantiateCharacter(spawn.position);   
     }
 
+    public void AssignPrefabNum(int myNum)
+    //called from the character that the player just possessed into just now
+    //sets prefabNum
+    //tells us which character to re-spawn the player as when they die
+    {
+        prefabNum = myNum;
+    }
+
     //makes a guy
     private GameObject InstantiateCharacter(Vector3 pos)
     {

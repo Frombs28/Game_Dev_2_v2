@@ -222,4 +222,9 @@ public class SniperCharacter : CharacterScript
             perchInRange = false;
         }
     }
+
+    public override void RespawnAsThisCharacter()
+    {
+        instantiateManager.SendMessage("AssignPrefabNum", 2);
+    }
 }

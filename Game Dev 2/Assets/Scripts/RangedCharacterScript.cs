@@ -271,4 +271,9 @@ public class RangedCharacterScript : CharacterScript
         navAgent.SetDestination(myVect);
         return true;
     }
+
+    public override void RespawnAsThisCharacter()
+    {
+        instantiateManager.SendMessage("AssignPrefabNum", 1);
+    }
 }

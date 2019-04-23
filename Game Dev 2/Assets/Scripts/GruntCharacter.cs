@@ -129,4 +129,9 @@ public class GruntCharacter : CharacterScript
         navAgent.SetDestination(player.transform.position);
         return true;
     }
+
+    public override void RespawnAsThisCharacter()
+    {
+        instantiateManager.SendMessage("AssignPrefabNum", 3);
+    }
 }

@@ -314,4 +314,9 @@ public class MeleeCharacterScript : CharacterScript
             triggerInWall = false;
         }
     }
+
+    public override void RespawnAsThisCharacter()
+    {
+        instantiateManager.SendMessage("AssignPrefabNum", 0);
+    }
 }

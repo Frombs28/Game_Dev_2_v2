@@ -16,6 +16,7 @@ public class CharacterScript : MonoBehaviour
     public GameObject player;
     public bool amPlayer;
     public GameObject inputManager;
+    public GameObject instantiateManager;
 
     public NavMeshAgent navAgent;
 
@@ -74,6 +75,7 @@ public class CharacterScript : MonoBehaviour
         controller = GetComponent<CharacterController>();
         navAgent = GetComponent<NavMeshAgent>();
         inputManager = GameObject.Find("Input Manager");
+        instantiateManager = GameObject.Find("Instantiate Manager");
         navAgent.speed = enemySpeed;
         myAnimator = gameObject.GetComponentInChildren<Animator>();
         figure = gameObject.transform.GetChild(3).gameObject;
@@ -103,6 +105,7 @@ public class CharacterScript : MonoBehaviour
             material = possessed;
             gameObject.tag = "Player";
             inputManager = GameObject.Find("Input Manager");
+            RespawnAsThisCharacter();
         }
         else {
             navAgent.enabled = true;
@@ -513,6 +516,7 @@ public class CharacterScript : MonoBehaviour
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //the virtual stuff that must be overloaded by the subclasses
+    public virtual void RespawnAsThisCharacter() { }
     public virtual bool MakeDistanceHelperOne() { return true; } //turns the character to face in the desired direction, returns true as long as this has not been successful
     public virtual bool MakeDistanceHelperTwo() { return true; } //moves the character in the desired direction, returns true as long as distance has not been made
     public virtual void Attack()
