@@ -46,6 +46,9 @@ public class CharacterScript : MonoBehaviour
 
     bool dead = false;
 
+    public float wall_time = 0.2f;
+    float cur_wall_time;
+
     GameObject figure;
 
     public Camera cam; //player character rotation is based on camera rotation //this is the MAIN CAMERA,  *not*  your personal VIRTUAL CAMERA
@@ -81,6 +84,7 @@ public class CharacterScript : MonoBehaviour
         reload_circle = GameObject.FindWithTag("ReloadTimer").GetComponent<Image>();
         reload_circle.enabled = false;
         hit_wall = false;
+        cur_wall_time = 0f;
     }
 
     public void AssignPlayer(GameObject myPlayer)
@@ -125,6 +129,7 @@ public class CharacterScript : MonoBehaviour
     {
         grounded = controller.isGrounded;
         timer += Time.deltaTime;
+        cur_wall_time += Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.G) && !PauseScript.paused && amPlayer)
         {
@@ -250,6 +255,7 @@ public class CharacterScript : MonoBehaviour
                 {
                     cam.SendMessage("WallCam",hit.transform);
                     hit_wall = true;
+                    cur_wall_time = Time.deltaTime;
                     //Debug.Log("yert");
                 }
                 //else if (hit.transform == cam.transform && hit_wall)
@@ -262,7 +268,7 @@ public class CharacterScript : MonoBehaviour
 
                 //}
             }
-            else if(hit_wall)
+            else if(hit_wall && ((Time.deltaTime - cur_wall_time) <= wall_time ))
             {
                 //if (!(Vector3.Distance(cam.transform.position, transform.position) < 5))
                 //{
