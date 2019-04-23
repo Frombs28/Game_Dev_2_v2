@@ -85,21 +85,6 @@ public class ThirdPersonCamScript : MonoBehaviour
             currentX += Input.GetAxis("Mouse X") * sensitivityX;
             currentY += Input.GetAxis("Mouse Y") * sensitivityY;
             currentY = Mathf.Clamp(currentY, minY, maxY);
-
-            if (wall_cam)
-            {
-                RaycastHit hit;
-                Debug.DrawRay(transform.position, lookAtObject.transform.position - transform.position);
-                if (Physics.Raycast(transform.position, ((lookAtObject.transform.position - transform.position) / Vector3.Distance(transform.position, lookAtObject.transform.position)), out hit, 4f))
-                {
-                    //if it cam hits a wall
-                }
-                else
-                {
-                    NormCam();
-                    lookAtObject.transform.parent.gameObject.SendMessage("ChangeWallCam");
-                }
-            }
         }
     }
 
@@ -174,7 +159,11 @@ public class ThirdPersonCamScript : MonoBehaviour
         sensitivityX = 2f;
         sensitivityY = 2f;
         distance = 5f;
-        wall_cam = false;
+        if (wall_cam)
+        {
+            wall_cam = false;
+            lookAtObject.transform.parent.gameObject.SendMessage("ChangeWallCam");
+        }
         Debug.Log(wall_cam);
         if (lookAtObject) { lookAtObject.SendMessage("CameraNotZoomedIn"); }
     }
@@ -202,5 +191,13 @@ public class ThirdPersonCamScript : MonoBehaviour
     {
         //transform.Rotate(amount, 0f, 0f);
         currentY += amount;
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        if (wall_cam)
+        {
+            NormCam();
+        }
     }
 }
