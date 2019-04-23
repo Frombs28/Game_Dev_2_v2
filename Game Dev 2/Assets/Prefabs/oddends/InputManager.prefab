@@ -56,7 +56,7 @@ MonoBehaviour:
   playerhealth: 10
   minusDuration: 0.35
   hurtDuration: 0.75
-  possession_rate: 0.5
+  possession_rate: 0.25
   healthBar: {fileID: 0}
   ammo_num: {fileID: 0}
   images:
@@ -78,3 +78,41 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0a533ad49d5530a468d96196480eeca9, type: 3}
   - {fileID: 21300000, guid: bc4f98cde14017d46bc8f24f36e28f99, type: 3}
   hurt: {fileID: 0}
+  speech: {fileID: 0}
+  speech_list:
+  - I just got DDoSed!
+  - 'WTF BRO '
+  - UREMDFCNRSIUFN
+  - F**K YOU
+  - '**** **** ***** ******'
+  - So this game is still broken on console apparently
+  - Who build attack speed
+  - You Rock, Cancel That
+  - Good Game
+  - Good Game, Cancel that
+  - Mozambique here!
+  - GG, Not really
+  - Strategic Feeding Right?
+  - Disgusting
+  - Yeet
+  - This quack
+  - Did I just get rekt??
+  - '#nolife'
+  - Reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+  - Bitch
+  - Give yer balls a tug
+  - Hello??
+  - ??
+  - Bamboozled
+  - F
+  - Wtf
+  - "( \u0361\xB0 \u035C\u0296 \u0361\xB0)"
+  - Reported
+  - Dude you aren't even good. That's my smurf
+  - You're in the endgame now
+  - Rip
+  - "(\u256F\xB0\u25A1\xB0)\u256F\uFE35 \u253B\u2501\u253B"
+  - Where tha FUCK was my HEALER
+  - "We have a \u201Cbadass\u201D over here"
+  - U H8 2 C IT
+  - Uh oh, the bad man hurt me

@@ -39214,7 +39214,7 @@ MonoBehaviour:
   playerhealth: 10
   minusDuration: 0.35
   hurtDuration: 0.75
-  possession_rate: 0.5
+  possession_rate: 0.25
   healthBar: {fileID: 1255340480}
   ammo_num: {fileID: 226417777}
   images:
