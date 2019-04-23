@@ -258,26 +258,7 @@ public class CharacterScript : MonoBehaviour
                 {
                     cam.SendMessage("WallCam",hit.transform);
                     hit_wall = true;
-                    cur_wall_time = Time.deltaTime;
-                    //Debug.Log("yert");
                 }
-                //else if (hit.transform == cam.transform && hit_wall)
-                //{
-                //    if(!( Vector3.Distance(cam.transform.position, transform.position) < 5) )
-                //    {
-                //        cam.SendMessage("NoWallCam");
-                //        hit_wall = false;
-                //    }
-
-                //}
-            }
-            else if(hit_wall && ((Time.deltaTime - cur_wall_time) <= wall_time ))
-            {
-                //if (!(Vector3.Distance(cam.transform.position, transform.position) < 5))
-                //{
-                    cam.SendMessage("NoWallCam");
-                    hit_wall = false;
-                //}
             }
         }
         
@@ -576,6 +557,11 @@ public class CharacterScript : MonoBehaviour
     public void Invincibility()
     {
         StartCoroutine("Frames");
+    }
+
+    public void ChangeWallCam()
+    {
+        hit_wall = false;
     }
 
     IEnumerator Frames()

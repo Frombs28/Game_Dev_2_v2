@@ -144,9 +144,9 @@ public class Gun : MonoBehaviour
                 targetTransform = new Vector3(cam.transform.forward.x + 2 * Mathf.Cos(i), cam.transform.forward.y + 2 * Mathf.Sin(i), (transform.InverseTransformDirection(Vector3.forward).z));
                 myDirection2 = targetTransform;
             }
-            cur_bullet2 = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation);
+            cur_bullet2 = Instantiate(bullet, new Vector3(barrel.transform.position.x + 2 * Mathf.Cos(i), barrel.transform.position.y + 2 * Mathf.Sin(i), barrel.transform.position.z), barrel.transform.rotation);
             //cur_bullet.GetComponent<Rigidbody>().velocity = cam.transform.TransformDirection(Vector3.forward * bullet_speed);
-            cur_bullet2.GetComponent<Rigidbody>().velocity = myDirection2.normalized * short_bullet_speed;
+            cur_bullet2.GetComponent<Rigidbody>().velocity = myDirection.normalized * short_bullet_speed;
             cur_bullet2.layer = 9;
             cur_bullet2.gameObject.GetComponent<Bullet>().SetDamage(short_damage);
             Destroy(cur_bullet2, 1f);

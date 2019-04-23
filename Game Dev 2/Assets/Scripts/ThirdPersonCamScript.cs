@@ -27,6 +27,7 @@ public class ThirdPersonCamScript : MonoBehaviour
     public float lerpCurve = 5f; //bigger value, bigger ease in / ease out
     private float t;
     bool free;
+    bool wall_cam;
 
     public GameObject inputManager; //set in the inspector
 
@@ -34,6 +35,7 @@ public class ThirdPersonCamScript : MonoBehaviour
     {
         NormCam();
         free = true;
+        wall_cam = false;
     }
 
     public void AssignPlayer(GameObject player)
@@ -83,6 +85,21 @@ public class ThirdPersonCamScript : MonoBehaviour
             currentX += Input.GetAxis("Mouse X") * sensitivityX;
             currentY += Input.GetAxis("Mouse Y") * sensitivityY;
             currentY = Mathf.Clamp(currentY, minY, maxY);
+
+            if (wall_cam)
+            {
+                RaycastHit hit;
+                Debug.DrawRay(transform.position, lookAtObject.transform.position - transform.position);
+                if (Physics.Raycast(transform.position, ((lookAtObject.transform.position - transform.position) / Vector3.Distance(transform.position, lookAtObject.transform.position)), out hit, 4f))
+                {
+                    //if it cam hits a wall
+                }
+                else
+                {
+                    NormCam();
+                    lookAtObject.transform.parent.gameObject.SendMessage("ChangeWallCam");
+                }
+            }
         }
     }
 
@@ -157,7 +174,8 @@ public class ThirdPersonCamScript : MonoBehaviour
         sensitivityX = 2f;
         sensitivityY = 2f;
         distance = 5f;
-
+        wall_cam = false;
+        Debug.Log(wall_cam);
         if (lookAtObject) { lookAtObject.SendMessage("CameraNotZoomedIn"); }
     }
 
@@ -169,6 +187,8 @@ public class ThirdPersonCamScript : MonoBehaviour
         //free = false;
         distance = 1f;
         gameObject.GetComponent<Camera>().fieldOfView = 100;
+        wall_cam = true;
+        Debug.Log(wall_cam);
     }
 
     void NoWallCam()
