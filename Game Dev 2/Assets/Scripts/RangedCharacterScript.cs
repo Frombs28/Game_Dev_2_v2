@@ -187,6 +187,7 @@ public class RangedCharacterScript : CharacterScript
         cam.SendMessage("NormCam");
         dashEndTime = Time.time;
         dashing = false;
+        myAnimator.SetBool("charge", false);
     }
 
     IEnumerator Shield()

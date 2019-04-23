@@ -1522,6 +1522,7 @@ MonoBehaviour:
   player: {fileID: 0}
   amPlayer: 0
   inputManager: {fileID: 0}
+  instantiateManager: {fileID: 0}
   navAgent: {fileID: 0}
   myAnimator: {fileID: 0}
   controller: {fileID: 0}
@@ -1548,6 +1549,7 @@ MonoBehaviour:
   reloading: 0
   notPossessed: {fileID: 0}
   possessed: {fileID: 0}
+  wall_time: 0.2
   cam: {fileID: 0}
   state: none
   lookAtPlayer: 0
@@ -1560,7 +1562,7 @@ MonoBehaviour:
   myAiFireSeconds: 3.45
   dashDistance: 70
   dashSpeed: 75
-  dashTime: 3
+  dashTime: 1
   dashCoolDown: 1
   shieldTime: 3
   shieldCoolDown: 6

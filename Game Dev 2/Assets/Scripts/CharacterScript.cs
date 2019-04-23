@@ -606,7 +606,8 @@ public class CharacterScript : MonoBehaviour
         }
         if(gameObject.GetComponent<RangedCharacterScript>() && collider.gameObject.tag != "Possessable" && collider.gameObject.tag != "Projectile") //projectile was spelled wrong
         {
-            gameObject.SendMessage("StopCharging");
+            //gameObject.SendMessage("StopCharging");
+            //Debug.Log("called now!");
         }
         if (collider.gameObject.tag == "Wall")
         {
