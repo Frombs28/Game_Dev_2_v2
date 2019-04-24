@@ -1596,7 +1596,7 @@ MonoBehaviour:
   grunt_bullet_speed: 300
   rifle_damage: 2
   short_damage: 4
-  sniper_damage: 10
+  sniper_damage: 12
   grunt_damage: 1
   grunt_burst_rate: 0.2
   melee_burst_rate: 0.15

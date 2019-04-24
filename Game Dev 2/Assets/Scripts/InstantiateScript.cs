@@ -70,6 +70,7 @@ public class InstantiateScript : MonoBehaviour
     //i will eventually add functionality to spawn the correct character type and with the correct health, etc.
     {
         myCharacter = InstantiateCharacter(pos);
+        myCharacter.SendMessage("Invincibility");
         inputManager.SendMessage("AssignEveryCharacterPlayer", myCharacter);
     }
 
