@@ -43,7 +43,7 @@ public class EndDialogue : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.layer == 2)
+        if (collider.gameObject.layer == 2 && !done)
         {
             Time.timeScale = 0f;
             begin = true;
