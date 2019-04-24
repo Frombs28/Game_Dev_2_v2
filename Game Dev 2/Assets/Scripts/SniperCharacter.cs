@@ -26,8 +26,8 @@ public class SniperCharacter : CharacterScript
     private bool dashing = false;
     //remember to override movespeed in the inspector!
 
-    private bool perchInRange = false;
-    private Vector3 perchPosition;
+    public bool perchInRange = false;
+    public Vector3 perchPosition;
     
 
     public override void SetEnemyHealth()
@@ -189,7 +189,7 @@ public class SniperCharacter : CharacterScript
             return true;
         }
         float myDist = Vector3.Distance(player.transform.position, transform.position);
-        if ((myDist >= 20 && !perchInRange) || hittingWall || (perchInRange && (new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(perchPosition.x, 0, perchPosition.z)).magnitude <= 0.5f))
+        if ((myDist >= 30 && !perchInRange) || hittingWall || (perchInRange && (new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(perchPosition.x, 0, perchPosition.z)).magnitude <= 0.5f))
         {
             navAgent.ResetPath();
             lookAwayFromPlayer = false;
