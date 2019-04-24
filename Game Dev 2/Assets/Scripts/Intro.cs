@@ -26,7 +26,7 @@ public class Intro : MonoBehaviour
         {
             NextSlide();
         }
-        else if(i == images.Count)
+        else if(i == images.Count && (Input.GetKeyDown(KeyCode.Space)))
         {
             SceneManager.LoadScene("level1", LoadSceneMode.Single);
         }

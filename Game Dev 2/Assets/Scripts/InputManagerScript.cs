@@ -357,6 +357,11 @@ public class InputManagerScript : MonoBehaviour
         receiveInput = true;
     }
 
+    public void SetReceiveInputFalse()
+    {
+        receiveInput = false;
+    }
+
     void RechargeTraversal()
     {
         traversalRechargeStartTime = Time.deltaTime;

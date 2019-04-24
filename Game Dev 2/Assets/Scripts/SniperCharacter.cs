@@ -164,6 +164,7 @@ public class SniperCharacter : CharacterScript
         while ((Time.time - slowStartTime) <= slowTime)
         {
             Time.timeScale = 0.25f;
+            reload = 0.25f;
             yield return null;
         }
         Time.timeScale = 1f;

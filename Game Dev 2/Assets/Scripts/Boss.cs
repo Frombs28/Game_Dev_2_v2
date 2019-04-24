@@ -16,7 +16,7 @@ public class Boss : MonoBehaviour
     {
         health_bar.maxValue = health;
         health_bar.value = health;
-        Instantiate(door, spot);
+        door = GameObject.Find("door2");
     }
 
     // Update is called once per frame
