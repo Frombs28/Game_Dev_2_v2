@@ -13055,7 +13055,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775df2772c688e74390357c29518da2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  images: []
+  images:
+  - {fileID: 21300000, guid: 1480777e576804a43bb3b75456000217, type: 3}
+  - {fileID: 21300000, guid: fd01862b5cb67034aa071dbe628f2fcd, type: 3}
+  - {fileID: 21300000, guid: 1480777e576804a43bb3b75456000217, type: 3}
+  - {fileID: 21300000, guid: fd01862b5cb67034aa071dbe628f2fcd, type: 3}
   picture: {fileID: 417887479}
   inputManager: {fileID: 1991040169}
 --- !u!1001 &618265599

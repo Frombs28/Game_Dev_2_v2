@@ -10,10 +10,12 @@ public class EndDialogue : MonoBehaviour {
     bool begin;
     int i;
     public GameObject inputManager;
+    bool done;
 
     // Use this for initialization
     void Start () {
         begin = false;
+        done = false;
         i = 0;
         picture.enabled = false;
         picture.sprite = images[0];
@@ -22,7 +24,7 @@ public class EndDialogue : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (begin)
+        if (begin && !done)
         {
             if ((i < images.Count) && (Input.GetKeyDown(KeyCode.Space)))
             {
@@ -33,6 +35,7 @@ public class EndDialogue : MonoBehaviour {
             {
                 Time.timeScale = 1f;
                 picture.enabled = false;
+                done = true;
                 inputManager.SendMessage("SetReceiveInputTrue");
             }
         }
