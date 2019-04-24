@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndDialogue : MonoBehaviour {
 
@@ -31,7 +32,7 @@ public class EndDialogue : MonoBehaviour {
             else if (i == images.Count && (Input.GetKeyDown(KeyCode.Space)))
             {
                 Time.timeScale = 1f;
-                picutre.enabled = false;
+                picture.enabled = false;
                 inputManager.SendMessage("SetReceiveInputTrue");
             }
         }
