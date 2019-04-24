@@ -18,7 +18,7 @@ public class SniperCharacter : CharacterScript
     private float slowEndTime = 0f;
     public float ammo_count = 1f;
     public float max_ammo = 1f;
-    public float reload = 4f;
+    public float reload = 2f;
     public float fire_rate = 0.1f;
     public int my_health = 12;
     public int max_health = 12;
@@ -106,6 +106,10 @@ public class SniperCharacter : CharacterScript
         {
             inputManager.SendMessage("ChangeTime", 5);
         }
+        if (amPlayer)
+        {
+            Time.timeScale = 1f;
+        }
         base.Die();
     }
 
@@ -161,9 +165,9 @@ public class SniperCharacter : CharacterScript
 
     IEnumerator Slow()
     {
+        Time.timeScale = 0.25f;
         while ((Time.time - slowStartTime) <= slowTime)
         {
-            Time.timeScale = 0.25f;
             reload = 0.25f;
             yield return null;
         }
@@ -171,6 +175,7 @@ public class SniperCharacter : CharacterScript
         slowEndTime = Time.time;
         //cam.SendMessage("NormCam");
         Debug.Log("Done slow!");
+        reload = 2f;
     }
 
     public override bool MakeDistanceHelperOne()
