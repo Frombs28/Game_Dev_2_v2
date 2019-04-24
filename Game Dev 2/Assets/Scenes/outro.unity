@@ -494,9 +494,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: e7031718be71bbe4a8009edcc5e1134f, type: 3}
+  - {fileID: 21300000, guid: 43a8ef54e20173f48a75ce563b1b4c00, type: 3}
   picture: {fileID: 1052773568}
