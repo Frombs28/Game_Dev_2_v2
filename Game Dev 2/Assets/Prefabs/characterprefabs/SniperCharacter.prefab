@@ -1604,7 +1604,7 @@ MonoBehaviour:
   interruptMovement: 0
   zeroMovement: 1
   moveSpeed: 20
-  jumpSpeed: 20
+  jumpSpeed: 50
   gravity: 70
   enemyhealth: 12
   cur_bullet: 0
@@ -1647,6 +1647,8 @@ MonoBehaviour:
   fire_rate: 0.1
   my_health: 12
   max_health: 12
+  perchInRange: 0
+  perchPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114962437012064500
 MonoBehaviour:
   m_ObjectHideFlags: 1

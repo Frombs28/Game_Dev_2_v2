@@ -1569,7 +1569,7 @@ MonoBehaviour:
   interruptMovement: 0
   zeroMovement: 1
   moveSpeed: 20
-  jumpSpeed: 20
+  jumpSpeed: 30
   gravity: 70
   enemyhealth: 3
   cur_bullet: 0
