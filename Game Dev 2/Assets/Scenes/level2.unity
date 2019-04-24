@@ -41888,6 +41888,156 @@ Prefab:
       propertyPath: m_Name
       value: Input Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[35]
+      value: 'You can s*ck my left nut '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[34]
+      value: 'U H8 2 C IT '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[33]
+      value: "We have a \u201Cbadass\u201D over here "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[32]
+      value: 'Where tha FUCK was my HEALER '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[31]
+      value: "(\u256F\xB0\u25A1\xB0)\u256F\uFE35 \u253B\u2501\u253B "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[30]
+      value: 'Rip '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[29]
+      value: 'You''re in the endgame now '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[28]
+      value: Dude you aren't even good. That's my smurf
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[27]
+      value: Reported
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[26]
+      value: "( \u0361\xB0 \u035C\u0296 \u0361\xB0) "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[25]
+      value: Wtf
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[24]
+      value: 'F '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[23]
+      value: 'Bamboozled '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[22]
+      value: ??
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[21]
+      value: Hello??
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[0]
+      value: '1..2.. The ban is coming for you '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[1]
+      value: The banhammer is coming!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[2]
+      value: "It\u2019s all fun and games until someone gets banned "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[3]
+      value: 'DART has you in their sights! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[4]
+      value: I hope he shuts you down forever
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[5]
+      value: Last time the Banhammer showed up, everyone paid a price
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[6]
+      value: 'The banhammer is gonna DESTROY you '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[7]
+      value: 'Are you ready to never play games online again? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[8]
+      value: 'No mercy for the hacker scum '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[9]
+      value: 'Hacking is for trolls, and trolls belong under a bridge on their own '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[10]
+      value: 'The banhammer is unstoppable, just quit now '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[11]
+      value: 'Here he comessssss!!! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[12]
+      value: 'Your crimes against this server will be accounted for today '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[13]
+      value: Everybody run!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796820561047488, guid: b602f4c049415e5479e71cc191d23969,
+        type: 2}
+      propertyPath: speech_list.Array.data[14]
+      value: "That\u2019s it, I\u2019m calling the banhammer"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b602f4c049415e5479e71cc191d23969, type: 2}
   m_IsPrefabAsset: 0
