@@ -413,7 +413,7 @@ public class CharacterScript : MonoBehaviour
     {
         bool strafingRight = (Random.value >= 0.5f);
         float startTime = Time.time;
-        float myTimer = Random.Range(5f, 10f);
+        float myTimer = Random.Range(3f, 6f);
         float myDist = 10f;
         if (player) { myDist = Vector3.Distance(player.transform.position, transform.position); }
         if (strafingRight)
@@ -448,6 +448,7 @@ public class CharacterScript : MonoBehaviour
                 if (player)
                 {
                     navAgent.SetDestination(player.transform.position);
+                    strafingRight = !strafingRight;
                 }
                 else
                 {
