@@ -849,7 +849,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1594852165712796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -522.10785, y: 2.85, z: 174.18999}
+  m_LocalPosition: {x: -209.29, y: -2.3845396, z: -219.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4434947811156944}
@@ -1441,8 +1441,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 7, z: 0}
+  m_Size: {x: 15, y: 5, z: 15}
+  m_Center: {x: 0, y: 17, z: 0}
 --- !u!65 &65217833014978528
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1597,16 +1597,16 @@ MonoBehaviour:
   amPlayer: 0
   inputManager: {fileID: 0}
   instantiateManager: {fileID: 0}
-  navAgent: {fileID: 0}
-  myAnimator: {fileID: 0}
-  controller: {fileID: 0}
+  navAgent: {fileID: 195193465858194444}
+  myAnimator: {fileID: 95931124095773858}
+  controller: {fileID: 143474385847301776}
   moveDirection: {x: 0, y: 0, z: 0}
   interruptMovement: 0
   zeroMovement: 1
   moveSpeed: 20
   jumpSpeed: 20
   gravity: 70
-  enemyhealth: 3
+  enemyhealth: 12
   cur_bullet: 0
   enemySpeed: 12
   invincible: 0
@@ -1799,7 +1799,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 12
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 120
