@@ -382,6 +382,11 @@ public class InputManagerScript : MonoBehaviour
         return characters.Count;
     }
 
+    public float GetTime()
+    {
+        return ui_timer;
+    }
+
     public void AssignEveryCharacterPlayer(GameObject myPlayer)
     {
         foreach (GameObject character in characters)

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Switch1To2 : MonoBehaviour {
 
+    public GameObject inputManager;
+    float time1;
 	// Use this for initialization
 	void Start () {
 		
@@ -19,6 +21,8 @@ public class Switch1To2 : MonoBehaviour {
     {
         if (collider.gameObject.layer == 2)
         {
+            time1 = inputManager.GetComponent<InputManagerScript>().GetTime();
+            PlayerPrefs.SetFloat("time1", time1);
             SceneManager.LoadScene("level2", LoadSceneMode.Single);
         }
     }

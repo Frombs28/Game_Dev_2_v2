@@ -28,7 +28,7 @@ public class Outro : MonoBehaviour
         }
         else if (i == images.Count && (Input.GetKeyDown(KeyCode.Space)))
         {
-            SceneManager.LoadScene("start", LoadSceneMode.Single);
+            SceneManager.LoadScene("end", LoadSceneMode.Single);
         }
     }
 

@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Switch2ToEnd : MonoBehaviour
 {
-
+    public GameObject inputManager;
+    float time2;
     // Use this for initialization
     void Start()
     {
@@ -22,6 +23,8 @@ public class Switch2ToEnd : MonoBehaviour
     {
         if (collider.gameObject.layer == 2)
         {
+            time2 = inputManager.GetComponent<InputManagerScript>().GetTime();
+            PlayerPrefs.SetFloat("time2", time2);
             SceneManager.LoadScene("outro", LoadSceneMode.Single);
         }
     }

@@ -111,7 +111,10 @@ public class CharacterScript : MonoBehaviour
             navAgent.enabled = true;
             //myAnimator.SetBool("walk", true);
             material = notPossessed;
-            gameObject.tag = "Possessable";
+            if(gameObject.name!= "Boss(Clone)")
+            {
+                gameObject.tag = "Possessable";
+            }
         }
     }
 

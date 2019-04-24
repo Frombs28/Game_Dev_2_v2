@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/outro.unity
     guid: 43d9172b6d36a324691637d4005359f6
+  - enabled: 1
+    path: Assets/Scenes/end.unity
+    guid: bba00ae727ce8ce4fa226fa9f2403e2e
   m_configObjects: {}
