@@ -1647,6 +1647,8 @@ MonoBehaviour:
   fire_rate: 0.1
   my_health: 12
   max_health: 12
+  perchInRange: 0
+  perchPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114962437012064500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1668,7 +1670,7 @@ MonoBehaviour:
   grunt_bullet_speed: 100
   rifle_damage: 2
   short_damage: 4
-  sniper_damage: 10
+  sniper_damage: 12
   grunt_damage: 1
   grunt_burst_rate: 0.2
   melee_burst_rate: 0.15
