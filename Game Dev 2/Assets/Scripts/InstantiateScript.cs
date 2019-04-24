@@ -29,6 +29,7 @@ public class InstantiateScript : MonoBehaviour
     //sets prefabNum
     //tells us which character to re-spawn the player as when they die
     {
+        if (myNum == 7) { myNum = 0; }
         prefabNum = myNum;
     }
 

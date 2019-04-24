@@ -317,6 +317,6 @@ public class MeleeCharacterScript : CharacterScript
 
     public override void RespawnAsThisCharacter()
     {
-        instantiateManager.SendMessage("AssignPrefabNum", 0);
+        instantiateManager.SendMessage("AssignPrefabNum", 7);
     }
 }
