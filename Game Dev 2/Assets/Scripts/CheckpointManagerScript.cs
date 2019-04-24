@@ -13,7 +13,7 @@ public class CheckpointManagerScript : MonoBehaviour {
 
     private CheckpointScript myCheckScript;
 
-    public Vector3 GetLastCheckpoint()
+    public Transform GetLastCheckpoint()
     //called from the function "GameOver" in InputManager
     //tells it the transform to yeet the player into when they up and die
     {
@@ -24,12 +24,12 @@ public class CheckpointManagerScript : MonoBehaviour {
             myCheckScript = checkpoints[i].GetComponent<CheckpointScript>();
             if (myCheckScript.activated)
             {
-                return myCheckScript.myPosition;
+                return myCheckScript.myTransform;
             }
         }
         //ya done messed up if you ever reach this point
         //just yeet the player into space
-        return new Vector3(-99f, -99f, -99f);
+        return gameObject.transform;
     }
 
 }

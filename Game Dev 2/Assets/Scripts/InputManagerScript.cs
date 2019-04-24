@@ -296,7 +296,7 @@ public class InputManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && !playerIsAlive)
         //respawn
         {
-            Vector3 respawnPoint = CheckpointManager.GetComponent<CheckpointManagerScript>().GetLastCheckpoint();
+            Transform respawnPoint = CheckpointManager.GetComponent<CheckpointManagerScript>().GetLastCheckpoint();
             instantiateManager.SendMessage("Respawn", respawnPoint);
             myCanvas.SendMessage("DeActivateRespawnUI");
         }

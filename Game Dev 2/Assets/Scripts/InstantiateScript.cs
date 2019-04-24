@@ -21,7 +21,7 @@ public class InstantiateScript : MonoBehaviour
 
     private void Awake()
     {
-        InstantiateCharacter(spawn.position);   
+        InstantiateCharacter(spawn);
     }
 
     public void AssignPrefabNum(int myNum)
@@ -34,7 +34,7 @@ public class InstantiateScript : MonoBehaviour
     }
 
     //makes a guy
-    private GameObject InstantiateCharacter(Vector3 pos)
+    private GameObject InstantiateCharacter(Transform pos)
     {
         GameObject myPrefab;
         if (prefabNum == 0)
@@ -53,7 +53,7 @@ public class InstantiateScript : MonoBehaviour
         {
             myPrefab = gruntPrefab;
         }
-        myCharacter = Instantiate(myPrefab, pos, Quaternion.identity);
+        myCharacter = Instantiate(myPrefab, pos.position, pos.rotation);
         inputManager.SendMessage("AssignPlayer", myCharacter);
         cam.SendMessage("AssignPlayer", myCharacter.transform.GetChild(1).gameObject);
         myPlayer = myCharacter;
@@ -64,7 +64,7 @@ public class InstantiateScript : MonoBehaviour
         return myCharacter;
     }
 
-    public void Respawn(Vector3 pos)
+    public void Respawn(Transform pos)
     //called from InputManager in Update once R is pressed after the player dies
     //plops the player back down at the last checkpoint, passed as a vector3
     //i will eventually add functionality to spawn the correct character type and with the correct health, etc.

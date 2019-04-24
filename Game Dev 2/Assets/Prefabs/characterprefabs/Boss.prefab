@@ -836,7 +836,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1564476163900242}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -467.08218, y: 11.608683, z: -108.71838}
   m_LocalScale: {x: 2.8779361, y: 2.877935, z: 2.8779361}
   m_Children:
@@ -1472,6 +1472,7 @@ MonoBehaviour:
   player: {fileID: 0}
   amPlayer: 0
   inputManager: {fileID: 0}
+  instantiateManager: {fileID: 0}
   navAgent: {fileID: 0}
   myAnimator: {fileID: 0}
   controller: {fileID: 0}
@@ -1490,6 +1491,7 @@ MonoBehaviour:
   reloading: 0
   notPossessed: {fileID: 0}
   possessed: {fileID: 0}
+  wall_time: 0.2
   cam: {fileID: 0}
   state: none
   lookAtPlayer: 0
@@ -1498,6 +1500,8 @@ MonoBehaviour:
   aggro: 0
   distanceToAggro: 25
   timer: 100
+  makeDistanceTimer: 0
+  myAiFireSeconds: 0
   dashDistance: 70
   dashSpeed: 75
   dashTime: 1

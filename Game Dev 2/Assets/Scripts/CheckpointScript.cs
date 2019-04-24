@@ -6,10 +6,12 @@ public class CheckpointScript : MonoBehaviour {
 
     public bool activated = false;
     public Vector3 myPosition;
+    public Transform myTransform;
 
     void Awake()
     {
         myPosition = transform.position;
+        myTransform = transform;
     }
 
     void OnTriggerEnter(Collider other)
