@@ -1600,7 +1600,7 @@ MonoBehaviour:
   grunt_damage: 1
   grunt_burst_rate: 0.2
   melee_burst_rate: 0.15
-  ranged_burst_rate: 1.15
+  ranged_burst_rate: 0.3
   sniper_burst_rate: 2
   grunt_burst_num: 5
   melee_burst_num: 10
